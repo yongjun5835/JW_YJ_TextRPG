@@ -27,23 +27,22 @@ internal class UI
             Console.ForegroundColor = ConsoleColor.Gray;
         else if (color == "Yellow")
             Console.ForegroundColor = ConsoleColor.Yellow;
+        else if (color == "White")
+            Console.ForegroundColor = ConsoleColor.White;
         Console.SetCursorPosition(x, y);
         Console.Write(text);
         Console.ResetColor();
     }
 
-    public void DrawUI(int type, int x, int y, string text, string color)
+    public void DrawUI(int x, int y, int textPosition, string text, string color)
     {
-        if (type == 1)
-        {
-            DrawText(x, y + 0, " ______________.-'-.______________", color);
-            DrawText(x, y + 1, "(_                               _)", color);
-            DrawText(x, y + 2, "", color);
-            DrawText(x + 13, y + 3, text, color);
-            DrawText(x, y + 4, " _                               _", color);
-            DrawText(x, y + 5, "(______________     ______________)", color);
-            DrawText(x, y + 6, "               '-.-'", color);
-        }
+        DrawText(x, y + 0, " ______________.-'-.______________", color);
+        DrawText(x, y + 1, "(_                               _)", color);
+        DrawText(x, y + 2, "", color);
+        DrawText(x + textPosition, y + 3, text, color);
+        DrawText(x, y + 4, " _                               _", color);
+        DrawText(x, y + 5, "(______________     ______________)", color);
+        DrawText(x, y + 6, "               '-.-'", color);
     }
 
 
@@ -62,6 +61,8 @@ internal class UI
             Console.ForegroundColor = ConsoleColor.Gray;
         else if (color == "Yellow")
             Console.ForegroundColor = ConsoleColor.Yellow;
+        else if (color == "White")
+            Console.ForegroundColor = ConsoleColor.White;
         Console.SetCursorPosition(x, y);
         Console.Write("┏");
         for (int i = 1; i <= width - 2; i++)

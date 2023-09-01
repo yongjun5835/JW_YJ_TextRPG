@@ -9,7 +9,33 @@ internal class Animation
 {
     public Animation()
     {
+        
+    }
 
+    public void DrawTextSlowly(int x, int y, string text, string color)
+    {
+        Console.SetCursorPosition(x, y);
+        char[] inputs = text.ToCharArray();
+        for (int i = 0; i < inputs.Length; i++)
+        {
+            if (color == "Green")
+                Console.ForegroundColor = ConsoleColor.Green;
+            else if (color == "Red")
+                Console.ForegroundColor = ConsoleColor.Red;
+            else if (color == "Blue")
+                Console.ForegroundColor = ConsoleColor.Blue;
+            else if (color == "Black")
+                Console.ForegroundColor = ConsoleColor.Black;
+            else if (color == "Gray")
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+            else if (color == "Yellow")
+                Console.ForegroundColor = ConsoleColor.Yellow;
+            else if (color == "White")
+                Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(inputs[i]);
+            Console.ResetColor();
+            Thread.Sleep(50);
+        }
     }
 
     public void SmallerBox(int x, int y)

@@ -24,7 +24,7 @@ internal class UI
         else if (color == "Black")
             Console.ForegroundColor = ConsoleColor.Black;
         else if (color == "Gray")
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.DarkGray;
         else if (color == "Yellow")
             Console.ForegroundColor = ConsoleColor.Yellow;
         else if (color == "White")
@@ -58,7 +58,7 @@ internal class UI
         else if (color == "Black")
             Console.ForegroundColor = ConsoleColor.Black;
         else if (color == "Gray")
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.DarkGray;
         else if (color == "Yellow")
             Console.ForegroundColor = ConsoleColor.Yellow;
         else if (color == "White")

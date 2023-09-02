@@ -12,6 +12,7 @@
         static void Main(string[] args)
         {
             new SkillManager();
+
             createPlayer.DrawDisplay();
             intro.DrawDisplay();
             tutorial.DrawDisplay();

@@ -34,6 +34,7 @@ internal class UnitManager
     void Player(Unit unit)
     {
         unit.Hp = 30;
+        unit.MaxHp = 30;
         unit.Atk = 5;
         unit.Def = 2;
         unit.Spd = 5;
@@ -50,6 +51,7 @@ internal class UnitManager
     {
         unit.Name = "고등어";
         unit.Hp = 30;
+        unit.MaxHp = 30;
         unit.Atk = 5;
         unit.Def = 2;
         unit.Spd = 5;
@@ -64,6 +66,7 @@ internal class UnitManager
     {
         unit.Name = "상어";
         unit.Hp = 90;
+        unit.MaxHp = 90;
         unit.Atk = 10;
         unit.Def = 3;
         unit.Spd = 10;
@@ -79,6 +82,7 @@ internal class UnitManager
     {
         unit.Name = "거북이";
         unit.Hp = 150;
+        unit.MaxHp = 150;
         unit.Atk = 5;
         unit.Def = 10;
         unit.Spd = 1;
@@ -93,7 +97,8 @@ internal class UnitManager
     void Angler(Unit unit)
     {
         unit.Name = "낚시꾼";
-        unit.Hp = 200;
+        unit.Hp = 210;
+        unit.MaxHp = 210;
         unit.Atk = 20;
         unit.Def = 5;
         unit.Spd = 10;

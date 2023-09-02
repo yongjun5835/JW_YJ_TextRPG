@@ -21,7 +21,7 @@
 
     public Buff(Unit taget, int effectTurn, AttackType atkType, float percent)
     {
-        SkillManager.SM.RoundTurn += DecreaseTurn;
+        SkillManager.SM.RoundTurn += this.DecreaseTurn;
         taget.BuffList.Add(this);
         this.effectTurn = effectTurn;
         this.taget = taget;
@@ -34,11 +34,11 @@
                 taget.Hp -= buffValue;
                 break;
             case AttackType.Atk:
-                buffValue = taget.Atk - (int)(taget.Atk * percent);
+                buffValue = (int)(taget.Atk*percent);
                 taget.Atk -= buffValue;
                 break;
             case AttackType.Def:
-                buffValue = taget.Def - (int)(taget.Def * percent);
+                buffValue = (int)(taget.Def*percent);
                 taget.Def -= buffValue;
                 break;
             default:
@@ -70,6 +70,7 @@
             if (buff == this)
             {
                 taget.BuffList.Remove(this);
+                SkillManager.SM.RoundTurn -= this.DecreaseTurn;
                 break;
             }
         }
@@ -77,10 +78,10 @@
 
     public void DecreaseTurn()
     {
-        if (atkType == AttackType.Hp)
+        EffectTurn--;
+        if (atkType == AttackType.Hp && isEffectOn ==true)
         {
             taget.Hp -= buffValue;
         }
-        EffectTurn--;
     }
 }

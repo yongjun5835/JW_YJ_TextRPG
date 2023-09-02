@@ -4,6 +4,7 @@ namespace JW_YJ_TextRPG
 {
     internal class Program
     {
+        public static Player player = new Player(UnitType.Player);
         public static UI ui = new UI();
         public static Animation animation = new Animation();
         public static CreatePlayer createPlayer = new CreatePlayer();
@@ -16,11 +17,6 @@ namespace JW_YJ_TextRPG
         {
             new SkillManager();
             new UnitManager();
-
-            Unit unit = new Unit(UnitType.Shark);
-            Unit unit1 = new Unit(UnitType.Scomber);
-            unit.SkillList.Add(new BuffSkill(SKillType.BiteDeep));
-            unit.Attack(4,unit1);
 
             Console.CursorVisible = false;
 
@@ -35,6 +31,27 @@ namespace JW_YJ_TextRPG
 
         }
 
+        static void TestBuff()
+        {
+            Unit taget = new Unit(UnitType.Scomber);
+            Unit unit = new Unit(UnitType.Shark);
 
+            int tempHp =taget.Hp;
+            unit.SkillList.Add(new BuffSkill(SKillType.BiteDeep));
+
+            taget.Def = 100;
+
+            unit.Attack(2, taget);
+            Console.WriteLine($"공격한 턴 HP :{taget.Hp} / {tempHp}");
+            SkillManager.SM.TurnEvent();
+            Console.WriteLine($"+1 턴 HP :{taget.Hp} / {tempHp}");
+            SkillManager.SM.TurnEvent();
+            Console.WriteLine($"+2 턴 HP :{taget.Hp} / {tempHp}");
+            SkillManager.SM.TurnEvent();
+            Console.WriteLine($"+3 턴 HP :{taget.Hp} / {tempHp}");
+
+        }
     }
+
+
 }

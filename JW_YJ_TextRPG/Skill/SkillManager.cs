@@ -2,13 +2,21 @@
 {
     public static SkillManager SM;
 
-    public delegate void TurnEvent();
-    public event TurnEvent RoundTurn;
+    public delegate void Event();
+    public event Event RoundTurn;
 
 
     public SkillManager()
     {
         SM = this;
+    }
+
+    public void TurnEvent()
+    {
+        if (RoundTurn == null)
+            return;
+
+        RoundTurn();
     }
 
     public void ChangeSkillData(Skill skill)
@@ -55,9 +63,11 @@
         skill.AttackType = AttackType.Def;
         skill.Name = "꼬리 흔들기";
         skill.Comment = "꼬리를 흔들어 상대를 도발한다.";
-        skill.Power = 0.8f;
+        skill.Power = 1.0f;
         skill.Accuracy = 1.0f;
-        ((BuffSkill)skill).EffectTurn = 2;
+        ((BuffSkill)skill).EffectTurn = 3;
+        ((BuffSkill)skill).Percent = 0.2f;
+
     }
 
     void WaterCanon(Skill skill)
@@ -104,6 +114,7 @@
         skill.Power = 1.0f;
         skill.Accuracy = 0.7f;
         ((BuffSkill)skill).EffectTurn = 3;
+        ((BuffSkill)skill).Percent = 5;
     }
 
     public void CalcAttackType(Skill skill, Unit taget, ref int damage)

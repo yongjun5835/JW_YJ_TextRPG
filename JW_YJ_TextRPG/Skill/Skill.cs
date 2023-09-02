@@ -80,8 +80,9 @@ class AttackSkill : Skill
 class BuffSkill : Skill
 {
     float percent = 0.0f;
-    int effectTurn;
+    int effectTurn =0;
 
+    public float Percent { get { return percent; } set { percent = value; } }
     public int EffectTurn { get { return effectTurn; } set { effectTurn = value; }}
 
     public BuffSkill(SKillType sKillType) : base(sKillType) { }
@@ -90,12 +91,7 @@ class BuffSkill : Skill
     {
         if (user != target && IsDodged(user, target) == true)
             return;
-        new Buff(target,effectTurn, AttackType, percent);
+        new Buff(target,EffectTurn, AttackType, Percent);
     }
-
-}
-
-class DotSkill
-{
 
 }

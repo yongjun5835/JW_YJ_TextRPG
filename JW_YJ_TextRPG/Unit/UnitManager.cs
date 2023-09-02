@@ -34,10 +34,10 @@ internal class UnitManager
         unit.Accuracy = 3;
         unit.Dodge = 1;
 
-        unit.SkillList.Add(new Skill(SKillType.BodySlam));
-        unit.SkillList.Add(new Skill(SKillType.Splash));
-        unit.SkillList.Add(new Skill(SKillType.None));
-        unit.SkillList.Add(new Skill(SKillType.None));
+        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
+        unit.SkillList.Add(new BuffSkill(SKillType.Splash));
+        unit.SkillList.Add(new AttackSkill(SKillType.None));
+        unit.SkillList.Add(new AttackSkill(SKillType.None));
     }
 
     void Scomber(Unit unit)
@@ -50,8 +50,8 @@ internal class UnitManager
         unit.Accuracy = 3;
         unit.Dodge = 1;
 
-        unit.SkillList.Add(new Skill(SKillType.BodySlam));
-        unit.SkillList.Add(new Skill(SKillType.Splash));
+        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
+        unit.SkillList.Add(new BuffSkill(SKillType.Splash));
     }
 
     void Shark(Unit unit)
@@ -64,9 +64,24 @@ internal class UnitManager
         unit.Accuracy = 5;
         unit.Dodge = 5;
 
-        unit.SkillList.Add(new Skill(SKillType.BodySlam));
-        unit.SkillList.Add(new Skill(SKillType.Splash));
-        unit.SkillList.Add(new Skill(SKillType.WaterCanon));
+        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
+        unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));
+        unit.SkillList.Add(new AttackSkill(SKillType.WaterCanon));
+    }
+
+    void Turtle(Unit unit)
+    {
+        unit.Name = "거북이";
+        unit.Hp = 150;
+        unit.Atk = 5;
+        unit.Def = 10;
+        unit.Spd = 1;
+        unit.Accuracy = 1;
+        unit.Dodge = 1;
+
+        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
+        unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));
+        unit.SkillList.Add(new AttackSkill(SKillType.WaterCanon));
     }
 
 }

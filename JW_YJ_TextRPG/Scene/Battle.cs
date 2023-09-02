@@ -172,7 +172,7 @@ internal class Battle
                 }
                 else
                 {
-                    index = rand.Next(0, 3);
+                    index = rand.Next(1, 3);
 
                     enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
@@ -220,7 +220,7 @@ internal class Battle
             {
                 if (isFaster == true)
                 {
-                    index = rand.Next(0, 3);
+                    index = rand.Next(1, 3);
 
                     Program.player.Attack(2, enemy);
                     DrawDisplay(enemy.UnitType);
@@ -265,7 +265,7 @@ internal class Battle
                 }
                 else
                 {
-                    index = rand.Next(0, 3);
+                    index = rand.Next(1, 3);
 
                     enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
@@ -313,7 +313,7 @@ internal class Battle
             {
                 if (isFaster == true)
                 {
-                    index = rand.Next(0, 3);
+                    index = rand.Next(1, 3);
 
                     Program.player.Attack(3, enemy);
                     DrawDisplay(enemy.UnitType);
@@ -358,7 +358,7 @@ internal class Battle
                 }
                 else
                 {
-                    index = rand.Next(0, 3);
+                    index = rand.Next(1, 3);
 
                     enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
@@ -451,7 +451,7 @@ internal class Battle
                 }
                 else
                 {
-                    index = rand.Next(0, 3);
+                    index = rand.Next(1, 3);
 
                     enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);

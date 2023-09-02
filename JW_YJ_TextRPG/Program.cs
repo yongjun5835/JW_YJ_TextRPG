@@ -14,17 +14,22 @@ namespace JW_YJ_TextRPG
 
         static void Main(string[] args)
         {
+            new SkillManager();
+            new UnitManager();
+
+            Unit unit = new Unit(UnitType.Shark);
+
             Console.CursorVisible = false;
 
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            new SkillManager();
 
             createPlayer.DrawDisplay();
             intro.DrawDisplay();
             tutorial.DrawDisplay();
             story1.DrawDisplay();
+
         }
     }
 }

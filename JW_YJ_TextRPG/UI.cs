@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JW_YJ_TextRPG;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -169,5 +170,84 @@ internal class UI
         {
             DrawText(x + 11, y + 4 + i, "                                                                                ", "");
         }
+    }
+
+    public void DrawTexture(UnitType type, int x, int y, string color)
+    {
+        if (type == UnitType.Player)
+        {
+            Program.ui.DrawText(x + 0, y + 0, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⢶⣶⠂⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 1, "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣯⣤⣾⣃⣀⣠⡾⢻⡿⠁⠀⠀⠀⠀⠀⠀⢀⣀⣀", color);
+            Program.ui.DrawText(x + 0, y + 2, "⠀⠀⠀⠀⣠⣴⠶⠟⠛⠉⠉⠉⠉⠉⠉⠙⠛⠿⢿⣥⣤⠀⡀⠀⠀⢀⣴⣿⣿⡏", color);
+            Program.ui.DrawText(x + 0, y + 3, "⠀⢀⣴⠟⢫⣶⡄⠻⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⢷⣾⣂⣾⣿⣿⡟⠀", color);
+            Program.ui.DrawText(x + 0, y + 4, "⣰⣿⣧⣀⠈⠛⠁⠀⢻⡇⢰⣶⣶⣶⣶⣶⣶⠆⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⠁⠀", color);
+            Program.ui.DrawText(x + 0, y + 5, "⠙⢦⣍⠉⠛⠀⢀⣠⡟⠀⠸⢿⣿⣿⠿⠋⠁⠀⠀⠀⠀⣀⣤⠶⠛⣿⣿⣿⣇⠀", color);
+            Program.ui.DrawText(x + 0, y + 6, "⠀⠀⠉⠻⢶⣤⣀⡉⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠶⠛⠉⠀⠀⠀⠘⢿⣿⣿⡆", color);
+            Program.ui.DrawText(x + 0, y + 7, "⠀⠀⠀⠀⠀⠀⠉⠙⠻⣿⡻⠶⣶⠚⠛⠛⠻⣯⣽⣦⠀⠀⠀⠀⠀⠀⠀⠙⠛⠛", color);
+            Program.ui.DrawText(x + 0, y + 8, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠷⢿⡦⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+        }
+        else if (type == UnitType.Scomber)
+        {
+            Program.ui.DrawText(x + 0, y + 0, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 1, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡾⠋⣻⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡄⠀", color);
+            Program.ui.DrawText(x + 0, y + 2, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣋⣠⣾⣏⣿⣄⡀⠀⠀⠀⠀⣀⣄⠀⠀⠀⠀⠀⣀⣴⣾⣿⠁⠀", color);
+            Program.ui.DrawText(x + 0, y + 3, "⠀⠀⠀⠀⠀⣀⣤⣤⣶⡶⠶⣿⠟⠛⠛⠻⣿⡛⢻⣿⠛⢿⣟⠿⠿⠶⣿⣯⣽⣷⡄⠀⣠⣾⢛⣥⡿⠁⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 4, "⠀⢠⣶⡿⠛⠻⣿⠄⠀⠀⠀⢿⣧⣠⣤⣤⣻⣥⣤⣭⣶⣾⣷⣶⣶⣶⣶⣶⣯⣿⣿⣿⣿⣷⢿⡿⠁⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 5, "⠀⠈⣻⣿⡿⠇⠀⠀⠀⠀⠀⢸⣿⣭⣉⣿⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢉⣩⣽⣿⡻⣿⣷⡀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 6, "⠀⠀⠈⠙⠻⢷⣦⣄⣀⣀⣠⡿⠃⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣶⠿⣻⡿⠇⠈⠻⣦⣝⣷⡀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 7, "⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠛⠿⠿⠷⣶⣶⣾⠿⠿⠿⠟⠛⠛⠋⠉⠉⠉⠻⠟⠋⠀⠀⠀⠀⠈⠙⠻⣷⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 8, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+        }
+        else if (type == UnitType.Shark)
+        {
+            Program.ui.DrawText(x + 0, y + 0, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⢾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 1, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡾⠋⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣄⠀", color);
+            Program.ui.DrawText(x + 0, y + 2, "⠀⠀⢀⣀⣀⣀⣤⣤⣤⡴⠶⠶⠛⠀⠀⠀⢸⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠞⣹⠇⠀", color);
+            Program.ui.DrawText(x + 0, y + 3, "⠀⢸⡏⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠳⢦⣤⣀⣀⠀⠀⢀⡾⠁⢠⡟⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 4, "⠀⠀⢻⡄⠀⠀⡀⠀⠀⠀⣷⠀⣿⠀⣿⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⠛⠛⠁⠀⣼⠁⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 5, "⠀⠀⠈⢷⣄⣀⣁⣀⠀⠀⠈⠁⠈⠁⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⢻⡄⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 6, "⠀⠀⠀⠀⠈⣩⣿⣏⣀⣀⣀⣀⣀⣀⣀⣀⡀⠀⠀⣀⣀⣀⣤⡤⠶⠛⠉⠻⣦⣈⣷⡄⠀", color);
+            Program.ui.DrawText(x + 0, y + 7, "⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⢳⣄⠀⢹⡏⠉⠀⠀⠀⠀⠀⠀⠀⠉⠙⠋⠀", color);
+            Program.ui.DrawText(x + 0, y + 8, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠙⠳⢦⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+        }
+        else if (type == UnitType.Turtle)
+        {
+            Program.ui.DrawText(x + 0, y + 0, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠰⠒⠒⡖⠒⠦⣄⡀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 1, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣞⠁⠀⠀⢀⡇⠀⠀⠀⢹⣄⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 2, "⡴⠚⠉⠛⢦⡀⠀⠀⢠⠏⠈⠳⢤⡴⠋⠉⠲⣤⠞⠁⠘⢆⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 3, "⠹⡄⠈⠀⠀⢳⡤⡖⠋⠀⠀⠀⢸⠀⠀⠀⠀⢿⠀⠀⠀⠈⢳⣤⡀", color);
+            Program.ui.DrawText(x + 0, y + 4, "⠀⠙⣆⠀⠀⢸⡀⠙⢦⣀⠀⠀⣾⠀⠀⠀⠀⢸⠀⠀⠀⠰⠋⠀⡽", color);
+            Program.ui.DrawText(x + 0, y + 5, "⠀⠀⠈⠳⠀⣀⠑⣤⡀⠈⠛⠒⠧⠤⠤⠤⠤⠼⠖⠚⠁⢀⣠⠞⠁", color);
+            Program.ui.DrawText(x + 0, y + 6, "⠀⠀⠀⠀⠀⠈⠉⡽⠉⠓⢲⡤⣤⣀⣀⣀⣀⣤⠤⡴⠒⠛⣇⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 7, "⠀⠀⠀⠀⠀⢀⡼⠁⠀⣠⠎⠀⠀⠀⠀⠀⠀⠀⠀⠹⡄⠀⠸⡄⠀", color);
+            Program.ui.DrawText(x + 0, y + 8, "⠀⠀⠀⠀⠸⠭⠤⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠧⠤⠤⠽⠀", color);
+        }
+        else if (type == UnitType.Angler)
+        {
+            Program.ui.DrawText(x + 0, y + 0, "⠀⠀⠀⠀⣴⣶⣤⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠀⠀⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 1, "⠀⠀⠀⠘⢿⣿⡿⠃⠀⠀⠀⠀⠀⡠⠞⠉⠃⠀⠀⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 2, "⠀⠀⢠⣶⣦⡉⠀⠀⠀⣀⣀⡴⠛⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 3, "⠀⢠⣿⣿⣿⢿⣶⣶⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 4, "⠀⣾⣿⣿⠏⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 5, "⢰⣿⣿⣿⣶⣶⣶⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠆⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 6, "⠈⠛⠛⠛⠛⠻⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠄⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 7, "⣿⣿⣿⣿⣿⠀⢹⣿⣷⠀⠀⠀⢀⡀⢀⣤⣤⣄⡀⣨⣤⣤⡀⢀⣀", color);
+            Program.ui.DrawText(x + 0, y + 8, "⠿⠿⠿⠿⠿⠀⠈⠻⠟⠁⠀⠀⠙⠻⠿⠋⠉⠻⠿⠟⠋⠙⠿⠿⠋", color);
+        }
+    }
+
+    public void DrawHpBar(int x, int y, Unit unit)
+    {
+        int hpMultiple = unit.Hp / 50;
+        Console.SetCursorPosition(x, y);
+        Console.Write("|");
+        Console.BackgroundColor = ConsoleColor.Red;
+        for (int i = 1; hpMultiple * i <= unit.Hp; i++)
+        {
+            Console.Write(" ");
+        }
+        Console.ResetColor();
+        Console.SetCursorPosition(x + 51, y);
+        Console.Write("|");
     }
 }

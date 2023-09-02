@@ -14,9 +14,9 @@ internal class Battle
 
     public bool isFaster = true;
 
-    public void StartPhase()
+    public void StartPhase(UnitType Unit)
     {
-        DrawDisplay();
+        DrawDisplay(Unit);
         Thread.Sleep(100000);
     }
 
@@ -35,11 +35,11 @@ internal class Battle
 
     }
 
-    public void DrawDisplay()
+    public void DrawDisplay(UnitType Unit)
     {
         Console.Clear();
-        Program.ui.DrawBox(0, 0, 60, 19, "White");
-        Program.ui.DrawBox(60, 0, 60, 19, "White");
+        Program.ui.DrawTexture(UnitType.Player, 5, 8, "White");
+        Program.ui.DrawTexture(Unit, 80, 2, "White");
         Program.ui.DrawBox(0, 19, 120, 10, "White");
     }
 }

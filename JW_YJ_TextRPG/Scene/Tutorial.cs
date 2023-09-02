@@ -31,7 +31,7 @@ internal class Tutorial
                 Console.Clear();
                 Program.animation.SmallerBox(32, 5);
                 Thread.Sleep(1000);
-                Program.battle.StartPhase();
+                Program.battle.StartPhase(UnitType.Player);
                 isSelect1 = true;
                 Console.CursorVisible = false;
             }

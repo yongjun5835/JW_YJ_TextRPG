@@ -14,7 +14,7 @@ internal class CreatePlayer
 
     public void DrawDisplay()
     {
-        Program.animation.FadeInOut(42, 10, 11, "이야기의 시작");
+        Program.animation.FadeInOut(42, 10, 10, "0. 이야기의 시작");
         Program.animation.UnfoldScroll(10, 0);
         Program.animation.DrawTextSlowly(48, 11, "당신의 이름을 입력해주세요.", "gray");
         Program.ui.DrawBox(48, 15, 27, 5, "gray");

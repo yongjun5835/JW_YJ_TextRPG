@@ -145,6 +145,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(43, 23, $"상대는 {Program.player.Name}의 한 끼 식사가 되었습니다!.", "Blue");
                         Thread.Sleep(2000);
                         // 리워드 페이지로
+                        break;
                     }
 
                     enemy.SkillList[index].Use(enemy, Program.player);
@@ -163,6 +164,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(46, 23, $"당신은 급하게 은신처로 갔습니다.", "Red");
                         Thread.Sleep(2000);
                         // 은신처로 돌아가기
+                        break;
                     }
 
                     isSelect1 = true;
@@ -188,6 +190,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(46, 23, $"당신은 급하게 은신처로 갔습니다.", "Red");
                         Thread.Sleep(2000);
                         // 은신처로 돌아가기
+                        break;
                     }
 
                     Program.player.SkillList[0].Use(Program.player, enemy);
@@ -206,6 +209,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(43, 23, $"상대는 {Program.player.Name}의 한 끼 식사가 되었습니다!.", "Blue");
                         Thread.Sleep(2000);
                         // 리워드 페이지로
+                        break;
                     }
 
                     isSelect1 = true;
@@ -234,6 +238,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(43, 23, $"상대는 {Program.player.Name}의 한 끼 식사가 되었습니다!.", "Blue");
                         Thread.Sleep(2000);
                         // 리워드 페이지로
+                        break;
                     }
 
                     enemy.SkillList[index].Use(enemy, Program.player);
@@ -252,6 +257,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(46, 23, $"당신은 급하게 은신처로 갔습니다.", "Red");
                         Thread.Sleep(2000);
                         // 은신처로 돌아가기
+                        break;
                     }
 
                     isSelect1 = true;
@@ -277,6 +283,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(46, 23, $"당신은 급하게 은신처로 갔습니다.", "Red");
                         Thread.Sleep(2000);
                         // 은신처로 돌아가기
+                        break;
                     }
 
                     Program.player.SkillList[0].Use(Program.player, enemy);
@@ -295,6 +302,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(43, 23, $"상대는 {Program.player.Name}의 한 끼 식사가 되었습니다!.", "Blue");
                         Thread.Sleep(2000);
                         // 리워드 페이지로
+                        break;
                     }
 
                     isSelect1 = true;
@@ -323,6 +331,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(43, 23, $"상대는 {Program.player.Name}의 한 끼 식사가 되었습니다!.", "Blue");
                         Thread.Sleep(2000);
                         // 리워드 페이지로
+                        break;
                     }
 
                     enemy.SkillList[index].Use(enemy, Program.player);
@@ -341,6 +350,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(46, 23, $"당신은 급하게 은신처로 갔습니다.", "Red");
                         Thread.Sleep(2000);
                         // 은신처로 돌아가기
+                        break;
                     }
 
                     isSelect1 = true;
@@ -366,6 +376,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(46, 23, $"당신은 급하게 은신처로 갔습니다.", "Red");
                         Thread.Sleep(2000);
                         // 은신처로 돌아가기
+                        break;
                     }
 
                     Program.player.SkillList[0].Use(Program.player, enemy);
@@ -384,6 +395,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(43, 23, $"상대는 {Program.player.Name}의 한 끼 식사가 되었습니다!.", "Blue");
                         Thread.Sleep(2000);
                         // 리워드 페이지로
+                        break;
                     }
 
                     isSelect1 = true;
@@ -412,6 +424,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(43, 23, $"상대는 {Program.player.Name}의 한 끼 식사가 되었습니다!.", "Blue");
                         Thread.Sleep(2000);
                         // 리워드 페이지로
+                        break;
                     }
 
                     enemy.SkillList[index].Use(enemy, Program.player);
@@ -430,6 +443,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(46, 23, $"당신은 급하게 은신처로 갔습니다.", "Red");
                         Thread.Sleep(2000);
                         // 은신처로 돌아가기
+                        break;
                     }
 
                     isSelect1 = true;
@@ -455,6 +469,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(46, 23, $"당신은 급하게 은신처로 갔습니다.", "Red");
                         Thread.Sleep(2000);
                         // 은신처로 돌아가기
+                        break;
                     }
 
                     Program.player.SkillList[0].Use(Program.player, enemy);
@@ -473,6 +488,7 @@ internal class Battle
                         Program.animation.DrawTextSlowly(43, 23, $"상대는 {Program.player.Name}의 한 끼 식사가 되었습니다!.", "Blue");
                         Thread.Sleep(2000);
                         // 리워드 페이지로
+                        break;
                     }
 
                     isSelect1 = true;
@@ -520,7 +536,8 @@ internal class Battle
             }
         }
 
-        ChoicePhase();
+        if (Program.player.Hp > 0 && enemy.Hp > 0)
+            ChoicePhase();
     }
 
     public void DrawDisplay(UnitType Unit)

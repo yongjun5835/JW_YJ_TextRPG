@@ -92,7 +92,6 @@ class AttackSkill : Skill
             damage = 0;
         }
         target.Hp -= damage;
-        this.PP -= 1;
     }
 
 }
@@ -112,7 +111,6 @@ class BuffSkill : Skill
         if (user != target && IsDodged(user, target) == true)
             return;
         new Buff(target, EffectTurn, AttackType, Percent);
-        this.PP -= 1;
     }
 
 }

@@ -35,7 +35,7 @@ internal class UnitManager
     {
         unit.Hp = 30;
         unit.MaxHp = 30;
-        unit.Atk = 50;
+        unit.Atk = 15;
         unit.Def = 2;
         unit.Spd = 5;
         unit.Accuracy = 3;

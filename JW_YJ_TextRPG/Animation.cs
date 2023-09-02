@@ -165,22 +165,22 @@ internal class Animation
     public void FadeInOut(int x, int y, int textPosition, string text)
     {
         Console.Clear();
-        Thread.Sleep(300);
+        Thread.Sleep(400);
         Program.ui.DrawUI(x, y, textPosition, text, "Gray");
-        Thread.Sleep(300);
+        Thread.Sleep(400);
         Console.Clear();
         Program.ui.DrawUI(x, y, textPosition, text, "gray");
-        Thread.Sleep(300);
+        Thread.Sleep(400);
         Console.Clear();
         Program.ui.DrawUI(x, y, textPosition, text, "White");
         Thread.Sleep(3000);
         Console.Clear();
         Program.ui.DrawUI(x, y, textPosition, text, "gray");
-        Thread.Sleep(300);
+        Thread.Sleep(400);
         Console.Clear();
         Program.ui.DrawUI(x, y, textPosition, text, "Gray");
-        Thread.Sleep(300);
+        Thread.Sleep(400);
         Console.Clear();
-        Thread.Sleep(300);
+        Thread.Sleep(400);
     }
 }

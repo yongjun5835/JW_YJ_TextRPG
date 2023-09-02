@@ -1,8 +1,12 @@
-﻿enum UnitType
+﻿using JW_YJ_TextRPG;
+
+enum UnitType
 {
     Player = 0,
     Scomber = 10,
-    Shark
+    Shark,
+    Tutle,
+    Angler
 }
 
 internal class Unit
@@ -44,5 +48,21 @@ internal class Unit
     public void Attack(int skillListNum, Unit taget) //  이걸로 공격!
     {
         skillList[skillListNum-1].Use(this, taget);
+    }
+
+    public void DrawTexture(UnitType type, int x, int y, string color)
+    {
+        if (UnitType == UnitType.Player)
+        {
+            Program.ui.DrawText(x + 0, y + 0, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⢶⣶⠂⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+            Program.ui.DrawText(x + 0, y + 1, "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣯⣤⣾⣃⣀⣠⡾⢻⡿⠁⠀⠀⠀⠀⠀⠀⢀⣀⣀", color);
+            Program.ui.DrawText(x + 0, y + 2, "⠀⠀⠀⠀⣠⣴⠶⠟⠛⠉⠉⠉⠉⠉⠉⠙⠛⠿⢿⣥⣤⠀⡀⠀⠀⢀⣴⣿⣿⡏", color);
+            Program.ui.DrawText(x + 0, y + 3, "⠀⢀⣴⠟⢫⣶⡄⠻⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⢷⣾⣂⣾⣿⣿⡟⠀", color);
+            Program.ui.DrawText(x + 0, y + 4, "⣰⣿⣧⣀⠈⠛⠁⠀⢻⡇⢰⣶⣶⣶⣶⣶⣶⠆⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⠁⠀", color);
+            Program.ui.DrawText(x + 0, y + 5, "⠙⢦⣍⠉⠛⠀⢀⣠⡟⠀⠸⢿⣿⣿⠿⠋⠁⠀⠀⠀⠀⣀⣤⠶⠛⣿⣿⣿⣇⠀", color);
+            Program.ui.DrawText(x + 0, y + 6, "⠀⠀⠉⠻⢶⣤⣀⡉⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠶⠛⠉⠀⠀⠀⠘⢿⣿⣿⡆", color);
+            Program.ui.DrawText(x + 0, y + 7, "⠀⠀⠀⠀⠀⠀⠉⠙⠻⣿⡻⠶⣶⠚⠛⠛⠻⣯⣽⣦⠀⠀⠀⠀⠀⠀⠀⠙⠛⠛", color);
+            Program.ui.DrawText(x + 0, y + 8, "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠷⢿⡦⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀", color);
+        }
     }
 }

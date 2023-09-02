@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reflection.PortableExecutable;
 using System.Text;
@@ -159,6 +160,14 @@ internal class UI
         {
             DrawText(x + 10 + i, y + 3, "-", color);
             DrawText(x + 10 + i, y + 26, "-", color);
+        }
+    }
+
+    public void ClearScroll(int x, int y)
+    {
+        for (int i = 0; i < 22; i++)
+        {
+            DrawText(x + 11, y + 4 + i, "                                                                                ", "");
         }
     }
 }

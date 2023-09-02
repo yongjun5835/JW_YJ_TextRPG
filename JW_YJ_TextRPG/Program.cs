@@ -4,7 +4,6 @@ namespace JW_YJ_TextRPG
 {
     internal class Program
     {
-        public static Player player = new Player(UnitType.Player);
         public static UI ui = new UI();
         public static Animation animation = new Animation();
         public static CreatePlayer createPlayer = new CreatePlayer();

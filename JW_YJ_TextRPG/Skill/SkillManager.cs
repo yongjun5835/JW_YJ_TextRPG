@@ -1,4 +1,6 @@
-﻿class SkillManager
+﻿using System.Runtime.InteropServices;
+
+class SkillManager
 {
     public static SkillManager SM;
 
@@ -17,6 +19,22 @@
             return;
 
         RoundTurn();
+    }
+
+    public void AddSkill(Unit unit, SKillType type) // 스킬 실수 없이 추가 하기
+    {
+        List<Skill> addlist = unit.SkillList;
+
+        switch ((int)type)
+        {
+            case < 100: // 공격 스킬
+                addlist.Add(new AttackSkill(type));
+                break;
+            case >= 100: // 버프 스킬
+                addlist.Add(new BuffSkill(type));
+                break;
+        }
+
     }
 
     public void ChangeSkillData(Skill skill)
@@ -50,7 +68,7 @@
             default:
                 break;
         }
-    }
+    } // skill 데이터 입력
 
     void BodySlam(Skill skill)
     {

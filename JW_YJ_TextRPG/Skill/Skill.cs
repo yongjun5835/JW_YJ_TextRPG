@@ -1,12 +1,13 @@
 ﻿enum SKillType // 스킬 이름
 {
     BodySlam,
-    TailWhip,
     WaterCanon,
     BubbleBeam,
     IceBeam,
-    Splash,
     BiteDeep,
+    Splash,
+    TailWhip =100,
+
     None
 }
 

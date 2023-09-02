@@ -41,8 +41,8 @@ internal class UnitManager
         unit.Accuracy = 3;
         unit.Dodge = 1;
 
-        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
-        unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));
+        SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
+        SkillManager.SM.AddSkill(unit, SKillType.TailWhip);
         unit.SkillList.Add(new AttackSkill(SKillType.None));
         unit.SkillList.Add(new AttackSkill(SKillType.None));
     }
@@ -58,8 +58,9 @@ internal class UnitManager
         unit.Accuracy = 3;
         unit.Dodge = 1;
 
-        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
-        unit.SkillList.Add(new AttackSkill(SKillType.Splash));
+
+        SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
+        SkillManager.SM.AddSkill(unit, SKillType.Splash);
     }
 
     void Shark(Unit unit)
@@ -73,9 +74,9 @@ internal class UnitManager
         unit.Accuracy = 5;
         unit.Dodge = 5;
 
-        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
-        unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));
-        unit.SkillList.Add(new AttackSkill(SKillType.WaterCanon));
+        SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
+        SkillManager.SM.AddSkill(unit, SKillType.TailWhip);
+        SkillManager.SM.AddSkill(unit, SKillType.WaterCanon);
     }
 
     void Turtle(Unit unit)
@@ -89,9 +90,9 @@ internal class UnitManager
         unit.Accuracy = 1;
         unit.Dodge = 1;
 
-        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
-        unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));
-        unit.SkillList.Add(new AttackSkill(SKillType.BubbleBeam));
+        SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
+        SkillManager.SM.AddSkill(unit, SKillType.TailWhip);
+        SkillManager.SM.AddSkill(unit, SKillType.BubbleBeam);
     }
 
     void Angler(Unit unit)
@@ -105,9 +106,9 @@ internal class UnitManager
         unit.Accuracy = 5;
         unit.Dodge = 5;
 
-        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
-        unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));
-        unit.SkillList.Add(new AttackSkill(SKillType.WaterCanon));
+        SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
+        SkillManager.SM.AddSkill(unit, SKillType.TailWhip);
+        SkillManager.SM.AddSkill(unit, SKillType.WaterCanon);
     }
 
 }

@@ -6,19 +6,16 @@
         public static Animation animation = new Animation();
         public static CreatePlayer createPlayer = new CreatePlayer();
         public static Intro intro = new Intro();
+        public static Tutorial tutorial = new Tutorial();
+        public static Story1 story1 = new Story1();
 
         static void Main(string[] args)
         {
             new SkillManager();
-
-            //createPlayer.DrawDisplay();
-            //intro.DrawDisplay();
-
-            Unit unit = new Unit();
-            Unit unit1 = new Unit();
-
-            unit.Attack(0, unit1);
-            unit1.Attack(3, unit);
+            createPlayer.DrawDisplay();
+            intro.DrawDisplay();
+            tutorial.DrawDisplay();
+            story1.DrawDisplay();
         }
     }
 }

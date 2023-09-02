@@ -1,5 +1,4 @@
-﻿using JW_YJ_TextRPG;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,30 +8,142 @@ internal class Intro
 {
     public Intro()
     {
-
+        
     }
 
     public void DrawDisplay()
     {
-        Program.animation.FadeInOut(42, 10, 11, "1. 어미를 잃다");
-        Program.animation.UnfoldScroll(10, 0);
-        Program.animation.DrawTextSlowly(45, 11, "저는 자이언트 참치의 새끼입니다.", "gray");
-        Thread.Sleep(5000);
-        Program.ui.ClearScroll(10, 0);
-        Program.animation.DrawTextSlowly(35, 11, "저는 여느때와 같이 엄마와 바다를 여행중이었습니다.", "gray");
-        Thread.Sleep(5000);
-        Program.ui.ClearScroll(10, 0);
-        Program.animation.DrawTextSlowly(34, 11, "엄마는 늘 제게 낚시 바늘을 조심하라고 타이르셨습니다.", "gray");
-        Thread.Sleep(5000);
-        Program.ui.ClearScroll(10, 0);
-        Program.animation.DrawTextSlowly(35, 11, "\"바늘에 아무리 맛있는게 걸려 있어도 절대 먹어선 안돼!\"", "Red");
-        Thread.Sleep(5000);
-        Program.ui.ClearScroll(10, 0);
-        Program.animation.DrawTextSlowly(40, 11, "하지만 저는 호기심에 바늘을 물어버렸고,", "gray");
-        Thread.Sleep(5000);
-        Program.ui.ClearScroll(10, 0);
-        Program.animation.DrawTextSlowly(36, 11, "곧 이어 바늘에 달린 낚시줄이 당겨지기 시작했습니다,", "gray");
-        Thread.Sleep(5000);
-        Program.ui.ClearScroll(10, 0);
+        Console.Clear();
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "Gray");
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "gray");
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "White");
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "Red");
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "White");
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "Red");
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "White");
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "Red");
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "White");
+        Thread.Sleep(2000);
+        DrawTuna(35, 5, "gray");
+        Thread.Sleep(400);
+        DrawTuna(35, 5, "Gray");
+        Thread.Sleep(400);
+        Console.Clear();
+        Thread.Sleep(400);
+        TunaText(35, 10, "Gray");
+        Thread.Sleep(400);
+        TunaText(35, 10, "gray");
+        Thread.Sleep(400);
+        TunaText(35, 10, "White");
+        Thread.Sleep(2000);
+        TunaText(35, 10, "gray");
+        Thread.Sleep(400);
+        TunaText(35, 10, "Gray");
+        Thread.Sleep(400);
+        Console.Clear();
+        Thread.Sleep(2000);
+    }
+
+    public void DrawTuna(int x, int y, string color)
+    {
+        if (color == "Green")
+            Console.ForegroundColor = ConsoleColor.Green;
+        else if (color == "Red")
+            Console.ForegroundColor = ConsoleColor.Red;
+        else if (color == "Blue")
+            Console.ForegroundColor = ConsoleColor.Blue;
+        else if (color == "Black")
+            Console.ForegroundColor = ConsoleColor.Black;
+        else if (color == "Gray")
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+        else if (color == "gray")
+            Console.ForegroundColor = ConsoleColor.Gray;
+        else if (color == "Yellow")
+            Console.ForegroundColor = ConsoleColor.Yellow;
+        else if (color == "White")
+            Console.ForegroundColor = ConsoleColor.White;
+        Console.SetCursorPosition(x, y + 0);
+        Console.Write("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@~ @@@@@@@@@@@@@@@@@");
+        Console.SetCursorPosition(x, y + 1);
+        Console.Write("@@@@@@@@@@@@@@@@@@@**=@@@@@@@@@*~.:@@@@@@@@@@@@=@@@@");
+        Console.SetCursorPosition(x, y + 2);
+        Console.Write("@@@@@@@@@@@@@@@@@@!,,-;:@@@@@#;.:!@@@@@@@@@@@;;,@@@@");
+        Console.SetCursorPosition(x, y + 3);
+        Console.Write("@@@@@@@@@@@@@@@@@~,,,,,,-#@@#--,!@@@@@@@@@@@;..$@@@@");
+        Console.SetCursorPosition(x, y + 4);
+        Console.Write("@@@@@@@@@@@@@@@!.....-,, !:,~@@@@@@@@@@@@!  :@@@@@@@");
+        Console.SetCursorPosition(x, y + 5);
+        Console.Write("@@@@@@@@@@#$.                     =$@@@@@@!  $@@@@@@");
+        Console.SetCursorPosition(x, y + 6);
+        Console.Write("@@@@@@@@@*~*                         $#@@=   $@@@@@@");
+        Console.SetCursorPosition(x, y + 7);
+        Console.Write("@@@@@@@; ~~-:                        ,~:;,  ~#@@@@@@");
+        Console.SetCursorPosition(x, y + 8);
+        Console.Write("@@@@@@~.  :.,                               *@@@@@@@");
+        Console.SetCursorPosition(x, y + 9);
+        Console.Write("@@@@@@,          ~,,,,,,,,,,,,,,,*########* *@@@@@@@");
+        Console.SetCursorPosition(x, y + 10);
+        Console.Write("@@@@@@~=######;~~~~~~~~~~;##########$#=~@.   $@@@@@@");
+        Console.SetCursorPosition(x, y + 11);
+        Console.Write("@@@@@@@; !#######################=$!;!==@@!   $@@@@@");
+        Console.SetCursorPosition(x, y + 12);
+        Console.Write("@@@@@@@@!~*######$$$$$#######$:=;#**@@@@@@:  ~@@@@@@");
+        Console.SetCursorPosition(x, y + 13);
+        Console.Write("@@@@@@@@@$;=@####$$$$$#####@;~ ~#@@@@@@@@@@:  @@@@@@");
+        Console.SetCursorPosition(x, y + 14);
+        Console.Write("@@@@@@@@@@@@@ *##########= !:,~@@@@@@@@@@@@@~  @@@@@");
+        Console.SetCursorPosition(x, y + 15);
+        Console.Write("@@@@@@@@@@@@@@#$=*$;~~~=$#@@#-,,*@@@@@@@@@@@@#-,@@@@");
+        Console.SetCursorPosition(x, y + 16);
+        Console.Write("@@@@@@@@@@@@@@@@@!:!@@@@@@@@@@:::!@@@@@@@@@@@@@!@@@@");
+        Console.SetCursorPosition(x, y + 17);
+        Console.Write("@@@@@@@@@@@@@@@@@@*$@@@@@@@@@@@#*-:@@@@@@@@@@@@@@@@@");
+        Console.SetCursorPosition(x, y + 18);
+        Console.Write("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#,@@@@@@@@@@@@@@@@@");
+        Console.ResetColor();
+    }
+
+    public void TunaText(int x, int y, string color)
+    {
+        if (color == "Green")
+            Console.ForegroundColor = ConsoleColor.Green;
+        else if (color == "Red")
+            Console.ForegroundColor = ConsoleColor.Red;
+        else if (color == "Blue")
+            Console.ForegroundColor = ConsoleColor.Blue;
+        else if (color == "Black")
+            Console.ForegroundColor = ConsoleColor.Black;
+        else if (color == "Gray")
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+        else if (color == "gray")
+            Console.ForegroundColor = ConsoleColor.Gray;
+        else if (color == "Yellow")
+            Console.ForegroundColor = ConsoleColor.Yellow;
+        else if (color == "White")
+            Console.ForegroundColor = ConsoleColor.White;
+        Console.SetCursorPosition(x, y + 0);
+        Console.Write("  ::::::::::   :::    :::    ::::    :::        ::: ");
+        Console.SetCursorPosition(x, y + 1);
+        Console.Write("     :+:      :+:    :+:    :+:+:   :+:      :+: :+:");
+        Console.SetCursorPosition(x, y + 2);
+        Console.Write("    +:+      +:+    +:+    :+:+:+  +:+     +:+   +:+");
+        Console.SetCursorPosition(x, y + 3);
+        Console.Write("   +#+      +#+    +:+    +#+ +:+ +#+    +#++:++#++:");
+        Console.SetCursorPosition(x, y + 4);
+        Console.Write("  +#+      +#+    +#+    +#+  +#+#+#    +#+     +#+ ");
+        Console.SetCursorPosition(x, y + 5);
+        Console.Write(" #+#      #+#    #+#    #+#   #+#+#    #+#     #+#  ");
+        Console.SetCursorPosition(x, y + 6);
+        Console.Write("###       ########     ###    ####    ###     ###   ");
+        Console.ResetColor();
     }
 }

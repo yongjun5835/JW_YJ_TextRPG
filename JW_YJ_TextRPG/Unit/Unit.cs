@@ -1,6 +1,4 @@
-﻿using JW_YJ_TextRPG;
-
-enum UnitType
+﻿enum UnitType
 {
     Player = 0,
     Scomber = 10,
@@ -34,22 +32,27 @@ internal class Unit
     public int Def { get { return def; } set { def = value; } }
     public int Spd { get { return speed; } set { speed = value; } }
 
-    public int Accuracy { get { return accuracy; } set {  accuracy = value; } }
-    public int Dodge { get { return dodge; } set {  dodge = value; } }
+    public int Accuracy { get { return accuracy; } set { accuracy = value; } }
+    public int Dodge { get { return dodge; } set { dodge = value; } }
 
     public List<Skill> SkillList { get { return skillList; } set { skillList = value; } }
     public List<Buff> BuffList { get { return debuffList; } set { debuffList = value; } }
 
 
-    public Unit(UnitType unitType)
+    public Unit(UnitType unitType) // 생성시 데이터에 맞게 불러옴
     {
         this.unitType = unitType;
         UnitManager.UM.ChangeMonsterData(this);
     }
 
 
-    public void Attack(int skillListNum, Unit taget) //  이걸로 공격!
+    public bool Attack(int skillListNum, Unit taget) //  이걸로 공격! 불값은 pp가 0이면 false 리턴
     {
-        skillList[skillListNum-1].Use(this, taget);
+        if (skillList[skillListNum - 1].PP <= 0)
+            return false;
+
+        skillList[skillListNum - 1].PP--;
+        skillList[skillListNum - 1].Use(this, taget);
+        return true;
     }
 }

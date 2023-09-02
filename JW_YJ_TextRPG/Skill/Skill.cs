@@ -1,6 +1,4 @@
-﻿using System;
-
-enum SKillType // 스킬 이름
+﻿enum SKillType // 스킬 이름
 {
     BodySlam,
     TailWhip,
@@ -39,6 +37,19 @@ class Skill
     public AttackType AttackType { get { return attackType; } set { attackType = value; } }
     public string Name { get { return name; } set { name = value; } }
     public string Comment { get { return comment; } set { comment = value; } }
+    public int MaxPP { get { return maxPowerPoint; } set { maxPowerPoint = value; } }
+    public int PP
+    {
+        get { return powerPoint; }
+        set
+        {
+            powerPoint = value;
+            if (powerPoint > maxPowerPoint)
+            {
+                powerPoint = maxPowerPoint;
+            }
+        }
+    }
     public string UseComment { get { return useComment; } set { useComment = value; } }
     public int MaxPP { get { return maxPowerPoint; } set { maxPowerPoint = value; } }
     public int PP

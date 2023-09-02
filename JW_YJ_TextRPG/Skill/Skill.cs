@@ -87,6 +87,10 @@ class AttackSkill : Skill
             return;
         damage = (int)(user.Atk * power);
         SkillManager.SM.CalcAttackType(this, target, ref damage);
+        if (damage < 0)
+        {
+            damage = 0;
+        }
         target.Hp -= damage;
     }
 

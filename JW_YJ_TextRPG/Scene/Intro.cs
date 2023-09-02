@@ -32,7 +32,7 @@ internal class Intro
         DrawTuna(35, 5, "Red");
         Thread.Sleep(400);
         DrawTuna(35, 5, "White");
-        Thread.Sleep(400);
+        Thread.Sleep(2000);
         DrawTuna(35, 5, "gray");
         Thread.Sleep(400);
         DrawTuna(35, 5, "Gray");
@@ -44,13 +44,13 @@ internal class Intro
         TunaText(35, 10, "gray");
         Thread.Sleep(400);
         TunaText(35, 10, "White");
-        Thread.Sleep(400);
+        Thread.Sleep(2000);
         TunaText(35, 10, "gray");
         Thread.Sleep(400);
         TunaText(35, 10, "Gray");
         Thread.Sleep(400);
         Console.Clear();
-        Thread.Sleep(2000);
+        Thread.Sleep(4000);
     }
 
     public void DrawTuna(int x, int y, string color)

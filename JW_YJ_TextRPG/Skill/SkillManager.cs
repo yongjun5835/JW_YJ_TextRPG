@@ -54,7 +54,8 @@
         skill.AttackType = AttackType.Nomal;
         skill.Name = "몸통 박치기";
         skill.Comment = "상대를 향하여 전속력 박치기를 한다.";
-        skill.PP = 20;
+        skill.MaxPP = 20;
+        skill.PP = skill.MaxPP;
         skill.Power = 0.8f;
         skill.Accuracy = 0.9f;
     }
@@ -65,7 +66,8 @@
         skill.Name = "꼬리 흔들기";
         skill.Comment = "꼬리를 흔들어 상대를 도발한다.";
         skill.Power = 1.0f;
-        skill.PP = 15;
+        skill.MaxPP = 15;
+        skill.PP = skill.MaxPP;
         skill.Accuracy = 1.0f;
         ((BuffSkill)skill).EffectTurn = 3;
         ((BuffSkill)skill).Percent = 0.2f;
@@ -77,7 +79,8 @@
         skill.AttackType = AttackType.Cut;
         skill.Name = "물 대포";
         skill.Comment = "물을 상대에게 발사한다.";
-        skill.PP = 10;
+        skill.MaxPP = 10;
+        skill.PP = skill.MaxPP;
         skill.Power = 1.4f;
         skill.Accuracy = 0.9f;
     }
@@ -87,7 +90,8 @@
         skill.AttackType = AttackType.Nomal;
         skill.Name = "거품 광선";
         skill.Comment = "거품을 상대에게 발사한다.";
-        skill.PP = 10;
+        skill.MaxPP = 10;
+        skill.PP = skill.MaxPP;
         skill.Power = 1.0f;
         skill.Accuracy = 0.9f;
     }
@@ -97,7 +101,8 @@
         skill.AttackType = AttackType.Pierce;
         skill.Name = "냉동 빔";
         skill.Comment = "냉동빔을 상대에게 발사한다.";
-        skill.PP = 5;
+        skill.MaxPP = 5;
+        skill.PP = skill.MaxPP;
         skill.Power = 0.8f;
         skill.Accuracy = 0.9f;
     }
@@ -107,7 +112,8 @@
         skill.AttackType = AttackType.Nomal;
         skill.Name = "튀어오르기";
         skill.Comment = "공격도 하지 않고 팔딱팔딱 튈 뿐";
-        skill.PP = 50;
+        skill.MaxPP = 50;
+        skill.PP = skill.MaxPP;
         skill.Power = 0.0f;
         skill.Accuracy = 0.0f;
     }
@@ -117,7 +123,8 @@
         skill.AttackType = AttackType.Hp;
         skill.Name = "깊게 물기";
         skill.Comment = "상대에게 출혈을 유도한다.";
-        skill.PP = 5;
+        skill.MaxPP = 5;
+        skill.PP = skill.MaxPP;
         skill.Power = 1.0f;
         skill.Accuracy = 0.7f;
         ((BuffSkill)skill).EffectTurn = 3;

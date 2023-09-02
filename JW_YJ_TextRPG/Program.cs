@@ -11,16 +11,12 @@ namespace JW_YJ_TextRPG
         public static Tutorial tutorial = new Tutorial();
         public static Story1 story1 = new Story1();
         public static Battle battle = new Battle();
+        public static Unit player = new Unit(UnitType.Player);
 
         static void Main(string[] args)
         {
             new SkillManager();
             new UnitManager();
-
-            Unit unit = new Unit(UnitType.Shark);
-            Unit unit1 = new Unit(UnitType.Scomber);
-            unit.SkillList.Add(new BuffSkill(SKillType.BiteDeep));
-            unit.Attack(4,unit1);
 
             Console.CursorVisible = false;
 
@@ -34,7 +30,5 @@ namespace JW_YJ_TextRPG
             story1.DrawDisplay();
 
         }
-
-
     }
 }

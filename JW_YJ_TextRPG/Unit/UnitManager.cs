@@ -12,6 +12,7 @@ internal class UnitManager
         switch (unit.UnitType)
         {
             case UnitType.Player:
+                Player(unit);
                 break;
             case UnitType.Scomber:
                 Scomber(unit);
@@ -24,10 +25,23 @@ internal class UnitManager
         }
     }
 
+    void Player(Unit unit)
+    {
+        unit.Hp = 30;
+        unit.Atk = 5;
+        unit.Def = 2;
+        unit.Spd = 5;
+        unit.Accuracy = 3;
+        unit.Dodge = 1;
+
+        unit.SkillList.Add(new Skill(SKillType.BodySlam));
+        unit.SkillList.Add(new Skill(SKillType.Splash));
+    }
+
     void Scomber(Unit unit)
     {
         unit.Name = "고등어";
-        unit.Hp = 50;
+        unit.Hp = 30;
         unit.Atk = 5;
         unit.Def = 2;
         unit.Spd = 5;
@@ -41,7 +55,7 @@ internal class UnitManager
     void Shark(Unit unit)
     {
         unit.Name = "상어";
-        unit.Hp = 100;
+        unit.Hp = 90;
         unit.Atk = 10;
         unit.Def = 3;
         unit.Spd = 10;

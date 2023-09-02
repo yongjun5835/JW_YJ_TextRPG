@@ -238,7 +238,7 @@ internal class UI
 
     public void DrawHpBar(int x, int y, Unit unit)
     {
-        int hpMultiple = unit.Hp / 50;
+        int hpMultiple = unit.Hp / 30;
         Console.SetCursorPosition(x, y);
         Console.Write("|");
         Console.BackgroundColor = ConsoleColor.Red;
@@ -247,7 +247,7 @@ internal class UI
             Console.Write(" ");
         }
         Console.ResetColor();
-        Console.SetCursorPosition(x + 51, y);
+        Console.SetCursorPosition(x + 31, y);
         Console.Write("|");
     }
 }

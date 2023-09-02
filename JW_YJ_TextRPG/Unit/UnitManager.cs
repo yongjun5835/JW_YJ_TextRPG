@@ -42,7 +42,7 @@ internal class UnitManager
         unit.Dodge = 1;
 
         unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
-        unit.SkillList.Add(new BuffSkill(SKillType.Splash));
+        unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));
         unit.SkillList.Add(new AttackSkill(SKillType.None));
         unit.SkillList.Add(new AttackSkill(SKillType.None));
     }
@@ -59,7 +59,7 @@ internal class UnitManager
         unit.Dodge = 1;
 
         unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
-        unit.SkillList.Add(new BuffSkill(SKillType.Splash));
+        unit.SkillList.Add(new AttackSkill(SKillType.Splash));
     }
 
     void Shark(Unit unit)

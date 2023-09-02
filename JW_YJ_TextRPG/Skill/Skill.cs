@@ -8,16 +8,18 @@ enum SKillType // 스킬 이름
     BubbleBeam,
     IceBeam,
     Splash,
+    BiteDeep
 
 }
 
 enum AttackType // 공격 방식
 {
-    Nomal = 0, // 일반적
+    Nomal = 0, // 일반 공격
     Pierce, // 방어력 일부 무시
     Cut, // 방어력이 약한 상대
     
-    Atk = 10, // 디버프
+    Hp = 10,
+    Atk, // 디버프
     Def
 }
 
@@ -45,7 +47,7 @@ class Skill
         SkillManager.SM.ChangeSkillData(this);
     }
 
-    protected bool IsDodged(Unit user, Unit target)
+    protected bool IsDodged(Unit user, Unit target) // 회피 여부
     {
         int sucessNum = 100-(int)(Accuracy*(user.Accuracy-target.Dodge));
         if (new Random().Next(1,101)<sucessNum)
@@ -94,11 +96,6 @@ class BuffSkill : Skill
 }
 
 class DotSkill
-{
-
-}
-
-class temp
 {
 
 }

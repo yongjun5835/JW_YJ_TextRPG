@@ -27,7 +27,7 @@ internal class UnitManager
     void Scomber(Unit unit)
     {
         unit.Name = "고등어";
-        unit.Hp = 30;
+        unit.Hp = 50;
         unit.Atk = 5;
         unit.Def = 2;
         unit.Spd = 5;
@@ -41,7 +41,7 @@ internal class UnitManager
     void Shark(Unit unit)
     {
         unit.Name = "상어";
-        unit.Hp = 70;
+        unit.Hp = 100;
         unit.Atk = 10;
         unit.Def = 3;
         unit.Spd = 10;

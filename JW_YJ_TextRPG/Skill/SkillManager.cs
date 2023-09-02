@@ -1,6 +1,11 @@
 ﻿class SkillManager
 {
     public static SkillManager SM;
+
+    public delegate void TurnEvent();
+    public event TurnEvent RoundTurn;
+
+
     public SkillManager()
     {
         SM = this;
@@ -27,6 +32,9 @@
                 break;
             case SKillType.Splash:
                 Splash(skill);
+                break;
+            case SKillType.BiteDeep:
+                BiteDeep(skill);
                 break;
             default:
                 break;
@@ -88,6 +96,16 @@
         skill.Accuracy = 0.0f;
     }
 
+    void BiteDeep(Skill skill)
+    {
+        skill.AttackType = AttackType.Hp;
+        skill.Name = "깊게 물기";
+        skill.Comment = "상대에게 출혈을 유도한다.";
+        skill.Power = 1.0f;
+        skill.Accuracy = 0.7f;
+        ((BuffSkill)skill).EffectTurn = 3;
+    }
+
     public void CalcAttackType(Skill skill, Unit taget, ref int damage)
     {
         switch (skill.AttackType)
@@ -107,4 +125,6 @@
 
         }
     }
+
+
 }

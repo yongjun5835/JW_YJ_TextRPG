@@ -12,15 +12,14 @@ enum UnitType
 internal class Unit
 {
     UnitType unitType;
-
     protected string name = "";
-    protected int hp =100;
-    protected int atk= 10;
-    protected int def = 1;
-    protected int speed = 1; // 스피드
+    protected int hp;
+    protected int atk;
+    protected int def;
+    protected int speed; // 스피드
 
-    protected int accuracy = 1; // 명중
-    protected int dodge = 1; // 회피
+    protected int accuracy; // 명중
+    protected int dodge; // 회피
 
     List<Skill> skillList = new List<Skill>(4); // 스킬
     List<Buff> debuffList = new List<Buff>(); // 디버프

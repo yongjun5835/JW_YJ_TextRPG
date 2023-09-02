@@ -39,7 +39,7 @@ class Skill
     public AttackType AttackType { get { return attackType; } set { attackType = value; } }
     public string Name { get { return name; } set { name = value; } }
     public string Comment { get { return comment; } set { comment = value; } }
-    public string UseComment { get { return comment; } set { comment = value; } }
+    public string UseComment { get { return useComment; } set { useComment = value; } }
     public int MaxPP { get { return maxPowerPoint; } set { maxPowerPoint = value; } }
     public int PP
     {

@@ -50,7 +50,7 @@ internal class Intro
         TunaText(35, 10, "Gray");
         Thread.Sleep(400);
         Console.Clear();
-        Thread.Sleep(4000);
+        Thread.Sleep(2000);
     }
 
     public void DrawTuna(int x, int y, string color)

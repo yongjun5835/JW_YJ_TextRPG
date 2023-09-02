@@ -34,6 +34,8 @@ internal class Tutorial
             else if (inputLive == "2")
             {
                 Console.Clear();
+                Program.animation.SmallerBox(32, 5);
+                Thread.Sleep(1000);
                 isSelect1 = true;
             }
             else

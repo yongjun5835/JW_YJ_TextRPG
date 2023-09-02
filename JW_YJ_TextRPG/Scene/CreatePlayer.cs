@@ -19,6 +19,7 @@ internal class CreatePlayer
         Program.animation.DrawTextSlowly(49, 11, "당신의 이름은 무엇인가요?", "gray");
         Program.ui.DrawBox(48, 15, 27, 5, "gray");
         Console.SetCursorPosition(50, 17);
+        Console.CursorVisible = true;
         string inputName = Console.ReadLine();
         Program.ui.ClearScroll(10, 0);
         Program.animation.DrawTextSlowly(48, 11, $"당신의 이름은 {inputName}이군요.", "gray");
@@ -40,18 +41,21 @@ internal class CreatePlayer
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(47, 11, $"당신의 서식지는 '태평양'이군요.", "gray");
                 isSelect2 = true;
+                Console.CursorVisible = false;
             }
             else if (inputLive == "2")
             {
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(47, 11, $"당신의 서식지는 '대서양'이군요.", "gray");
                 isSelect2 = true;
+                Console.CursorVisible = false;
             }
             else if (inputLive == "3")
             {
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(47, 11, $"당신의 서식지는 '인도양'이군요.", "gray");
                 isSelect2 = true;
+                Console.CursorVisible = false;
             }
             else
             {
@@ -72,6 +76,7 @@ internal class CreatePlayer
         Program.ui.DrawBox(48, 18, 27, 5, "gray");
         bool isSelect1 = false;
         string inputAge = "";
+        Console.CursorVisible = true;
         while (isSelect1 == false)
         {
             Console.SetCursorPosition(50, 20);
@@ -81,18 +86,21 @@ internal class CreatePlayer
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(48, 11, $"당신은 참치의 '치어'시군요.", "gray");
                 isSelect1 = true;
+                Console.CursorVisible = false;
             }
             else if (inputAge == "2")
             {
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(48, 11, $"당신은 참치의 '유어'시군요.", "gray");
                 isSelect1 = true;
+                Console.CursorVisible = false;
             }
             else if (inputAge == "3")
             {
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(48, 11, $"당신은 참치의 '성어'시군요.", "gray");
                 isSelect1 = true;
+                Console.CursorVisible = false;
             }
             else
             {

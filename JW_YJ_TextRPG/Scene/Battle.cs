@@ -17,7 +17,7 @@ internal class Battle
     public void StartPhase()
     {
         DrawDisplay();
-        Thread.Sleep(10000);
+        Thread.Sleep(100000);
     }
 
     public void PlayerPhase()

@@ -18,12 +18,13 @@ internal class Tutorial
         Program.animation.DrawTextSlowly(48, 8, "튜토리얼을 진행하시겠습니까?", "gray");
         Program.ui.DrawText(48, 12, "[1] 진행한다", "gray");
         Program.ui.DrawText(48, 13, "[2] 스킵한다", "gray");
-        Program.ui.DrawBox(48, 18, 27, 5, "gray");
+        Program.ui.DrawBox(48, 17, 27, 5, "gray");
         bool isSelect1 = false;
         string inputLive = "";
         while (isSelect1 == false)
         {
-            Console.SetCursorPosition(50, 20);
+            Console.CursorVisible = true;
+            Console.SetCursorPosition(50, 19);
             inputLive = Console.ReadLine();
             if (inputLive == "1")
             {
@@ -32,6 +33,7 @@ internal class Tutorial
                 Thread.Sleep(1000);
                 Program.battle.StartPhase();
                 isSelect1 = true;
+                Console.CursorVisible = false;
             }
             else if (inputLive == "2")
             {
@@ -39,6 +41,7 @@ internal class Tutorial
                 Program.animation.SmallerBox(32, 5);
                 Thread.Sleep(1000);
                 isSelect1 = true;
+                Console.CursorVisible = false;
             }
             else
             {

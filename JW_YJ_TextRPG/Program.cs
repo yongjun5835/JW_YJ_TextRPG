@@ -1,4 +1,6 @@
-﻿namespace JW_YJ_TextRPG
+﻿using System.Text;
+
+namespace JW_YJ_TextRPG
 {
     internal class Program
     {
@@ -12,6 +14,11 @@
 
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
+
+            Console.InputEncoding = Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
+
             new SkillManager();
             createPlayer.DrawDisplay();
             intro.DrawDisplay();

@@ -33,4 +33,3 @@
         skillList[skillListNum-1].Use(this, taget);
     }
 }
-

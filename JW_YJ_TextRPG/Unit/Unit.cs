@@ -51,8 +51,8 @@ internal class Unit
         if (skillList[skillListNum - 1].PP <= 0)
             return false;
 
-        skillList[skillListNum - 1].PP--;
-        skillList[skillListNum - 1].Use(this, taget);
+        this.skillList[skillListNum - 1].PP--;
+        this.skillList[skillListNum - 1].Use(this, taget);
         return true;
     }
 }

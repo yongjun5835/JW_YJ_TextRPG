@@ -12,6 +12,7 @@ namespace JW_YJ_TextRPG
         public static Tutorial tutorial = new Tutorial();
         public static Story1 story1 = new Story1();
         public static Battle battle = new Battle();
+        public static Unit player = new Unit(UnitType.Player);
 
         static void Main(string[] args)
         {

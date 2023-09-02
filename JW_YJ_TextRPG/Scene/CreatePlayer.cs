@@ -23,6 +23,7 @@ internal class CreatePlayer
         string inputName = Console.ReadLine();
         Program.ui.ClearScroll(10, 0);
         Program.animation.DrawTextSlowly(48, 11, $"당신의 이름은 {inputName}이군요.", "gray");
+        Program.player.Name = inputName;
         Thread.Sleep(3000);
         Program.ui.ClearScroll(10, 0);
         Program.animation.DrawTextSlowly(48, 8, "당신은 어디에 살고 계시죠?", "gray");

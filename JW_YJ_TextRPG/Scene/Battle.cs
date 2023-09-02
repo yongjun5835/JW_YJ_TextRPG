@@ -129,7 +129,7 @@ internal class Battle
                 {
                     index = rand.Next(0, 3);
 
-                    Program.player.SkillList[0].Use(Program.player, enemy);
+                    Program.player.Attack(1, enemy);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[0].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -148,7 +148,7 @@ internal class Battle
                         break;
                     }
 
-                    enemy.SkillList[index].Use(enemy, Program.player);
+                    enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -174,7 +174,7 @@ internal class Battle
                 {
                     index = rand.Next(0, 3);
 
-                    enemy.SkillList[index].Use(enemy, Program.player);
+                    enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -193,7 +193,7 @@ internal class Battle
                         break;
                     }
 
-                    Program.player.SkillList[0].Use(Program.player, enemy);
+                    Program.player.Attack(1, enemy);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[0].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -222,7 +222,7 @@ internal class Battle
                 {
                     index = rand.Next(0, 3);
 
-                    Program.player.SkillList[0].Use(Program.player, enemy);
+                    Program.player.Attack(2, enemy);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -241,7 +241,7 @@ internal class Battle
                         break;
                     }
 
-                    enemy.SkillList[index].Use(enemy, Program.player);
+                    enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -267,7 +267,7 @@ internal class Battle
                 {
                     index = rand.Next(0, 3);
 
-                    enemy.SkillList[index].Use(enemy, Program.player);
+                    enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -286,7 +286,7 @@ internal class Battle
                         break;
                     }
 
-                    Program.player.SkillList[0].Use(Program.player, enemy);
+                    Program.player.Attack(2, enemy);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -315,7 +315,7 @@ internal class Battle
                 {
                     index = rand.Next(0, 3);
 
-                    Program.player.SkillList[0].Use(Program.player, enemy);
+                    Program.player.Attack(3, enemy);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[2].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -334,7 +334,7 @@ internal class Battle
                         break;
                     }
 
-                    enemy.SkillList[index].Use(enemy, Program.player);
+                    enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -360,7 +360,7 @@ internal class Battle
                 {
                     index = rand.Next(0, 3);
 
-                    enemy.SkillList[index].Use(enemy, Program.player);
+                    enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -379,7 +379,7 @@ internal class Battle
                         break;
                     }
 
-                    Program.player.SkillList[0].Use(Program.player, enemy);
+                    Program.player.Attack(3, enemy);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[2].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -408,7 +408,7 @@ internal class Battle
                 {
                     index = rand.Next(0, 3);
 
-                    Program.player.SkillList[0].Use(Program.player, enemy);
+                    Program.player.Attack(4, enemy);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[3].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -427,7 +427,7 @@ internal class Battle
                         break;
                     }
 
-                    enemy.SkillList[index].Use(enemy, Program.player);
+                    enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -453,7 +453,7 @@ internal class Battle
                 {
                     index = rand.Next(0, 3);
 
-                    enemy.SkillList[index].Use(enemy, Program.player);
+                    enemy.Attack(index, Program.player);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
@@ -472,7 +472,7 @@ internal class Battle
                         break;
                     }
 
-                    Program.player.SkillList[0].Use(Program.player, enemy);
+                    Program.player.Attack(4, enemy);
                     DrawDisplay(enemy.UnitType);
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[3].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);

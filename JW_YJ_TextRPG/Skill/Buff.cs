@@ -4,6 +4,8 @@
     Unit taget;
     int effectTurn;
     int buffValue;
+
+    float initialValue;
     bool isEffectOn = true;
 
     public int EffectTurn
@@ -21,11 +23,15 @@
 
     public Buff(Unit taget, int effectTurn, AttackType atkType, float percent)
     {
-        SkillManager.SM.RoundTurn += this.DecreaseTurn;
-        taget.BuffList.Add(this);
+        initialValue = percent;
         this.effectTurn = effectTurn;
         this.taget = taget;
         this.atkType = atkType;
+
+        if (HaveSameEffect() == true) // 중복 효과 체크
+        {
+            return;
+        }
 
         switch (atkType)
         {
@@ -46,6 +52,9 @@
                 Console.ReadLine();
                 break;
         }
+
+        taget.BuffList.Add(this);
+        SkillManager.SM.RoundTurn += this.DecreaseTurn;
     }
 
     public void EffectOff()
@@ -83,5 +92,21 @@
         {
             taget.Hp -= buffValue;
         }
+    }
+
+    bool HaveSameEffect() // 중복 효과는 기간만 연장
+    {
+        foreach (var buff in taget.BuffList)
+        {
+            if (buff.atkType != this.atkType)
+                return false;
+            if (buff.initialValue != this.initialValue)
+                return false;
+
+            buff.EffectTurn += effectTurn;
+            return true;
+
+        }
+        return false;
     }
 }

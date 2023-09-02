@@ -29,6 +29,7 @@ class Skill
     protected AttackType attackType; 
     protected string name = ""; // 이름
     protected string comment = ""; // 설명
+    protected int powerPoint; // 스킬 사용 가능 횟수
     protected float power; // 스킬의 파워배율
     protected float accuracy; // 명중률
 
@@ -36,12 +37,13 @@ class Skill
     public AttackType AttackType { get { return attackType; } set { attackType = value; } }
     public string Name { get { return name; } set { name = value; } }
     public string Comment { get { return comment; } set { comment = value; } }
+    public int PP { get { return powerPoint; } set { powerPoint = value; } }
     public float Power { get { return power; } set { power = value; } }
     public float Accuracy { get { return accuracy; } set { accuracy = value; } }
 
     public virtual void Use(Unit user, Unit target) { } // 스킬 사용
 
-    public Skill(SKillType sKillType) // 스킬을 만들 땐 SkillType enum값!
+    public Skill(SKillType sKillType)  // 생성시 데이터에 맞게 불러옴
     {
         this.skillType = sKillType;
         SkillManager.SM.ChangeSkillData(this);
@@ -77,7 +79,7 @@ class AttackSkill : Skill
 
 }
 
-class BuffSkill : Skill
+class BuffSkill : Skill 
 {
     float percent = 0.0f;
     int effectTurn =0;

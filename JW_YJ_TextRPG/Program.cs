@@ -42,6 +42,21 @@ namespace JW_YJ_TextRPG
             taget.Def = 100;
 
             unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
+            unit.Attack(2, taget);
             Console.WriteLine($"공격한 턴 HP :{taget.Hp} / {tempHp}");
             SkillManager.SM.TurnEvent();
             Console.WriteLine($"+1 턴 HP :{taget.Hp} / {tempHp}");

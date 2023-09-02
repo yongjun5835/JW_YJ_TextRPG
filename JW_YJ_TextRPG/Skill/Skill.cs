@@ -51,19 +51,6 @@ class Skill
         }
     }
     public string UseComment { get { return useComment; } set { useComment = value; } }
-    public int MaxPP { get { return maxPowerPoint; } set { maxPowerPoint = value; } }
-    public int PP
-    {
-        get { return powerPoint; }
-        set
-        {
-            powerPoint = value;
-            if (powerPoint > maxPowerPoint)
-            {
-                powerPoint = maxPowerPoint;
-            }
-        }
-    }
     public float Power { get { return power; } set { power = value; } }
     public float Accuracy { get { return accuracy; } set { accuracy = value; } }
 

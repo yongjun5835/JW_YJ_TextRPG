@@ -9,8 +9,16 @@
 
         static void Main(string[] args)
         {
-            createPlayer.DrawDisplay();
-            intro.DrawDisplay();
+            new SkillManager();
+
+            //createPlayer.DrawDisplay();
+            //intro.DrawDisplay();
+
+            Unit unit = new Unit();
+            Unit unit1 = new Unit();
+
+            unit.Attack(0, unit1);
+            unit1.Attack(3, unit);
         }
     }
 }

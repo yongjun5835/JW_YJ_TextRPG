@@ -20,6 +20,7 @@ namespace JW_YJ_TextRPG
             Console.OutputEncoding = Encoding.Unicode;
 
             new SkillManager();
+
             createPlayer.DrawDisplay();
             intro.DrawDisplay();
             tutorial.DrawDisplay();

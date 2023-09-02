@@ -11,28 +11,27 @@ enum SKillType // 스킬 이름
 
 }
 
-enum ElementType // 공격 방식
+enum AttackType // 공격 방식
 {
     Nomal = 0, // 일반적
     Pierce, // 방어력 일부 무시
     Cut, // 방어력이 약한 상대
     
-    Hp = 10,
-    Atk,
+    Atk = 10, // 디버프
     Def
 }
 
 class Skill
 {
-    protected SKillType skillType; // enum skilltype
-    protected ElementType elementType; // enum skilltype
+    protected SKillType skillType;
+    protected AttackType attackType; 
     protected string name = ""; // 이름
     protected string comment = ""; // 설명
     protected float power; // 스킬의 파워배율
     protected float accuracy; // 명중률
 
     public SKillType SkillType { get { return skillType; } }
-    public ElementType ElementType { get { return elementType; } set { elementType = value; } }
+    public AttackType AttackType { get { return attackType; } set { attackType = value; } }
     public string Name { get { return name; } set { name = value; } }
     public string Comment { get { return comment; } set { comment = value; } }
     public float Power { get { return power; } set { power = value; } }
@@ -61,25 +60,27 @@ class Skill
 
 class AttackSkill : Skill
 {
-    public AttackSkill(SKillType sKillType) : base(sKillType) { }
+    int damage;
 
+    public AttackSkill(SKillType sKillType) : base(sKillType) { }
 
     public override void Use(Unit user, Unit target)
     {
         if (IsDodged(user, target) == true)
             return;
-
-        target.Hp -= (int)(user.Atk * power);
+        damage = (int)(user.Atk * power);
+        SkillManager.SM.CalcAttackType(this, target, ref damage);
+        target.Hp -= damage;
     }
 
 }
 
 class BuffSkill : Skill
 {
+    float percent = 0.0f;
+    int effectTurn;
 
-    ElementType tagetStatus;
-
-    public ElementType TagetStatus { set { tagetStatus = value; } }
+    public int EffectTurn { get { return effectTurn; } set { effectTurn = value; }}
 
     public BuffSkill(SKillType sKillType) : base(sKillType) { }
 
@@ -87,9 +88,9 @@ class BuffSkill : Skill
     {
         if (user != target && IsDodged(user, target) == true)
             return;
-
-
+        new Buff(target,effectTurn, AttackType, percent);
     }
+
 }
 
 class DotSkill

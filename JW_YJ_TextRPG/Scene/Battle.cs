@@ -134,7 +134,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[0].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.SkillList[0].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name} {Program.player.SkillList[0].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (enemy.Hp <= 0)
                     {
@@ -153,7 +153,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.SkillList[index - 1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name} {enemy.SkillList[index - 1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (Program.player.Hp <= 0)
                     {
@@ -179,7 +179,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.SkillList[index - 1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name} {enemy.SkillList[index - 1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (Program.player.Hp <= 0)
                     {
@@ -198,7 +198,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[0].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.SkillList[0].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name} {Program.player.SkillList[0].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (enemy.Hp <= 0)
                     {
@@ -227,7 +227,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.SkillList[1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name} {Program.player.SkillList[1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (enemy.Hp <= 0)
                     {
@@ -246,7 +246,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.SkillList[index - 1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name} {enemy.SkillList[index - 1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (Program.player.Hp <= 0)
                     {
@@ -272,7 +272,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.SkillList[index - 1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name} {enemy.SkillList[index - 1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (Program.player.Hp <= 0)
                     {
@@ -291,7 +291,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.SkillList[1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name} {Program.player.SkillList[1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (enemy.Hp <= 0)
                     {
@@ -320,7 +320,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[2].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.SkillList[2].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name} {Program.player.SkillList[2].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (enemy.Hp <= 0)
                     {
@@ -339,7 +339,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.SkillList[index - 1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name} {enemy.SkillList[index - 1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (Program.player.Hp <= 0)
                     {
@@ -365,7 +365,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.SkillList[index - 1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name} {enemy.SkillList[index - 1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (Program.player.Hp <= 0)
                     {
@@ -384,7 +384,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[2].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.SkillList[2].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name} {Program.player.SkillList[2].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (enemy.Hp <= 0)
                     {
@@ -413,7 +413,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[3].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.SkillList[3].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name} {Program.player.SkillList[3].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (enemy.Hp <= 0)
                     {
@@ -432,7 +432,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.SkillList[index - 1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name} {enemy.SkillList[index - 1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (Program.player.Hp <= 0)
                     {
@@ -458,7 +458,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.SkillList[index - 1].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name} {enemy.SkillList[index - 1].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (Program.player.Hp <= 0)
                     {
@@ -477,7 +477,7 @@ internal class Battle
                     Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}이(가) {Program.player.SkillList[3].Name}을(를) 사용했다!", "White");
                     Thread.Sleep(2000);
                     DrawDisplay(enemy.UnitType);
-                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.SkillList[3].UseComment}", "Red");
+                    Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name} {Program.player.SkillList[3].UseComment}", "Red");
                     Thread.Sleep(2000);
                     if (enemy.Hp <= 0)
                     {

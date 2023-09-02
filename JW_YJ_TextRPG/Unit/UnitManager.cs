@@ -20,6 +20,12 @@ internal class UnitManager
             case UnitType.Shark:
                 Shark(unit);
                 break;
+            case UnitType.Turtle:
+                Turtle(unit);
+                break;
+            case UnitType.Angler:
+                Angler(unit);
+                break;
             default:
                 break;
         }
@@ -78,6 +84,21 @@ internal class UnitManager
         unit.Spd = 1;
         unit.Accuracy = 1;
         unit.Dodge = 1;
+
+        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
+        unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));
+        unit.SkillList.Add(new AttackSkill(SKillType.BubbleBeam));
+    }
+
+    void Angler(Unit unit)
+    {
+        unit.Name = "낚시꾼";
+        unit.Hp = 200;
+        unit.Atk = 20;
+        unit.Def = 5;
+        unit.Spd = 10;
+        unit.Accuracy = 5;
+        unit.Dodge = 5;
 
         unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
         unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));

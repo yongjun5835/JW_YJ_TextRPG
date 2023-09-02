@@ -19,12 +19,140 @@ internal class Battle
     {
         enemy = new Unit(Unit);
         DrawDisplay(Unit);
-        Thread.Sleep(100000);
+        Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) 모습을 드러냈다!", "White");
+        Thread.Sleep(2000);
+        DrawDisplay(Unit);
+        Program.animation.DrawTextSlowly(46, 23, $"{Program.player.Name}은(는) 전투를 각오했다!", "White");
+        Thread.Sleep(2000);
+        ChoicePhase();
+    }
+
+    public void ChoicePhase()
+    {
+        DrawDisplay(enemy.UnitType);
+        Program.animation.DrawTextSlowly(49, 23, $"다음은 어떤 행동을 할까?", "White");
+        Thread.Sleep(2000);
+        DrawDisplay(enemy.UnitType);
+        Program.ui.DrawText(48, 21, "[1] 스킬사용", "gray");
+        Program.ui.DrawText(48, 22, "[2] 도망간다", "gray");
+        Program.ui.DrawBox(48, 23, 27, 5, "gray");
+        bool isSelect1 = false;
+        string input = "";
+        while (isSelect1 == false)
+        {
+            Console.CursorVisible = true;
+            Console.SetCursorPosition(50, 25);
+            input = Console.ReadLine();
+            if (input == "1")
+            {
+                PlayerPhase();
+                isSelect1 = true;
+                Console.CursorVisible = false;
+            }
+            else if (input == "2")
+            {
+                Console.Clear();
+                Program.animation.SmallerBox(32, 5);
+                Thread.Sleep(1000);
+                isSelect1 = true;
+                Console.CursorVisible = false;
+            }
+            else
+            {
+                DrawDisplay(enemy.UnitType);
+                Program.ui.DrawText(48, 21, "[1] 스킬사용", "gray");
+                Program.ui.DrawText(48, 22, "[2] 도망간다", "gray");
+                Program.ui.DrawBox(48, 23, 27, 5, "gray");
+            }
+        }
     }
 
     public void PlayerPhase()
     {
-        
+        DrawDisplay(enemy.UnitType);
+        Program.animation.DrawTextSlowly(50, 23, $"어떤 스킬을 사용할까?", "White");
+        Thread.Sleep(2000);
+        DrawDisplay(enemy.UnitType);
+
+        Program.ui.DrawText(2, 21, "[N] 스킬 이름", "White");
+        Program.ui.DrawText(22, 21, "|", "White");
+        Program.ui.DrawText(24, 21, "스킬 설명", "White");
+        Program.ui.DrawText(71, 21, "|", "White");
+        Program.ui.DrawText(73, 21, "남은 PP / 맥스 PP", "White");
+
+        Program.ui.DrawText(2, 23, $"[1] {Program.player.SkillList[0].Name}", "White");
+        Program.ui.DrawText(22, 23, "|", "White");
+        Program.ui.DrawText(24, 23, $"{Program.player.SkillList[0].Comment}", "White");
+        Program.ui.DrawText(71, 23, "|", "White");
+        Program.ui.DrawText(73, 23, $"{Program.player.SkillList[0].PP} / {Program.player.SkillList[0].MaxPP}", "White");
+
+        Program.ui.DrawText(2, 24, $"[2] {Program.player.SkillList[1].Name}", "White");
+        Program.ui.DrawText(22, 24, "|", "White");
+        Program.ui.DrawText(24, 24, $"{Program.player.SkillList[1].Comment}", "White");
+        Program.ui.DrawText(71, 24, "|", "White");
+        Program.ui.DrawText(73, 24, $"{Program.player.SkillList[1].PP} / {Program.player.SkillList[1].MaxPP}", "White");
+
+        Program.ui.DrawText(2, 25, $"[3] {Program.player.SkillList[2].Name}", "White");
+        Program.ui.DrawText(22, 25, "|", "White");
+        Program.ui.DrawText(24, 25, $"{Program.player.SkillList[2].Comment}", "White");
+        Program.ui.DrawText(71, 25, "|", "White");
+        Program.ui.DrawText(73, 25, $"{Program.player.SkillList[2].PP} / {Program.player.SkillList[2].MaxPP}", "White");
+
+        Program.ui.DrawText(2, 26, $"[4] {Program.player.SkillList[3].Name}", "White");
+        Program.ui.DrawText(22, 26, "|", "White");
+        Program.ui.DrawText(24, 26, $"{Program.player.SkillList[3].Comment}", "White");
+        Program.ui.DrawText(71, 26, "|", "White");
+        Program.ui.DrawText(73, 26, $"{Program.player.SkillList[3].PP} / {Program.player.SkillList[3].MaxPP}", "White");
+
+        Program.ui.DrawBox(91, 21, 27, 5, "gray");
+
+        bool isSelect1 = false;
+        string input = "";
+        while (isSelect1 == false)
+        {
+            Console.CursorVisible = true;
+            Console.SetCursorPosition(93, 23);
+            input = Console.ReadLine();
+            if (input == "1")
+            {
+                Console.Clear();
+                Program.animation.SmallerBox(32, 5);
+                Thread.Sleep(1000);
+                isSelect1 = true;
+                Console.CursorVisible = false;
+            }
+            else if (input == "2")
+            {
+                Console.Clear();
+                Program.animation.SmallerBox(32, 5);
+                Thread.Sleep(1000);
+                isSelect1 = true;
+                Console.CursorVisible = false;
+            }
+            else if (input == "3")
+            {
+                Console.Clear();
+                Program.animation.SmallerBox(32, 5);
+                Thread.Sleep(1000);
+                isSelect1 = true;
+                Console.CursorVisible = false;
+            }
+            else if (input == "4")
+            {
+                Console.Clear();
+                Program.animation.SmallerBox(32, 5);
+                Thread.Sleep(1000);
+                isSelect1 = true;
+                Console.CursorVisible = false;
+            }
+            else
+            {
+                DrawDisplay(enemy.UnitType);
+                Program.ui.DrawText(48, 21, "[1] 스킬사용", "gray");
+                Program.ui.DrawText(48, 22, "[2] 도망간다", "gray");
+                Program.ui.DrawBox(48, 23, 27, 5, "gray");
+            }
+        }
     }
 
     public void MonsterPhase()

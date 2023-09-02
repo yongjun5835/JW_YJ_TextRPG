@@ -44,6 +44,9 @@
             case SKillType.BiteDeep:
                 BiteDeep(skill);
                 break;
+            case SKillType.None:
+                None(skill);
+                break;
             default:
                 break;
         }
@@ -129,6 +132,17 @@
         skill.Accuracy = 0.7f;
         ((BuffSkill)skill).EffectTurn = 3;
         ((BuffSkill)skill).Percent = 5;
+    }
+
+    void None(Skill skill)
+    {
+        skill.AttackType = AttackType.Hp;
+        skill.Name = "";
+        skill.Comment = "";
+        skill.MaxPP = 0;
+        skill.PP = skill.MaxPP;
+        skill.Power = 0f;
+        skill.Accuracy = 0f;
     }
 
     public void CalcAttackType(Skill skill, Unit taget, ref int damage)

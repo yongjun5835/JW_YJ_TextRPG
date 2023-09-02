@@ -36,6 +36,8 @@ internal class UnitManager
 
         unit.SkillList.Add(new Skill(SKillType.BodySlam));
         unit.SkillList.Add(new Skill(SKillType.Splash));
+        unit.SkillList.Add(new Skill(SKillType.None));
+        unit.SkillList.Add(new Skill(SKillType.None));
     }
 
     void Scomber(Unit unit)
@@ -48,8 +50,8 @@ internal class UnitManager
         unit.Accuracy = 3;
         unit.Dodge = 1;
 
-        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
-        unit.SkillList.Add(new BuffSkill(SKillType.Splash));
+        unit.SkillList.Add(new Skill(SKillType.BodySlam));
+        unit.SkillList.Add(new Skill(SKillType.Splash));
     }
 
     void Shark(Unit unit)
@@ -62,9 +64,9 @@ internal class UnitManager
         unit.Accuracy = 5;
         unit.Dodge = 5;
 
-        unit.SkillList.Add(new AttackSkill(SKillType.BodySlam));
-        unit.SkillList.Add(new BuffSkill(SKillType.TailWhip));
-        unit.SkillList.Add(new AttackSkill(SKillType.WaterCanon));
+        unit.SkillList.Add(new Skill(SKillType.BodySlam));
+        unit.SkillList.Add(new Skill(SKillType.Splash));
+        unit.SkillList.Add(new Skill(SKillType.WaterCanon));
     }
 
 }

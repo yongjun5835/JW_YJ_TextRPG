@@ -8,8 +8,8 @@ enum SKillType // 스킬 이름
     BubbleBeam,
     IceBeam,
     Splash,
-    BiteDeep
-
+    BiteDeep,
+    None
 }
 
 enum AttackType // 공격 방식

@@ -35,13 +35,10 @@ internal class Unit
     public List<Buff> BuffList { get { return debuffList; } set { debuffList = value; } }
 
 
-    // 테스트용 코드
-    public Unit()
+    public Unit(UnitType unitType)
     {
-        skillList.Add(new AttackSkill(SKillType.BodySlam));
-        skillList.Add(new BuffSkill(SKillType.TailWhip));
-        skillList.Add(new AttackSkill(SKillType.BubbleBeam));
-        skillList.Add(new AttackSkill(SKillType.WaterCanon));
+        this.unitType = unitType;
+        UnitManager.UM.ChangeMonsterData(this);
     }
 
 

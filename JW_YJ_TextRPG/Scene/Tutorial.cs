@@ -27,8 +27,10 @@ internal class Tutorial
             inputLive = Console.ReadLine();
             if (inputLive == "1")
             {
-                Program.ui.ClearScroll(10, 0);
-                Program.animation.DrawTextSlowly(47, 11, $"당신의 서식지는 '태평양'이군요.", "gray");
+                Console.Clear();
+                Program.animation.SmallerBox(32, 5);
+                Thread.Sleep(1000);
+                Program.battle.StartPhase();
                 isSelect1 = true;
             }
             else if (inputLive == "2")

@@ -8,6 +8,7 @@
         public static Intro intro = new Intro();
         public static Tutorial tutorial = new Tutorial();
         public static Story1 story1 = new Story1();
+        public static Battle battle = new Battle();
 
         static void Main(string[] args)
         {

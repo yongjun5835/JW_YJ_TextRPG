@@ -65,7 +65,6 @@ internal class UnitManager
         unit.Dodge = 5;
 
         unit.SkillList.Add(new Skill(SKillType.BodySlam));
-        unit.SkillList.Add(new Skill(SKillType.Splash));
         unit.SkillList.Add(new Skill(SKillType.WaterCanon));
     }
 

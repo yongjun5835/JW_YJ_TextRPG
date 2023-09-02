@@ -29,6 +29,7 @@ class Skill
     protected AttackType attackType;
     protected string name = ""; // 이름
     protected string comment = ""; // 설명
+    protected string useComment = ""; // 사용시 코멘트
     protected int powerPoint; // 스킬 사용 가능 횟수
     protected int maxPowerPoint; // 스킬 사용 가능 횟수
     protected float power; // 스킬의 파워배율
@@ -38,6 +39,7 @@ class Skill
     public AttackType AttackType { get { return attackType; } set { attackType = value; } }
     public string Name { get { return name; } set { name = value; } }
     public string Comment { get { return comment; } set { comment = value; } }
+    public string UseComment { get { return comment; } set { comment = value; } }
     public int MaxPP { get { return maxPowerPoint; } set { maxPowerPoint = value; } }
     public int PP
     {

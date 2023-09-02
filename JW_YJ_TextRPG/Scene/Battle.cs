@@ -406,7 +406,7 @@ internal class Battle
             {
                 if (isFaster == true)
                 {
-                    index = rand.Next(0, 3);
+                    index = rand.Next(1, 3);
 
                     Program.player.Attack(4, enemy);
                     DrawDisplay(enemy.UnitType);

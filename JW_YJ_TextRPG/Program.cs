@@ -7,13 +7,10 @@
 
         static void Main(string[] args)
         {
-            animation.DrawTextSlowly(0, 0, "안녕 나는 조용준이다 으하하하하", "");
-            Thread.Sleep(100000);
+            animation.DrawTextSlowly(0, 0, "김치를 맛있게 먹는 방법은 고구마와 같이 먹는 것이다.", "Blue");
             animation.UnfoldScroll(0, 0);
             animation.FoldScroll(0, 0);
-            ui.DrawUI(0, 0, 12, "놀라운 결과", "Gray");
-            ui.DrawUI(0, 8, 12, "놀라운 결과", "");
-            ui.DrawScroll(50, 0, 20, "");
+            animation.FadeInOut(0, 0, 14, "반가워");
             Console.SetCursorPosition(0, 20);
         }
     }

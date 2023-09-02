@@ -1,5 +1,4 @@
-﻿
-class SkillManager
+﻿class SkillManager
 {
     public static SkillManager SM;
     public SkillManager()
@@ -36,7 +35,7 @@ class SkillManager
 
     void BodySlam(Skill skill)
     {
-        skill.ElementType = ElementType.Nomal;
+        skill.AttackType = AttackType.Nomal;
         skill.Name = "몸통 박치기";
         skill.Comment = "상대를 향하여 전속력 박치기를 한다.";
         skill.Power = 0.8f;
@@ -45,25 +44,26 @@ class SkillManager
 
     void TailWhip(Skill skill)
     {
-        skill.ElementType = ElementType.Def;
+        skill.AttackType = AttackType.Def;
         skill.Name = "꼬리 흔들기";
         skill.Comment = "꼬리를 흔들어 상대를 도발한다.";
         skill.Power = 0.8f;
         skill.Accuracy = 1.0f;
+        ((BuffSkill)skill).EffectTurn = 2;
     }
 
     void WaterCanon(Skill skill)
     {
-        skill.ElementType = ElementType.Cut;
+        skill.AttackType = AttackType.Cut;
         skill.Name = "물 대포";
         skill.Comment = "물을 상대에게 발사한다.";
-        skill.Power = 1.0f;
+        skill.Power = 1.4f;
         skill.Accuracy = 0.9f;
     }
 
     void BubbleBeam(Skill skill)
     {
-        skill.ElementType = ElementType.Nomal;
+        skill.AttackType = AttackType.Nomal;
         skill.Name = "거품 광선";
         skill.Comment = "거품을 상대에게 발사한다.";
         skill.Power = 1.0f;
@@ -72,21 +72,39 @@ class SkillManager
 
     void IceBeam(Skill skill)
     {
-        skill.ElementType = ElementType.Pierce;
+        skill.AttackType = AttackType.Pierce;
         skill.Name = "냉동 빔";
         skill.Comment = "냉동빔을 상대에게 발사한다.";
-        skill.Power = 1.2f;
-        skill.Accuracy = 1.0f;
+        skill.Power = 0.8f;
+        skill.Accuracy = 0.9f;
     }
 
     void Splash(Skill skill)
     {
-        skill.ElementType = ElementType.Hp;
+        skill.AttackType = AttackType.Nomal;
         skill.Name = "튀어오르기";
         skill.Comment = "공격도 하지 않고 팔딱팔딱 튈 뿐";
         skill.Power = 0.0f;
         skill.Accuracy = 0.0f;
     }
 
+    public void CalcAttackType(Skill skill, Unit taget, ref int damage)
+    {
+        switch (skill.AttackType)
+        {
+            case AttackType.Nomal:
+                damage -= taget.Def;
+                break;
+            case AttackType.Pierce:
+                damage -= (int)(taget.Def * 0.5f);
+                break;
+            case AttackType.Cut:
+                damage -= (int)(taget.Def * 1.5f);
+                break;
+            default:
+                damage -= taget.Def;
+                break;
 
+        }
+    }
 }

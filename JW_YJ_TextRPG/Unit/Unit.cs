@@ -69,5 +69,15 @@ internal class Unit
         return true;
     }
 
+    public bool UseItem(int Num, Unit taget)
+    {
+        bool result = itemList[Num - 1].Use(taget);
+        if (result == true)
+        {
+            ItemList.Remove(itemList[Num - 1]);
+            return true;
+        }
 
+        return false;
+    }
 }

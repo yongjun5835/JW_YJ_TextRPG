@@ -33,14 +33,14 @@ partial class SkillManager
     }
 
     // 스킬 실수 없이 추가 하기
-    public bool AddSkill(Unit unit, SKillType type)
+    public bool AddSkill(Unit unit, SKillType newtype)
     {
         int changeListNum = -1;
 
         // 중복 체크
         foreach (var skill in unit.SkillList)
         {
-            if (type == skill.SkillType)
+            if (newtype == skill.SkillType)
             {
                 Console.WriteLine("스킬 중복; 스킬매니저 AddSkill 대사 수정");
                 Console.ReadLine();
@@ -63,47 +63,28 @@ partial class SkillManager
         // 초과 체크
         while (unit.SkillList.Count >= 4 && changeListNum == -1)
         {
+            int num = 0;
 
 
-            Console.WriteLine("어떤 스킬을 교체 할까?");
-            for (int i = 0; i < unit.SkillList.Count; i++)
-            {
-                Console.Write($"{i + 1}. {unit.SkillList[i].Name}  ");
-            }
-            Console.WriteLine("0. 취소");
+            unit.SkillList[num] = new AttackSkill(newtype);
 
-            string inputKey = Console.ReadLine();
-            switch (inputKey)
-            {
-                case "1":
-                case "2":
-                case "3":
-                case "4":
-                    changeListNum = int.Parse(inputKey) - 1;
-                    break;
-                case "0":
-                    return false;
-                default:
-                    Console.WriteLine("그런 선택지는 없다!");
-                    Thread.Sleep(1000);
-                    continue;
-            }
+
         }
 
         // 추가
-        switch ((int)type)
+        switch ((int)newtype)
         {
             case < 100: // 공격 스킬
                 if (changeListNum == -1)
-                    unit.SkillList.Add(new AttackSkill(type));
+                    unit.SkillList.Add(new AttackSkill(newtype));
                 else
-                    unit.SkillList[changeListNum] = new AttackSkill(type);
+                    unit.SkillList[changeListNum] = new AttackSkill(newtype);
                 break;
             case >= 100: // 버프 스킬
                 if (changeListNum == -1)
-                    unit.SkillList.Add(new BuffSkill(type));
+                    unit.SkillList.Add(new BuffSkill(newtype));
                 else
-                    unit.SkillList[changeListNum] = new BuffSkill(type);
+                    unit.SkillList[changeListNum] = new BuffSkill(newtype);
                 break;
         }
         return true;

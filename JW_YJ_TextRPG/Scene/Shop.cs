@@ -184,6 +184,4 @@ class Shop
             shopItemList.Add(new Item(SKillType.Surf));
         }
     }
-
-
 }

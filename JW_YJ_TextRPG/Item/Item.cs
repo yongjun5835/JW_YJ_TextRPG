@@ -56,8 +56,8 @@ class Item
         ItemManager.IM.SetDate(this, type);
     }
 
-    public void Use(Unit unit)
+    public bool Use(Unit unit)
     {
-        SkillManager.SM.AddSkill(unit, sKillType);
+        return SkillManager.SM.AddSkill(unit, sKillType);
     }
 }

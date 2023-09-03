@@ -254,6 +254,7 @@ internal class UI
 
     public void DrawLeftScreen_ItemList(List<Item> List, bool playerItemSell)
     {
+        DelScrollLeftPart();
         float value = 1.0f;
         Program.ui.DrawText(23, 5, $"이름", "White");
         Program.ui.DrawText(23 + 13, 5, $"┃ 정보", "White");
@@ -284,6 +285,7 @@ internal class UI
 
     public void DrawLeftScreen_SkillList(List<Skill> List)
     {
+        DelScrollLeftPart();
         Program.ui.DrawText(23, 5, $"기술명", "White");
         Program.ui.DrawText(42, 5, $"┃ PP", "White");
         Program.ui.DrawText(50, 5, $"┃ 파워", "White");
@@ -300,8 +302,8 @@ internal class UI
             Program.ui.DrawText(23, 7 + i * 2, $"                                         ", "White");
             Program.ui.DrawText(23, 7 + i * 2, $" {i + 1}.{List[i].Name}", "White");
             Program.ui.DrawText(43, 7 + i * 2, $" {List[i].PP}/{List[i].MaxPP}", "White");
-            Program.ui.DrawText(51,7+ i * 2, $" {List[i].Power.ToString("n1")}", "White");
-            Program.ui.DrawText(57,7+ i * 2, $" {List[i].AttackType.ToString()}", "White");
+            Program.ui.DrawText(51, 7 + i * 2, $" {List[i].Power.ToString("n1")}", "White");
+            Program.ui.DrawText(57, 7 + i * 2, $" {List[i].AttackType.ToString()}", "White");
         }
 
         for (int i = 7; i < 25; i++)
@@ -324,5 +326,15 @@ internal class UI
         Program.ui.DrawText(66, 14, "                                   ", "White");
         Program.ui.DrawText(66, 18, "                                   ", "White");
     }
+
+    public void DelScrollLeftPart()
+    {
+        for (int i = 5; i < 25; i++) 
+        {
+            Program.ui.DrawText(22, i, "                                           ", "Gray");
+        }
+    }
+
+
 
 }

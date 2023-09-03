@@ -1,4 +1,5 @@
 ﻿
+using JW_YJ_TextRPG;
 using System.Security.Cryptography.X509Certificates;
 
 partial class SkillManager
@@ -42,10 +43,6 @@ partial class SkillManager
         {
             if (newtype == skill.SkillType)
             {
-                Console.WriteLine("스킬 중복; 스킬매니저 AddSkill 대사 수정");
-                Console.ReadLine();
-
-
                 return false;
             }
         }
@@ -63,11 +60,11 @@ partial class SkillManager
         // 초과 체크
         while (unit.SkillList.Count >= 4 && changeListNum == -1)
         {
-            int num = 0;
-
-
-            unit.SkillList[num] = new AttackSkill(newtype);
-
+            Program.ui.Popup(unit.SkillList);
+            if (int.TryParse(Console.ReadLine(), out changeListNum) == false && changeListNum == -1 || changeListNum > 4)
+            {
+                continue;
+            }
 
         }
 
@@ -132,7 +129,7 @@ partial class SkillManager
             case SKillType.FastSpin: 
                 FastSpin(skill);
                 break;
-                case SKillType.WriggleWriggleSpin: 
+            case SKillType.WriggleWriggleSpin: 
                 WriggleWriggleSpin(skill);
                 break;
             case SKillType.LookAtThisCan:

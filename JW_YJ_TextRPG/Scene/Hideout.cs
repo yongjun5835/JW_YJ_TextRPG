@@ -228,6 +228,8 @@ internal class Hideout
         while (true)
         {
             Program.ui.DelScrollOptionList();
+            Program.ui.DrawBox(21, 4, 45, 22, "Gray");
+
             Program.ui.DrawLeftScreen_ItemList(taget.ItemList, false);
             Program.ui.DrawText(70, 6, "사용할 머신을 선택해주세요", "White");
             Program.ui.DrawText(77, 10, "[0] 돌아가기", "White");

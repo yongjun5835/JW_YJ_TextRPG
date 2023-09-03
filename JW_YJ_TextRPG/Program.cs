@@ -43,6 +43,7 @@ namespace JW_YJ_TextRPG
             Console.CursorVisible = false;
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
+
             bossStory.DrawDisplay();
 
             createPlayer.DrawDisplay();

@@ -35,7 +35,7 @@ internal class Hideout
         Program.ui.DrawText(67, 12, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
         Program.ui.DrawText(77, 14, "[3] 스킬관리", "White");
         Program.ui.DrawText(67, 16, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
-        if (Program.storyManager.SP >= 4)
+        if (Program.storyManager.SP >= 4 && Program.story4.isProgress == true)
             Program.ui.DrawText(77, 18, "[4] 트레이닝", "White");
         else
             Program.ui.DrawText(77, 18, "[4] 트레이닝", "Gray");
@@ -72,7 +72,7 @@ internal class Hideout
             }
             else if (input == "4")
             {
-                if (Program.storyManager.SP >= 4)
+                if (Program.storyManager.SP >= 4 && Program.story4.isProgress == true)
                 {
                     if (Program.storyManager.SP == 4)
                     {

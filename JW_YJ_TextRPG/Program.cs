@@ -33,10 +33,7 @@ namespace JW_YJ_TextRPG
 
 
             Shop shop = new Shop();
-            shop.EnterShop();
 
-
-            Console.ReadLine();
 
             stories.Add(story1);
             stories.Add(story2);

@@ -29,6 +29,8 @@ internal class Battle
         {
             isFaster = false;
         }
+        if (Program.storyManager.SP == 3)
+            enemy.Atk = 10000;
         DrawDisplay(Unit);
         Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) 모습을 드러냈다!", "White");
         Thread.Sleep(2000);
@@ -67,6 +69,7 @@ internal class Battle
                 Thread.Sleep(1000);
                 isSelect1 = true;
                 Console.CursorVisible = false;
+                Program.hideout.DrawDisplay();
             }
             else
             {
@@ -548,6 +551,7 @@ internal class Battle
             Console.Clear();
             Program.animation.SmallerBox(32, 5);
             Thread.Sleep(1000);
+            Program.player.Hp = Program.player.MaxHp;
             Program.hideout.DrawDisplay();
         }
         else if (enemy.Hp <= 0)
@@ -556,6 +560,7 @@ internal class Battle
             Program.animation.SmallerBox(32, 5);
             Thread.Sleep(1000);
             Reward(enemy.Gold, enemy.Exp);
+            Program.player.Hp = Program.player.MaxHp;
             Program.hideout.DrawDisplay();
         }
     }

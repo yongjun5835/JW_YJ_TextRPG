@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 internal class Story4 : StoryManager
 {
+    public bool isProgress = false;
+
     public Story4()
     {
 
@@ -14,6 +17,7 @@ internal class Story4 : StoryManager
 
     public override void DrawDisplay()
     {
+        isProgress = true;
         Program.animation.FadeInOut(42, 10, 8, "4. 바다거북과의 만남");
         Program.animation.UnfoldScroll(10, 0);
         Program.animation.DrawTextSlowly(39, 11, "상어에게 패배한 저는 회의감에 빠졌습니다...", "gray");

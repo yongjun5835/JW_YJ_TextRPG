@@ -18,10 +18,15 @@ class Shop
     public void EnterShop()
     {
         AddMoreItems();
+        Program.animation.UnfoldScroll(10, 0);
         Program.ui.DrawBox(21, 4, 45, 22, "Gray");
 
         while (true)
         {
+            for (int i = 5; i < 25; i++) // 상점 왼쪽편 그림
+            {
+                Program.ui.DrawText(22, i, "                                           ", "Gray");
+            }
             Program.bossStory.DrawPicture(24, 7, "그 정도면\r\n개혜잔데?⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n⠀⠀⠈⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡸⢤⣡⣴⣶⣾⣿⣿⣷⣾⣥⡃⠀⠀⠀⠀⠀⠀⠀⠀⠀\r\n⠀⠀⠀⠀⡙⠚⠀⠀⠀⠀⢀⣀⡀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣠⣴⣶⣶⣶⣦⠀⠀\r\n⠀⠀⠀⠠⣌⡁⠀⠀⢠⣾⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀\r\n⠀⠀⠀⢐⡂⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠃⠀⠀\r\n⠀⠀⠠⢄⠈⠉⠀⠀⠀⠀⠉⠛⠋⢡⣿⡿⠛⠻⣿⣿⣿⡟⠛⠻⣿⣿⣿⡷⣄⠀⠀⠀⠀⠀⠀\r\n⠀⠀⠐⠒⠒⠀⠀⠀⠀⣀⣤⡖⠭⢹⣿⠁⠰⢂⣿⣿⣿⠀⠟⠀⣼⣿⣿⠒⠤⣉⢒⣤⡀⠀⠀\r\n⠀⠀⠠⠦⠀⠀⢀⣴⣿⣿⣿⡟⠊⣿⣿⣦⣴⣿⣿⣿⣿⣷⣶⣾⣿⣿⣿⣶⣶⣾⣿⣿⣿⣦⠀\r\n⠀⠀⠉⣀⠀⢰⣿⣿⣿⣿⣿⠀⢠⡿⠛⠛⠛⠛⠻⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀\r\n⠀⠀⢐⠦⡀⠀⠻⣿⣿⣿⣿⣶⡞⠁⠀⣴⠀⠀⠀⣰⠂⠀⠙⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀\r\n⠀⠀⠔⣪⠕⠀⠀⠙⣿⣿⣿⣿⣄⡀⠀⠀⠀⠀⠀⠈⠀⠀⠀⣹⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀\r\n⠀⠀⠈⢀⢔⠅⠀⠀⠘⣿⣿⣿⣿⣿⣿⣶⣶⣦⣤⣤⣤⣶⣾⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀\r\n⠀⠀⠀⠁⣡⢖⠄⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀\r\n⠀⠀⠀⠀⠡⠃⠂⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀\r\n⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠃⠀⠀⠀⠀⠀⠀⠀\r\n", "White");
 
             Program.ui.DelScrollOptionList();
@@ -91,6 +96,7 @@ class Shop
             }
             if (input <= shopItemList.Count && input > 0)
             {
+                Program.player.Gold += 1000;
                 txt = Buyitem(Program.player, shopItemList[input - 1]);
                 Console.SetCursorPosition(68, 23);
                 Console.Write(txt);

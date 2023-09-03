@@ -136,64 +136,64 @@ internal class BossBattle
             Program.player.Attack(1, enemy);
             Console.Clear();
             DrawDisplay();
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            ClearInfo();
+            DrawAngler("white");
             Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[0].UseComment}", "");
-            Thread.Sleep(2000);
+            DrawAngler("Red");
+            Thread.Sleep(500);
+            DrawAngler("White");
+            Thread.Sleep(500);
+            DrawAngler("Red");
+            Thread.Sleep(500);
+            DrawAngler("White");
+            Thread.Sleep(500);
         }
         else if (input == "2")
         {
-            Program.player.Attack(2, enemy);
+            Program.player.Attack(1, enemy);
             Console.Clear();
             DrawDisplay();
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            ClearInfo();
+            DrawAngler("white");
             Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[1].UseComment}", "");
-            Thread.Sleep(2000);
+            DrawAngler("Red");
+            Thread.Sleep(500);
+            DrawAngler("White");
+            Thread.Sleep(500);
+            DrawAngler("Red");
+            Thread.Sleep(500);
+            DrawAngler("White");
+            Thread.Sleep(500);
         }
         else if (input == "3")
         {
-            Program.player.Attack(3, enemy);
+            Program.player.Attack(1, enemy);
             Console.Clear();
             DrawDisplay();
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            ClearInfo();
+            DrawAngler("white");
             Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[2].UseComment}", "");
-            Thread.Sleep(2000);
+            DrawAngler("Red");
+            Thread.Sleep(500);
+            DrawAngler("White");
+            Thread.Sleep(500);
+            DrawAngler("Red");
+            Thread.Sleep(500);
+            DrawAngler("White");
+            Thread.Sleep(500);
         }
         else if (input == "4")
         {
-            Program.player.Attack(4, enemy);
+            Program.player.Attack(1, enemy);
             Console.Clear();
             DrawDisplay();
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            ClearInfo();
+            DrawAngler("white");
             Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[3].UseComment}", "");
-            Thread.Sleep(2000);
+            DrawAngler("Red");
+            Thread.Sleep(500);
+            DrawAngler("White");
+            Thread.Sleep(500);
+            DrawAngler("Red");
+            Thread.Sleep(500);
+            DrawAngler("White");
+            Thread.Sleep(500);
         }
     }
 

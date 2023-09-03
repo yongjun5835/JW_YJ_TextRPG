@@ -95,5 +95,6 @@
         SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
         SkillManager.SM.AddSkill(unit, SKillType.TailWhip);
         SkillManager.SM.AddSkill(unit, SKillType.WaterCanon);
+        SkillManager.SM.AddSkill(unit, SKillType.None);
     }
 }

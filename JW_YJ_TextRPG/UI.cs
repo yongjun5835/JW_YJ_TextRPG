@@ -315,7 +315,6 @@ internal class UI
     {
         Program.ui.DrawText(68, 23, "                                ", "White");
         Program.ui.DrawText(68, 23, addtxt, "White");
-        Console.SetCursorPosition(80, 23);
     }
 
     public void DelScrollOptionList()

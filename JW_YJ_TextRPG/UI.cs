@@ -251,7 +251,79 @@ internal class UI
         Console.Write("|");
     }
 
-    void dellef()
+
+    public void DrawLeftScreen_ItemList(List<Item> List, bool playerItemSell)
     {
+        float value = 1.0f;
+        Program.ui.DrawText(23, 5, $"이름", "White");
+        Program.ui.DrawText(23 + 13, 5, $"┃ 정보", "White");
+        Program.ui.DrawText(23 + 13 + 23, 5, $"┃ 가격", "White");
+        Program.ui.DrawText(22, 6, $"━━━━━━━━━━─━━━╋──────────────────────╋─────", "");
+        if (playerItemSell == true)
+        {
+            value = 0.8f;
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            Program.ui.DrawText(23, 7 + i * 2, $"                                         ", "White");
+            if (i >= List.Count)
+            {
+                continue;
+            }
+            Program.ui.DrawText(23, 7 + i * 2, $"{i + 1}.{List[i].Name}", "White");
+            Program.ui.DrawText(38, 7 + i * 2, $"{List[i].Comment}", "White");
+            Program.ui.DrawText(61, 7 + i * 2, $"{(int)(List[i].Gold * value)}", "White");
+        }
+
+        for (int i = 7; i < 25; i++)
+        {
+            Program.ui.DrawText(23 + 13 + 23, i, "┃", "white");
+            Program.ui.DrawText(23 + 13, i, "┃", "white");
+        }
     }
+
+    public void DrawLeftScreen_SkillList(List<Skill> List)
+    {
+        Program.ui.DrawText(23, 5, $"기술명", "White");
+        Program.ui.DrawText(42, 5, $"┃ PP", "White");
+        Program.ui.DrawText(50, 5, $"┃ 파워", "White");
+        Program.ui.DrawText(56, 5, $"┃ 타입", "White");
+        Program.ui.DrawText(22, 6, $"━━━━━━━━━━━━━━━━━━━━╋━━━━━━━╋━━━━━╋━━━━━━━", "");
+
+        for (int i = 0; i < 9; i++)
+        {
+            if (i >= List.Count)
+            {
+                Program.ui.DrawText(23, 7 + i * 2, $"                                         ", "White");
+                continue;
+            }
+            Program.ui.DrawText(23, 7 + i * 2, $"                                         ", "White");
+            Program.ui.DrawText(23, 7 + i * 2, $" {i + 1}.{List[i].Name}", "White");
+            Program.ui.DrawText(43, 7 + i * 2, $" {List[i].PP}/{List[i].MaxPP}", "White");
+            Program.ui.DrawText(51,7+ i * 2, $" {List[i].Power.ToString("n1")}", "White");
+            Program.ui.DrawText(57,7+ i * 2, $" {List[i].AttackType.ToString()}", "White");
+        }
+
+        for (int i = 7; i < 25; i++)
+        {
+            Program.ui.DrawText(42, i, "┃", "white");
+            Program.ui.DrawText(50, i, "┃", "white");
+            Program.ui.DrawText(56, i, "┃", "white");
+        }
+    }
+    public void DelScrollSelectBlock(string addtxt)
+    {
+        Program.ui.DrawText(68, 23, "                                ", "White");
+        Program.ui.DrawText(68, 23, addtxt, "White");
+        Console.SetCursorPosition(80, 23);
+    }
+
+    public void DelScrollOptionList()
+    {
+        Program.ui.DrawText(66, 6, "                                   ", "White");
+        Program.ui.DrawText(66, 10, "                                   ", "White");
+        Program.ui.DrawText(66, 14, "                                   ", "White");
+        Program.ui.DrawText(66, 18, "                                   ", "White");
+    }
+
 }

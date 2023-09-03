@@ -11,6 +11,10 @@
     TailWhip = 100, // 버프 스킬
     BiteDeep,
 
+    FastSpin =200, // 플레이어 스킬
+    WriggleWriggleSpin,
+    LookAtThisCan,
+    TunaSliced,
 
     None
 }
@@ -155,7 +159,56 @@ partial class SkillManager
         skill.Accuracy = 1.0f;
     }
 
-    void None(Skill skill) // 디버그용
+    void FastSpin(Skill skill)
+    {
+        skill.AttackType = AttackType.Nomal;
+        skill.Name = "빨리 감기";
+        skill.Comment = "낚시줄을 감아 상대를 공격한다.";
+        skill.UseComment = "은(는) 줄을 감았다.";
+        skill.MaxPP = 20;
+        skill.PP = skill.MaxPP;
+        skill.Power = 0.8f;
+        skill.Accuracy = 1.0f;
+    }
+
+    void WriggleWriggleSpin(Skill skill)
+    {
+        skill.AttackType = AttackType.Cut;
+        skill.Name = "빨리 감기";
+        skill.Comment = "낚시줄을 빨리 상대를 공격한다.";
+        skill.UseComment = "은(는) 줄을 빨리 감았다.";
+        skill.MaxPP = 10;
+        skill.PP = skill.MaxPP;
+        skill.Power = 1.2f;
+        skill.Accuracy = 0.8f;
+    }
+
+    void LookAtThisCan(Skill skill)
+    {
+        skill.AttackType = AttackType.Def;
+        skill.Name = "통조림 개봉";
+        skill.Comment = "통조림 개봉하여 충격을 줍니다.";
+        skill.UseComment = "은(는) 통조림을 열었다.";
+        skill.MaxPP = 10;
+        skill.PP = skill.MaxPP;
+        skill.Power = 1.0f;
+        skill.Accuracy = 1.0f;
+        ((BuffSkill)skill).EffectTurn = 3;
+        ((BuffSkill)skill).Percent = 0.3f;
+    }
+
+    void TunaSliced(Skill skill)
+    {
+        skill.AttackType = AttackType.Pierce;
+        skill.Name = "회 썰기";
+        skill.Comment = "좋은 회칼로 회를 떠 공격한다.";
+        skill.UseComment = "은(는) 회를 썰었다.";
+        skill.MaxPP = 10;
+        skill.PP = skill.MaxPP;
+        skill.Power = 1.4f;
+        skill.Accuracy = 1.0f;
+    }
+    void None(Skill skill) 
     {
         skill.AttackType = AttackType.Nomal;
         skill.Name = "";
@@ -165,5 +218,7 @@ partial class SkillManager
         skill.Power = 0f;
         skill.Accuracy = 0f;
     }
+
+
 
 }

@@ -71,5 +71,7 @@ internal class Story1 : StoryManager
         Thread.Sleep(5000);
         Program.animation.FoldScroll(10, 0);
         Thread.Sleep(1000);
+        Program.storyManager.SP++;
+        Program.hideout.DrawDisplay();
     }
 }

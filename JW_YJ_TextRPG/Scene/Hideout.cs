@@ -74,6 +74,10 @@ internal class Hideout
             {
                 if (Program.storyManager.SP >= 4)
                 {
+                    if (Program.storyManager.SP == 4)
+                    {
+                        Program.storyManager.SP++;
+                    }
                     isSelect1 = true;
                     Console.CursorVisible = false;
                     Program.battle.isTraining = true;

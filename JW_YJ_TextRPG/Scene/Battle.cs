@@ -30,7 +30,10 @@ internal class Battle
             isFaster = false;
         }
         if (Program.storyManager.SP == 3)
+        {
             enemy.Atk = 10000;
+            enemy.Hp = 300;
+        }
         DrawDisplay(Unit);
         Program.animation.DrawTextSlowly(46, 23, $"{enemy.Name}이(가) 모습을 드러냈다!", "White");
         Thread.Sleep(2000);
@@ -569,11 +572,15 @@ internal class Battle
     {
         if (isTraining == false)
             Program.storyManager.SP++;
+        if (enemy.Hp <= 0 && enemy.Name == "상어")
+            Program.storyManager.SP = 6;
         SkillManager.SM.FinishBattle();
         Console.Clear();
         Program.animation.BiggerBox(32, 5);
         Program.animation.OpenBox(55, 12);
         Program.animation.DrawTextSlowly(39, 11, $"당신은 {totalGold}의 골드와 {totalExp}의 경험치를 흭득했습니다!", "Blue");
+        Program.player.Gold += totalGold;
+        Program.player.Exp += totalExp;
         isTraining = false;
         Thread.Sleep(5000);
         Program.animation.SmallerBox(32, 5);

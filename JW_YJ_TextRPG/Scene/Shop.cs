@@ -177,7 +177,7 @@ class Shop
 
     void AddMoreItems()
     {
-        if (moreAdditem == false && Program.storyManager.SP >= 3)
+        if (moreAdditem == false && Program.storyManager.SP >= 4)
         {
             moreAdditem = true;
             shopItemList.Add(new Item(SKillType.BiteDeep));

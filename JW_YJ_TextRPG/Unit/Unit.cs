@@ -5,7 +5,6 @@
     Shark,
     Turtle,
     Angler,
-    Debug = 100
 }
 
 internal class Unit
@@ -51,15 +50,15 @@ internal class Unit
     public List<Skill> SkillList { get { return skillList; } set { skillList = value; } }
     public List<Buff> BuffList { get { return debuffList; } set { debuffList = value; } }
 
-
-    public Unit(UnitType unitType) // 생성시 데이터에 맞게 불러옴
+    // 생성할때 만들 유닛 타입
+    public Unit(UnitType unitType) 
     {
         this.unitType = unitType;
         UnitManager.UM.ChangeMonsterData(this);
     }
 
-
-    public bool Attack(int skillListNum, Unit taget) //  이걸로 공격! 불값은 pp가 0이면 false 리턴
+    // 이걸로 공격! 불값은 pp가 0이면 false 리턴
+    public bool Attack(int skillListNum, Unit taget) 
     {
         if (skillList[skillListNum - 1].PP <= 0)
             return false;
@@ -69,6 +68,7 @@ internal class Unit
         return true;
     }
 
+    // 아이템 사용
     public bool UseItem(int Num, Unit taget)
     {
         bool result = itemList[Num - 1].Use(taget);

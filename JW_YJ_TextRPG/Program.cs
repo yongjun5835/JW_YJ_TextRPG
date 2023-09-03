@@ -49,43 +49,5 @@ namespace JW_YJ_TextRPG
             createPlayer.DrawDisplay();
         }
 
-        static void TestBuff()
-        {
-            Unit taget = new Unit(UnitType.Scomber);
-            Unit unit1 = new Unit(UnitType.Player);
-            Unit unit2 = new Unit(UnitType.Scomber);
-            Unit unit3 = new Unit(UnitType.Shark);
-            Unit unit4 = new Unit(UnitType.Turtle);
-            Unit unit5 = new Unit(UnitType.Angler);
-
-            int tempHp = taget.Hp;
-
-            SkillManager.SM.AddSkill(taget, SKillType.BubbleBeam);
-            SkillManager.SM.AddSkill(taget, SKillType.IcePunch);
-            SkillManager.SM.AddSkill(taget, SKillType.Surf);
-            SkillManager.SM.AddSkill(taget, SKillType.WaterPulse);
-
-
-            unit3.Attack(2, unit2);
-            unit2.Attack(2, unit3);
-
-            taget.Def = 100;
-
-            Console.WriteLine($"공격한 턴 HP :{taget.Hp} / {tempHp}");
-            SkillManager.SM.TurnEvent();
-            Console.WriteLine($"+1 턴 HP :{taget.Hp} / {tempHp}");
-            SkillManager.SM.TurnEvent();
-            Console.WriteLine($"+2 턴 HP :{taget.Hp} / {tempHp}");
-            SkillManager.SM.TurnEvent();
-            Console.WriteLine($"+3 턴 HP :{taget.Hp} / {tempHp}");
-
-        }
-
-        static void DebugMod()
-        {
-            player = new Unit(UnitType.Debug);
-        }
     }
-
-
 }

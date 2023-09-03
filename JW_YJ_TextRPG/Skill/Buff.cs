@@ -21,6 +21,7 @@
         }
     }
 
+    // 
     public Buff(Unit taget, int effectTurn, AttackType atkType, float percent)
     {
         initialValue = percent;
@@ -48,7 +49,7 @@
                 taget.Def -= buffValue;
                 break;
             default:
-                Console.WriteLine("디버프 어택 타입 오류입니다.");
+                Console.WriteLine("AttackType enum 위치 오류");
                 Console.ReadLine();
                 break;
         }
@@ -58,6 +59,7 @@
         SkillManager.SM.finishBattle += this.EffectOff;
     }
 
+    // 이펙트 강제 종료
     public void EffectOff()
     {
         isEffectOn = false;
@@ -86,6 +88,7 @@
         }
     }
 
+    // 1턴 제거
     public void DecreaseTurn()
     {
         EffectTurn--;
@@ -95,7 +98,8 @@
         }
     }
 
-    bool HaveSameEffect() // 중복 효과는 기간만 연장
+    // 중복 효과는 기간만 연장
+    bool HaveSameEffect() 
     {
         foreach (var buff in taget.BuffList)
         {

@@ -39,14 +39,12 @@ namespace JW_YJ_TextRPG
             stories.Add(story2);
             stories.Add(story3);
             stories.Add(story4);
+            stories.Add(story5);
             stories.Add(bossStory);
 
             Console.CursorVisible = false;
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
-
-            hideout.DrawDisplay();
-            bossStory.DrawDisplay();
 
             createPlayer.DrawDisplay();
         }

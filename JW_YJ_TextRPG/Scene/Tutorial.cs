@@ -42,6 +42,8 @@ internal class Tutorial
                 Thread.Sleep(1000);
                 isSelect1 = true;
                 Console.CursorVisible = false;
+                Program.storyManager.SP++;
+                Program.hideout.DrawDisplay();
             }
             else
             {

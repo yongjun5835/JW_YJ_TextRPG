@@ -121,95 +121,113 @@ internal class BossBattle
 
         if (enemy.Hp <= 0)
         {
+            ClearInfo();
+            Program.animation.DrawTextSlowly(64, 2, $"당신은 낚시꾼을 쓰러뜨렸습니다!", "Blue");
+            Thread.Sleep(2000);
+            ClearInfo();
+            Program.animation.DrawTextSlowly(64, 2, $"낚시꾼은 당신의 한 끼 식사가 되었습니다!", "Blue");
+            Thread.Sleep(2000);
             // 엔딩 1로
         }
         else if (Program.player.Hp <= 0)
         {
+            ClearInfo();
+            Program.animation.DrawTextSlowly(64, 2, $"당신은 낚시꾼에게 잡히고 말았습니다.", "Red");
+            Thread.Sleep(2000);
+            ClearInfo();
+            Program.animation.DrawTextSlowly(64, 2, $"당신은 낚시꾼의 한 끼 식사가 되었습니다.", "Red");
+            Thread.Sleep(2000);
             // 엔딩 2로
         }
     }
 
     public void PlayerPhase()
     {
-        if (input == "1")
+        if (Program.player.Hp > 0)
         {
-            Program.player.Attack(1, enemy);
-            Console.Clear();
-            DrawDisplay();
-            DrawAngler("White");
-            Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[0].UseComment}", "");
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-        }
-        else if (input == "2")
-        {
-            Program.player.Attack(2, enemy);
-            Console.Clear();
-            DrawDisplay();
-            DrawAngler("White");
-            Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[1].UseComment}", "");
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-        }
-        else if (input == "3")
-        {
-            Program.player.Attack(3, enemy);
-            Console.Clear();
-            DrawDisplay();
-            DrawAngler("White");
-            Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[2].UseComment}", "");
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-        }
-        else if (input == "4")
-        {
-            Program.player.Attack(4, enemy);
-            Console.Clear();
-            DrawDisplay();
-            DrawAngler("White");
-            Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[3].UseComment}", "");
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
-            DrawAngler("Red");
-            Thread.Sleep(500);
-            DrawAngler("White");
-            Thread.Sleep(500);
+            if (input == "1")
+            {
+                Program.player.Attack(1, enemy);
+                Console.Clear();
+                DrawDisplay();
+                DrawAngler("White");
+                Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[0].UseComment}", "");
+                DrawAngler("Red");
+                Thread.Sleep(500);
+                DrawAngler("White");
+                Thread.Sleep(500);
+                DrawAngler("Red");
+                Thread.Sleep(500);
+                DrawAngler("White");
+                Thread.Sleep(500);
+            }
+            else if (input == "2")
+            {
+                Program.player.Attack(2, enemy);
+                Console.Clear();
+                DrawDisplay();
+                DrawAngler("White");
+                Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[1].UseComment}", "");
+                DrawAngler("Red");
+                Thread.Sleep(500);
+                DrawAngler("White");
+                Thread.Sleep(500);
+                DrawAngler("Red");
+                Thread.Sleep(500);
+                DrawAngler("White");
+                Thread.Sleep(500);
+            }
+            else if (input == "3")
+            {
+                Program.player.Attack(3, enemy);
+                Console.Clear();
+                DrawDisplay();
+                DrawAngler("White");
+                Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[2].UseComment}", "");
+                DrawAngler("Red");
+                Thread.Sleep(500);
+                DrawAngler("White");
+                Thread.Sleep(500);
+                DrawAngler("Red");
+                Thread.Sleep(500);
+                DrawAngler("White");
+                Thread.Sleep(500);
+            }
+            else if (input == "4")
+            {
+                Program.player.Attack(4, enemy);
+                Console.Clear();
+                DrawDisplay();
+                DrawAngler("White");
+                Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[3].UseComment}", "");
+                DrawAngler("Red");
+                Thread.Sleep(500);
+                DrawAngler("White");
+                Thread.Sleep(500);
+                DrawAngler("Red");
+                Thread.Sleep(500);
+                DrawAngler("White");
+                Thread.Sleep(500);
+            }
         }
     }
 
     public void EnemyPhase()
     {
-        int index = rand.Next(1, 5);
-        enemy.Attack(index, Program.player);
-        Console.Clear();
-        DrawAngler("White");
-        DrawDisplay();
-        ClearInfo();
-        Program.animation.DrawTextSlowly(64, 2, $"낚시꾼은 {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "");
-        Thread.Sleep(2000);
-        ClearInfo();
-        Program.animation.DrawTextSlowly(64, 2, $"나의 체력은 {Program.player.Hp}남았다.", "");
-        Thread.Sleep(2000);
+        if (enemy.Hp > 0)
+        {
+            int index = rand.Next(1, 5);
+            enemy.Attack(index, Program.player);
+            Console.Clear();
+            DrawAngler("White");
+            DrawDisplay();
+            ClearInfo();
+            Program.animation.DrawTextSlowly(64, 2, $"낚시꾼은 {enemy.SkillList[index - 1].Name}을(를) 사용했다!", "");
+            Thread.Sleep(2000);
+            ClearInfo();
+            Program.animation.DrawTextSlowly(64, 2, $"나의 체력은 {Program.player.Hp}남았다.", "");
+            Thread.Sleep(2000);
+        }
     }
 
     public void DrawDisplay()

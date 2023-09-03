@@ -1,4 +1,6 @@
 ﻿
+using System.Diagnostics;
+
 partial class UnitManager
 {
     public static UnitManager UM;
@@ -13,6 +15,9 @@ partial class UnitManager
         {
             case UnitType.Player:
                 Player(unit);
+                break;
+            case UnitType.Debug:
+                this.Dubug(unit);
                 break;
             case UnitType.Scomber:
                 Scomber(unit);

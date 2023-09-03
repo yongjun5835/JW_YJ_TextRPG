@@ -4,7 +4,8 @@
     Scomber = 10,
     Shark,
     Turtle,
-    Angler
+    Angler,
+    Debug = 100
 }
 
 internal class Unit
@@ -65,4 +66,6 @@ internal class Unit
         this.skillList[skillListNum - 1].Use(this, taget);
         return true;
     }
+
+
 }

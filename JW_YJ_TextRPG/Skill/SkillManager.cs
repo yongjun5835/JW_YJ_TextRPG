@@ -41,13 +41,26 @@ partial class SkillManager
                 Console.WriteLine("스킬 중복; 스킬매니저 AddSkill 대사 수정");
                 Console.ReadLine();
 
+                
                 return false;
             }
+        }
+
+        // none 체크
+        for (int i = 0; i < unit.SkillList.Count; i++)
+        {
+            if (unit.SkillList[i].SkillType != SKillType.None)
+                continue;
+
+            changeListNum = i;
+            break;
         }
 
         // 초과 체크
         while (unit.SkillList.Count >= 4 && changeListNum == -1)
         {
+
+
             Console.WriteLine("어떤 스킬을 교체 할까?");
             for (int i = 0; i < unit.SkillList.Count; i++)
             {
@@ -155,6 +168,4 @@ partial class SkillManager
 
         }
     }
-
-
 }

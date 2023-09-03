@@ -17,6 +17,22 @@
         unit.SkillList.Add(new AttackSkill(SKillType.None));
     }
 
+    void Dubug(Unit unit)
+    {
+        unit.Hp = 100;
+        unit.MaxHp = 100;
+        unit.Atk = 50;
+        unit.Def = 100;
+        unit.Spd = 100;
+        unit.Accuracy = 100;
+        unit.Dodge = 100; 
+        SkillManager.SM.AddSkill(unit, SKillType.WaterPulse);
+        SkillManager.SM.AddSkill(unit, SKillType.Surf);
+        SkillManager.SM.AddSkill(unit, SKillType.Splash);
+        SkillManager.SM.AddSkill(unit, SKillType.BiteDeep);
+
+    }
+
     void Scomber(Unit unit)
     {
         unit.Name = "고등어";

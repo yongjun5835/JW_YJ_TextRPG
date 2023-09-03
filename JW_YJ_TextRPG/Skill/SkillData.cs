@@ -4,12 +4,13 @@
     WaterCanon,
     BubbleBeam,
     IceBeam,
-    BiteDeep,
     Splash,
     WaterPulse,
     IcePunch,
     Surf,
     TailWhip = 100, // 버프 스킬
+    BiteDeep,
+
 
     None
 }

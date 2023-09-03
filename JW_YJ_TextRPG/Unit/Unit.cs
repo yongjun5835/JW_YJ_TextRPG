@@ -16,7 +16,11 @@ internal class Unit
     protected int maxHp = 100;
     protected int atk= 10;
     protected int def = 1;
-    protected int speed = 1; // 스피드
+    protected int speed = 1; // 스피드 치어3, 유어2, 성어1
+    protected int habitat = 0; // 1태평양, 2대서양, 3인도양
+    protected int gold = 0;
+    protected int exp = 0;
+    protected int level = 1;
 
     protected int accuracy = 1; // 명중
     protected int dodge = 1; // 회피
@@ -31,6 +35,10 @@ internal class Unit
     public int Atk { get { return atk; } set { atk = value; } }
     public int Def { get { return def; } set { def = value; } }
     public int Spd { get { return speed; } set { speed = value; } }
+    public int Habitat { get { return habitat; } set { habitat = value; } }
+    public int Gold { get { return gold; } set { gold = value; } }
+    public int Exp { get { return exp; } set { exp = value; } }
+    public int Level { get { return level; } set { level = value; } }
 
     public int Accuracy { get { return accuracy; } set { accuracy = value; } }
     public int Dodge { get { return dodge; } set { dodge = value; } }

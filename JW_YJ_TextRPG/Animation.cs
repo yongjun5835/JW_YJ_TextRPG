@@ -183,4 +183,77 @@ internal class Animation
         Console.Clear();
         Thread.Sleep(400);
     }
+
+    public void OpenBox(int x, int y)
+    {
+        Program.ui.DrawText(x, y + 0, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 1, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 2, " ━━━━━━━━━━━━━━　", "White");
+        Program.ui.DrawText(x, y + 3, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 4, "┣━━━━━━##━━━━━━┫", "White");
+        Program.ui.DrawText(x, y + 5, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 6, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 7, "┗━━━━━━━━━━━━━━┛", "White");
+        Thread.Sleep(2000);
+
+        Program.ui.DrawText(x, y + 0, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 1, " ━━━━━━━━━━━━━━　", "White");
+        Program.ui.DrawText(x, y + 2, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 3, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 4, "┣━━━━━━##━━━━━━┫", "White");
+        Program.ui.DrawText(x, y + 5, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 6, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 7, "┗━━━━━━━━━━━━━━┛", "White");
+        Thread.Sleep(200);
+
+        Program.ui.DrawText(x, y + 0, " ━━━━━━━━━━━━━━　", "White");
+        Program.ui.DrawText(x, y + 1, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 2, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 3, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 4, "┣━━━━━━##━━━━━━┫", "White");
+        Program.ui.DrawText(x, y + 5, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 6, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 7, "┗━━━━━━━━━━━━━━┛", "White");
+        Thread.Sleep(200);
+
+        Program.ui.DrawText(x, y + 0, " ━━━━━━━━━━━━━━　", "gray");
+        Program.ui.DrawText(x, y + 1, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 2, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 3, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 4, "┣━━━━━━##━━━━━━┫", "White");
+        Program.ui.DrawText(x, y + 5, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 6, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 7, "┗━━━━━━━━━━━━━━┛", "White");
+        Thread.Sleep(200);
+
+        Program.ui.DrawText(x, y + 0, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 1, " ━━━━━━━━━━━━━━　", "gray");
+        Program.ui.DrawText(x, y + 2, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 3, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 4, "┣━━━━━━##━━━━━━┫", "White");
+        Program.ui.DrawText(x, y + 5, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 6, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 7, "┗━━━━━━━━━━━━━━┛", "White");
+        Thread.Sleep(200);
+
+        Program.ui.DrawText(x, y + 0, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 1, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 2, " ━━━━━━━━━━━━━━　", "gray");
+        Program.ui.DrawText(x, y + 3, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 4, "┣━━━━━━##━━━━━━┫", "White");
+        Program.ui.DrawText(x, y + 5, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 6, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 7, "┗━━━━━━━━━━━━━━┛", "White");
+        Thread.Sleep(200);
+
+        Program.ui.DrawText(x, y + 0, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 1, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 2, "　　　　　　　　　", "White");
+        Program.ui.DrawText(x, y + 3, " ━━━━━━━━━━━━━━　", "gray");
+        Program.ui.DrawText(x, y + 4, "┣━━━━━━##━━━━━━┫", "White");
+        Program.ui.DrawText(x, y + 5, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 6, "┃　　　　　　　┃", "White");
+        Program.ui.DrawText(x, y + 7, "┗━━━━━━━━━━━━━━┛", "White");
+        Thread.Sleep(200);
+    }
 }

@@ -1,6 +1,4 @@
-﻿
-
-class Skill
+﻿class Skill
 {
     protected SKillType skillType;
     protected AttackType attackType;
@@ -52,7 +50,6 @@ class Skill
     }
 
 }
-
 
 class AttackSkill : Skill
 {

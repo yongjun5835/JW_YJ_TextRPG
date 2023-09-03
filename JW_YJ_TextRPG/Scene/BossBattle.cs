@@ -127,7 +127,7 @@ internal class BossBattle
             ClearInfo();
             Program.animation.DrawTextSlowly(64, 2, $"낚시꾼은 당신의 한 끼 식사가 되었습니다!", "Blue");
             Thread.Sleep(2000);
-            // 엔딩 1로
+            Program.ending.Ending1();
         }
         else if (Program.player.Hp <= 0)
         {
@@ -137,7 +137,7 @@ internal class BossBattle
             ClearInfo();
             Program.animation.DrawTextSlowly(64, 2, $"당신은 낚시꾼의 한 끼 식사가 되었습니다.", "Red");
             Thread.Sleep(2000);
-            // 엔딩 2로
+            Program.ending.Ending2();
         }
     }
 

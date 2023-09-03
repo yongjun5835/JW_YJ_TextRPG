@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -122,5 +123,40 @@ internal class CreatePlayer
         Thread.Sleep(3000);
         Program.animation.FoldScroll(10, 0);
         Thread.Sleep(1000);
+
+        if (Program.player.Habitat == "태평양")
+        {
+            Program.player.Def = 10;
+        }
+        else if (Program.player.Habitat == "대서양")
+        {
+            Program.player.Def = 5;
+        }
+        else if (Program.player.Habitat == "인도양")
+        {
+            Program.player.Def = 1;
+        }
+
+        if (Program.player.Grow == "치어")
+        {
+            Program.player.MaxHp = 30;
+            Program.player.Hp = 30;
+            Program.player.Spd = 5;
+        }
+        else if (Program.player.Grow == "유어")
+        {
+            Program.player.MaxHp = 60;
+            Program.player.Hp = 60;
+            Program.player.Spd = 3;
+        }
+        else if (Program.player.Grow == "성어")
+        {
+            Program.player.MaxHp = 90;
+            Program.player.Hp = 90;
+            Program.player.Spd = 1;
+        }
+
+        Program.intro.DrawDisplay();
+        Program.tutorial.DrawDisplay();
     }
 }

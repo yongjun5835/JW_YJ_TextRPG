@@ -5,7 +5,7 @@
     {
         unit.Hp = 30;
         unit.MaxHp = 30;
-        unit.Atk = 5;
+        unit.Atk = 40;
         unit.Def = 2;
         unit.Spd = 5;
         unit.Accuracy = 3;

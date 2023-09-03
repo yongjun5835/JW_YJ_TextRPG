@@ -33,7 +33,7 @@ namespace JW_YJ_TextRPG
             {
                 player.Def = 5;
             }
-            else  if (player.Habitat == "인도양")
+            else if (player.Habitat == "인도양")
             {
                 player.Def = 1;
             }
@@ -71,7 +71,7 @@ namespace JW_YJ_TextRPG
             Unit unit4 = new Unit(UnitType.Turtle);
             Unit unit5 = new Unit(UnitType.Angler);
 
-            int tempHp =taget.Hp;
+            int tempHp = taget.Hp;
 
             SkillManager.SM.AddSkill(taget, SKillType.BubbleBeam);
             SkillManager.SM.AddSkill(taget, SKillType.IcePunch);
@@ -92,6 +92,11 @@ namespace JW_YJ_TextRPG
             SkillManager.SM.TurnEvent();
             Console.WriteLine($"+3 턴 HP :{taget.Hp} / {tempHp}");
 
+        }
+
+        static void DebugMod()
+        {
+            player = new Unit(UnitType.Debug);
         }
     }
 

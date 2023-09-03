@@ -18,7 +18,6 @@ class Shop
     public void EnterShop()
     {
         AddMoreItems();
-        Program.animation.UnfoldScroll(10, 0);
         Program.ui.DrawBox(21, 4, 45, 22, "Gray");
 
         while (true)
@@ -95,7 +94,6 @@ class Shop
             }
             if (input <= shopItemList.Count && input > 0)
             {
-                Program.player.Gold += 1000;
                 txt = Buyitem(Program.player, shopItemList[input - 1]);
                 Console.SetCursorPosition(68, 23);
                 Console.Write(txt);

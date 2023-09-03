@@ -541,6 +541,10 @@ internal class Battle
             ChoicePhase();
         else if (Program.player.Hp <= 0)
         {
+            if (Program.storyManager.SP == 3)
+            {
+                Program.storyManager.SP++;
+            }
             Console.Clear();
             Program.animation.SmallerBox(32, 5);
             Thread.Sleep(1000);

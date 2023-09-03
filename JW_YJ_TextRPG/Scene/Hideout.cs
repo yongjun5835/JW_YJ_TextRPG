@@ -35,7 +35,10 @@ internal class Hideout
         Program.ui.DrawText(67, 12, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
         Program.ui.DrawText(77, 14, "[3] 스킬관리", "White");
         Program.ui.DrawText(67, 16, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
-        Program.ui.DrawText(77, 18, "[4] 트레이닝", "White");
+        if (Program.storyManager.SP >= 4)
+            Program.ui.DrawText(77, 18, "[4] 트레이닝", "White");
+        else
+            Program.ui.DrawText(77, 18, "[4] 트레이닝", "Gray");
         Program.ui.DrawText(67, 20, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
 
         Program.ui.DrawBox(66, 21, 35, 5, "Gray");
@@ -49,24 +52,40 @@ internal class Hideout
             input = Console.ReadLine();
             if (input == "1")
             {
-                Program.storyManager.Progress();
                 isSelect1 = true;
                 Console.CursorVisible = false;
+                Program.animation.FoldScroll(10, 0);
+                Thread.Sleep(1000);
+                Program.storyManager.Progress();
             }
             else if (input == "2")
             {
                 isSelect1 = true;
                 Console.CursorVisible = false;
+                Program.animation.FoldScroll(10, 0);
             }
             else if (input == "3")
             {
                 isSelect1 = true;
                 Console.CursorVisible = false;
+                Program.animation.FoldScroll(10, 0);
             }
             else if (input == "4")
             {
-                isSelect1 = true;
-                Console.CursorVisible = false;
+                if (Program.storyManager.SP >= 4)
+                {
+                    isSelect1 = true;
+                    Console.CursorVisible = false;
+                    Program.battle.isTraining = true;
+                    Program.animation.FoldScroll(10, 0);
+                    Thread.Sleep(1000);
+                    Program.battle.StartPhase(UnitType.Turtle);
+                }
+                else
+                {
+                    Console.SetCursorPosition(68, 23);
+                    Console.Write("                               ");
+                }
             }
             else
             {

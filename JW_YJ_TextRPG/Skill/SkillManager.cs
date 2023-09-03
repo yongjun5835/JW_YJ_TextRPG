@@ -1,4 +1,6 @@
 ﻿
+using System.Security.Cryptography.X509Certificates;
+
 partial class SkillManager
 {
     public static SkillManager SM;
@@ -146,6 +148,18 @@ partial class SkillManager
             case SKillType.None:
                 None(skill);
                 break;
+            case SKillType.FastSpin: 
+                FastSpin(skill);
+                break;
+                case SKillType.WriggleWriggleSpin: 
+                WriggleWriggleSpin(skill);
+                break;
+            case SKillType.LookAtThisCan:
+                LookAtThisCan(skill);
+                break;
+                case SKillType.TunaSliced: 
+                TunaSliced(skill);
+                break;
             default:
                 break;
         }
@@ -172,43 +186,13 @@ partial class SkillManager
         }
     }
 
-    public void ChangeSkill(Unit unit)
+    // 교체만
+    public void ChangeSkillList(List<Skill>List, int to, int taget)
     {
         Skill temp;
-        int tagetIndex = -1;
 
-        while (true)
-        {
-            Console.WriteLine("첫 번째 스킬을 선택해주세요.");
-            for (int i = 0; i < unit.SkillList.Count; i++)
-            {
-                Console.Write($"{i + 1}. {unit.SkillList[i].Name}  ");
-            }
-            Console.WriteLine("0. 취소");
-            string inputKey = Console.ReadLine();
-            switch (inputKey)
-            {
-                case "1":
-                case "2":
-                case "3":
-                case "4":
-                    tagetIndex = int.Parse(inputKey) - 1;
-                    temp = unit.SkillList[tagetIndex];
-                    break;
-                case "0":
-                    Console.WriteLine("교체를 취소 한다!");
-                    Thread.Sleep(1000);
-                    return;
-                default:
-                    Console.WriteLine("그런 선택지는 없다!");
-                    Thread.Sleep(1000);
-                    break;
-            }
-
-        }
-
-
-
-
+        temp = List[taget];
+        List[taget] = List[to];
+        List[to] = temp;
     }
 }

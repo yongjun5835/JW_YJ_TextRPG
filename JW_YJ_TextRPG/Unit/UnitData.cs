@@ -92,8 +92,9 @@
         unit.Accuracy = 5;
         unit.Dodge = 5;
 
-        SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
-        SkillManager.SM.AddSkill(unit, SKillType.TailWhip);
-        SkillManager.SM.AddSkill(unit, SKillType.WaterCanon);
+        SkillManager.SM.AddSkill(unit, SKillType.FastSpin);
+        SkillManager.SM.AddSkill(unit, SKillType.WriggleWriggleSpin);
+        SkillManager.SM.AddSkill(unit, SKillType.TunaSliced);
+        SkillManager.SM.AddSkill(unit, SKillType.LookAtThisCan);
     }
 }

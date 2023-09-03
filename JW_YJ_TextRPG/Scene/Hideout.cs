@@ -69,6 +69,7 @@ internal class Hideout
             {
                 isSelect1 = true;
                 Console.CursorVisible = false;
+                SkillOffice(Program.player.SkillList);
                 Program.animation.FoldScroll(10, 0);
             }
             else if (input == "4")
@@ -99,5 +100,18 @@ internal class Hideout
             }
         }
         Thread.Sleep(10000000);
+    }
+
+    void SkillOffice(List<Skill> inven)
+    {
+        for (int i = 5; i < 25; i++) // 상점 왼쪽편 그림
+        {
+            Program.ui.DrawText(22, i, "                                           ", "Gray");
+        }
+        Program.ui.DelScrollOptionList();
+        Program.ui.DrawLeftScreen_SkillList(inven);
+        Program.ui.DelScrollSelectBlock("");
+
+        Console.ReadLine();
     }
 }

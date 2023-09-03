@@ -19,8 +19,6 @@ namespace JW_YJ_TextRPG
             new SkillManager();
             new UnitManager();
 
-            TestBuff();
-
             Console.CursorVisible = false;
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;

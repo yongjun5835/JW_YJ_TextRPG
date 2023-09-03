@@ -14,7 +14,6 @@
     TailWhip = 100, // 버프 스킬
     LookAtThisCan,
     BiteDeep,
-    LookAtThisCan,
 
     None
 }

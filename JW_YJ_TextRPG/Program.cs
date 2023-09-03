@@ -17,6 +17,9 @@ namespace JW_YJ_TextRPG
         public static Unit player = new Unit(UnitType.Player);
         public static Hideout hideout = new Hideout();
         public static Story1 story1 = new Story1();
+        public static Story2 story2 = new Story2();
+        public static Story3 story3 = new Story3();
+        public static Story4 story4 = new Story4();
         public static StoryManager storyManager = new StoryManager();
 
         public static List<StoryManager> stories = new List<StoryManager>();
@@ -36,6 +39,9 @@ namespace JW_YJ_TextRPG
             Console.ReadLine();
 
             stories.Add(story1);
+            stories.Add(story2);
+            stories.Add(story3);
+            stories.Add(story4);
 
             Console.CursorVisible = false;
             Console.InputEncoding = Encoding.Unicode;

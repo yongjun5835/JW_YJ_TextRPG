@@ -34,10 +34,6 @@ namespace JW_YJ_TextRPG
             new UnitManager();
             new ItemManager();
 
-
-            Shop shop = new Shop();
-
-
             stories.Add(story1);
             stories.Add(story2);
             stories.Add(story3);
@@ -47,7 +43,7 @@ namespace JW_YJ_TextRPG
             Console.CursorVisible = false;
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
-
+            hideout.DrawDisplay();
             bossStory.DrawDisplay();
 
             createPlayer.DrawDisplay();

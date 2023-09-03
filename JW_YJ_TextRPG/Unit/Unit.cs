@@ -4,7 +4,8 @@
     Scomber = 10,
     Shark,
     Turtle,
-    Angler
+    Angler,
+    Debug = 100
 }
 
 internal class Unit

@@ -25,43 +25,44 @@ namespace JW_YJ_TextRPG
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            createPlayer.DrawDisplay();
-            if (player.Habitat == "태평양")
-            {
-                player.Def = 10;
-            }
-            else if (player.Habitat == "대서양")
-            {
-                player.Def = 5;
-            }
-            else  if (player.Habitat == "인도양")
-            {
-                player.Def = 1;
-            }
+            //createPlayer.DrawDisplay();
+            //if (player.Habitat == "태평양")
+            //{
+            //    player.Def = 10;
+            //}
+            //else if (player.Habitat == "대서양")
+            //{
+            //    player.Def = 5;
+            //}
+            //else  if (player.Habitat == "인도양")
+            //{
+            //    player.Def = 1;
+            //}
 
-            if (player.Grow == "치어")
-            {
-                player.MaxHp = 30;
-                player.Hp = 30;
-                player.Spd = 5;
-            }
-            else if (player.Grow == "유어")
-            {
-                player.MaxHp = 60;
-                player.Hp = 60;
-                player.Spd = 3;
-            }
-            else if (player.Grow == "성어")
-            {
-                player.MaxHp = 90;
-                player.Hp = 90;
-                player.Spd = 1;
-            }
+            //if (player.Grow == "치어")
+            //{
+            //    player.MaxHp = 30;
+            //    player.Hp = 30;
+            //    player.Spd = 5;
+            //}
+            //else if (player.Grow == "유어")
+            //{
+            //    player.MaxHp = 60;
+            //    player.Hp = 60;
+            //    player.Spd = 3;
+            //}
+            //else if (player.Grow == "성어")
+            //{
+            //    player.MaxHp = 90;
+            //    player.Hp = 90;
+            //    player.Spd = 1;
+            //}
 
             intro.DrawDisplay();
             tutorial.DrawDisplay();
             story1.DrawDisplay();
             hideout.DrawDisplay();
+            TestBuff();
         }
 
         static void TestBuff()

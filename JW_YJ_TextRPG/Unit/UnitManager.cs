@@ -14,6 +14,8 @@ partial class UnitManager
             case UnitType.Player:
                 Player(unit);
                 break;
+            case UnitType.Debug:
+                Debug(unit)
             case UnitType.Scomber:
                 Scomber(unit);
                 break;

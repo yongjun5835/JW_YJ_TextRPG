@@ -38,7 +38,7 @@
         unit.Name = "고등어";
         unit.Hp = 90;
         unit.MaxHp = 90;
-        unit.Atk = 5;
+        unit.Atk = 20;
         unit.Def = 2;
         unit.Spd = 3;
         unit.Accuracy = 3;
@@ -56,7 +56,7 @@
         unit.Name = "상어";
         unit.Hp = 180;
         unit.MaxHp = 180;
-        unit.Atk = 10;
+        unit.Atk = 40;
         unit.Def = 3;
         unit.Spd = 10;
         unit.Accuracy = 5;
@@ -74,7 +74,7 @@
         unit.Name = "거북이";
         unit.Hp = 270;
         unit.MaxHp = 270;
-        unit.Atk = 5;
+        unit.Atk = 10;
         unit.Def = 10;
         unit.Spd = 1;
         unit.Accuracy = 1;
@@ -92,7 +92,7 @@
         unit.Name = "낚시꾼";
         unit.Hp = 450;
         unit.MaxHp = 450;
-        unit.Atk = 20;
+        unit.Atk = 60;
         unit.Def = 5;
         unit.Spd = 5;
         unit.Accuracy = 5;

@@ -250,4 +250,8 @@ internal class UI
         Console.SetCursorPosition(x + 31, y);
         Console.Write("|");
     }
+
+    void dellef()
+    {
+    }
 }

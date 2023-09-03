@@ -27,6 +27,7 @@ internal class Unit
     protected int accuracy = 1; // 명중
     protected int dodge = 1; // 회피
 
+    List<Item> itemList = new List<Item>(); // 아이템
     List<Skill> skillList = new List<Skill>(4); // 스킬
     List<Buff> debuffList = new List<Buff>(); // 디버프
 
@@ -46,6 +47,7 @@ internal class Unit
     public int Accuracy { get { return accuracy; } set { accuracy = value; } }
     public int Dodge { get { return dodge; } set { dodge = value; } }
 
+    public List<Item> ItemList { get { return itemList; } set { itemList = value; } }
     public List<Skill> SkillList { get { return skillList; } set { skillList = value; } }
     public List<Buff> BuffList { get { return debuffList; } set { debuffList = value; } }
 

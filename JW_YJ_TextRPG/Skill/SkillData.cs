@@ -8,13 +8,14 @@
     WaterPulse = 10,
     IcePunch,
     Surf,
-    TailWhip = 100, // 버프 스킬
-    BiteDeep,
-
-    FastSpin =200, // 플레이어 스킬
+    FastSpin = 50, // 플레이어 스킬
     WriggleWriggleSpin,
     LookAtThisCan,
     TunaSliced,
+    TailWhip = 100, // 버프 스킬
+    BiteDeep,
+
+
 
     None
 }

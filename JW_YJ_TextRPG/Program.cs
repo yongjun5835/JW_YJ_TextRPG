@@ -45,6 +45,7 @@ namespace JW_YJ_TextRPG
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
+            hideout.DrawDisplay();
             bossStory.DrawDisplay();
 
             createPlayer.DrawDisplay();

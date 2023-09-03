@@ -105,14 +105,102 @@ internal class Hideout
 
     void SkillOffice(List<Skill> inven)
     {
-        for (int i = 5; i < 25; i++) // 상점 왼쪽편 그림
+        while (true)
         {
-            Program.ui.DrawText(22, i, "                                           ", "Gray");
-        }
-        Program.ui.DelScrollOptionList();
-        Program.ui.DrawLeftScreen_SkillList(inven);
-        Program.ui.DelScrollSelectBlock("");
+            for (int i = 5; i < 25; i++) // 상점 왼쪽편 그림
+            {
+                Program.ui.DrawText(22, i, "                                           ", "Gray");
+            }
+            Program.ui.DelScrollOptionList();
+            Program.ui.DrawLeftScreen_SkillList(inven);
+            Program.ui.DelScrollSelectBlock("");
 
-        Console.ReadLine();
+            StringBuilder txt;
+            Program.ui.DelScrollOptionList();
+            Program.ui.DrawText(76, 6, "[1] 스킬 교체", "White");
+            Program.ui.DrawText(73, 10, "[2] 기술 머신 사용", "White");
+            Program.ui.DrawText(77, 14, "[0] 돌아가기", "White");
+            Program.ui.DrawText(77, 18, "", "White");
+            if (int.TryParse(Console.ReadLine(), out int input) == false || input > 2)
+            {
+                Program.ui.DrawText(68, 23, $"다시 선택해주세요.", "Red");
+                Thread.Sleep(1000);
+                Program.ui.DrawText(68, 23, "                            ", "");
+                Console.SetCursorPosition(68, 23);
+                continue;
+            }
+            else if (input == 1)
+            {
+                SkillChangeMsg(inven);
+            }
+            else if (input == 2)
+            {
+
+            }
+            else if (input == 0)
+            {
+
+                return;
+            }
+        }
+    }
+
+    void SkillChangeMsg(List<Skill> inven)
+    {
+        int first;
+        int second;
+
+        while (true)
+        {
+            Program.ui.DelScrollOptionList();
+            Program.ui.DrawText(70, 6, "교체할 스킬을 선택해주세요.", "White");
+            Program.ui.DrawText(73, 10, "[0] 돌아가기", "White");
+            Program.ui.DelScrollSelectBlock("첫번째 스킬 : ");
+
+
+
+            if (int.TryParse(Console.ReadLine(), out int input) == false || input -1 > inven.Count)
+            {
+                Program.ui.DrawText(68, 23, $"다시 선택해주세요.", "Red");
+                Thread.Sleep(1000);
+                Program.ui.DrawText(68, 23, "                            ", "");
+                Console.SetCursorPosition(68, 23);
+                continue;
+            }
+            else if (input == 0)
+            {
+
+                return;
+            }
+
+            first = input -1;
+            break;
+        }
+
+        while (true)
+        {
+            Program.ui.DelScrollOptionList();
+            Program.ui.DrawText(70, 6, "교체할 스킬을 선택해주세요.", "White");
+            Program.ui.DrawText(73, 10, "[0] 돌아가기", "White");
+            Program.ui.DelScrollSelectBlock("두번째 스킬 : ");
+
+            if (int.TryParse(Console.ReadLine(), out int input) == false || input > inven.Count)
+            {
+                Program.ui.DrawText(68, 23, $"다시 선택해주세요.", "Red");
+                Thread.Sleep(1000);
+                Program.ui.DrawText(68, 23, "                            ", "");
+                Console.SetCursorPosition(68, 23);
+                continue;
+            }
+            else if (input == 0)
+            {
+
+                return;
+            }
+            second = input -1;
+            break;
+        }
+
+        SkillManager.SM.ChangeSkillList(inven, first, second);
     }
 }

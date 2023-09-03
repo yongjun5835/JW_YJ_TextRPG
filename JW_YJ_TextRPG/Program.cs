@@ -24,6 +24,7 @@ namespace JW_YJ_TextRPG
         public static Story5 story5 = new Story5();
         public static BossStory bossStory = new BossStory();
         public static StoryManager storyManager = new StoryManager();
+        public static Ending ending = new Ending();
 
         public static List<StoryManager> stories = new List<StoryManager>();
 
@@ -48,40 +49,6 @@ namespace JW_YJ_TextRPG
             bossStory.DrawDisplay();
 
             createPlayer.DrawDisplay();
-            if (player.Habitat == "태평양")
-            {
-                player.Def = 10;
-            }
-            else if (player.Habitat == "대서양")
-            {
-                player.Def = 5;
-            }
-            else if (player.Habitat == "인도양")
-            {
-                player.Def = 1;
-            }
-
-            if (player.Grow == "치어")
-            {
-                player.MaxHp = 30;
-                player.Hp = 30;
-                player.Spd = 5;
-            }
-            else if (player.Grow == "유어")
-            {
-                player.MaxHp = 60;
-                player.Hp = 60;
-                player.Spd = 3;
-            }
-            else if (player.Grow == "성어")
-            {
-                player.MaxHp = 90;
-                player.Hp = 90;
-                player.Spd = 1;
-            }
-
-            intro.DrawDisplay();
-            tutorial.DrawDisplay();
         }
 
         static void TestBuff()

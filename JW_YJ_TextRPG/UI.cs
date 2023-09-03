@@ -321,20 +321,49 @@ internal class UI
 
     public void DelScrollOptionList()
     {
-        Program.ui.DrawText(66, 6, "                                   ", "White");
-        Program.ui.DrawText(66, 10, "                                   ", "White");
-        Program.ui.DrawText(66, 14, "                                   ", "White");
-        Program.ui.DrawText(66, 18, "                                   ", "White");
+        for (int i = 4; i < 21; i++)
+        {
+            Program.ui.DrawText(66, i, "                                   ", "White");
+        }
+
+        Program.ui.DrawText(67, 4, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
+        Program.ui.DrawText(67, 8, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
+        Program.ui.DrawText(67, 12, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
+        Program.ui.DrawText(67, 16, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
+        Program.ui.DrawText(67, 20, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
     }
 
     public void DelScrollLeftPart()
     {
-        for (int i = 5; i < 25; i++) 
+        for (int i = 5; i < 25; i++)
         {
             Program.ui.DrawText(22, i, "                                           ", "Gray");
         }
     }
 
+
+    public void Popup(List<Skill> skills)
+    {
+        int PosX = 50;
+        Program.ui.DrawText(PosX, 10, "┌──────────────────────────┐", "Gray");
+        Program.ui.DrawText(PosX, 11, "│        기술 목록         │", "Gray");
+        Program.ui.DrawText(PosX, 12, "│                          │", "Gray");
+        Program.ui.DrawText(PosX, 13, "│                          │", "Gray");
+        Program.ui.DrawText(PosX, 14, "│                          │", "Gray");
+        Program.ui.DrawText(PosX, 15, "│                          │", "Gray");
+        Program.ui.DrawText(PosX, 16, "│                          │", "Gray");
+        Program.ui.DrawText(PosX, 17, "│ 취소 0                   │", "Gray");
+        Program.ui.DrawText(PosX, 18, "│                          │", "Gray");
+        Program.ui.DrawText(PosX, 19, "└──────────────────────────┘", "Gray");
+
+        for (int i = 0; i < 4; i++)
+        {
+            Program.ui.DrawText(PosX+5, 13+i, $"{i+1}. {skills[i].Name}", "");
+        }
+
+        Program.ui.DrawText(PosX+2, 18, "선택 : ", "");
+
+    }
 
 
 }

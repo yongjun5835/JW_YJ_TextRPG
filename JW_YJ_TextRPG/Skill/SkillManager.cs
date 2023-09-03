@@ -19,11 +19,11 @@ partial class SkillManager
         if (roundTurn == null)
             return;
 
-        roundTurn(); 
+        roundTurn();
     }
 
     //디버프 모두 삭제
-    public void FinishBattle() 
+    public void FinishBattle()
     {
         finishBattle();
     }
@@ -41,7 +41,7 @@ partial class SkillManager
                 Console.WriteLine("스킬 중복; 스킬매니저 AddSkill 대사 수정");
                 Console.ReadLine();
 
-                
+
                 return false;
             }
         }
@@ -64,7 +64,7 @@ partial class SkillManager
             Console.WriteLine("어떤 스킬을 교체 할까?");
             for (int i = 0; i < unit.SkillList.Count; i++)
             {
-                Console.Write($"{i+1}. {unit.SkillList[i].Name}  ");
+                Console.Write($"{i + 1}. {unit.SkillList[i].Name}  ");
             }
             Console.WriteLine("0. 취소");
 
@@ -149,6 +149,7 @@ partial class SkillManager
         }
     }
 
+    //공격 타입별 대미지 감소
     public void CalcAttackType(Skill skill, Unit taget, ref int damage)
     {
         switch (skill.AttackType)
@@ -167,5 +168,45 @@ partial class SkillManager
                 break;
 
         }
+    }
+
+    public void ChangeSkill(Unit unit)
+    {
+        Skill temp;
+        int tagetIndex = -1;
+
+        while (true)
+        {
+            Console.WriteLine("첫 번째 스킬을 선택해주세요.");
+            for (int i = 0; i < unit.SkillList.Count; i++)
+            {
+                Console.Write($"{i + 1}. {unit.SkillList[i].Name}  ");
+            }
+            Console.WriteLine("0. 취소");
+            string inputKey = Console.ReadLine();
+            switch (inputKey)
+            {
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                    tagetIndex = int.Parse(inputKey) - 1;
+                    temp = unit.SkillList[tagetIndex];
+                    break;
+                case "0":
+                    Console.WriteLine("교체를 취소 한다!");
+                    Thread.Sleep(1000);
+                    return;
+                default:
+                    Console.WriteLine("그런 선택지는 없다!");
+                    Thread.Sleep(1000);
+                    break;
+            }
+
+        }
+
+
+
+
     }
 }

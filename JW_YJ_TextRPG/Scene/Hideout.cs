@@ -25,11 +25,11 @@ internal class Hideout
             Program.player.Level = 5;
 
         if (Program.player.Grow == "치어")
-            Program.player.MaxHp = 30 + 10 * Program.player.Level;
+            Program.player.MaxHp = 30 + 30 * Program.player.Level;
         else if (Program.player.Grow == "유어")
-            Program.player.MaxHp = 60 + 10 * Program.player.Level;
+            Program.player.MaxHp = 60 + 30 * Program.player.Level;
         else if (Program.player.Grow == "성어")
-            Program.player.MaxHp = 90 + 10 * Program.player.Level;
+            Program.player.MaxHp = 90 + 30 * Program.player.Level;
 
         Program.animation.FadeInOut(42, 10, 15, "은신처");
         Program.animation.UnfoldScroll(10, 0);

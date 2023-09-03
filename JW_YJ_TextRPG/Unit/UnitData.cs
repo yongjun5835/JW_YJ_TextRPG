@@ -36,8 +36,8 @@
     void Scomber(Unit unit)
     {
         unit.Name = "고등어";
-        unit.Hp = 30;
-        unit.MaxHp = 30;
+        unit.Hp = 90;
+        unit.MaxHp = 90;
         unit.Atk = 5;
         unit.Def = 2;
         unit.Spd = 3;
@@ -54,8 +54,8 @@
     void Shark(Unit unit)
     {
         unit.Name = "상어";
-        unit.Hp = 90;
-        unit.MaxHp = 90;
+        unit.Hp = 180;
+        unit.MaxHp = 180;
         unit.Atk = 10;
         unit.Def = 3;
         unit.Spd = 10;
@@ -72,8 +72,8 @@
     void Turtle(Unit unit)
     {
         unit.Name = "거북이";
-        unit.Hp = 150;
-        unit.MaxHp = 150;
+        unit.Hp = 270;
+        unit.MaxHp = 270;
         unit.Atk = 5;
         unit.Def = 10;
         unit.Spd = 1;
@@ -90,8 +90,8 @@
     void Angler(Unit unit)
     {
         unit.Name = "낚시꾼";
-        unit.Hp = 420;
-        unit.MaxHp = 420;
+        unit.Hp = 450;
+        unit.MaxHp = 450;
         unit.Atk = 20;
         unit.Def = 5;
         unit.Spd = 5;

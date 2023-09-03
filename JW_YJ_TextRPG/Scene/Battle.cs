@@ -64,6 +64,8 @@ internal class Battle
             }
             else if (input == "2")
             {
+                if (Program.storyManager.SP == 0)
+                    Program.storyManager.SP = 1;
                 Console.Clear();
                 Program.animation.SmallerBox(32, 5);
                 Thread.Sleep(1000);

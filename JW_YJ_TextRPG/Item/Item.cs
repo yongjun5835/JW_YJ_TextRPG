@@ -24,11 +24,11 @@
         taget.Power = data.Power;
         if ((int)sKillType < 10)
         {
-            taget.Gold = 200;
+            taget.Gold = 20;
         }
         else if ((int)sKillType < 20)
         {
-            taget.Gold = 400;
+            taget.Gold = 40;
         }
 
     }

@@ -36,6 +36,21 @@ internal class BossBattle
         Program.ui.DrawText(64, 9, "당신의 HP", "");
         Program.ui.DrawText(110, 9, $"{Program.player.Hp}/{Program.player.MaxHp}", "");
         Program.ui.DrawBox(62, 12, 58, 13, "Gray");
+        Program.ui.DrawText(64, 15, "[N]", "");
+        Program.ui.DrawText(68, 15, "| 스킬이름", "");
+        Program.ui.DrawText(105, 15, "| PP / MaxPP", "");
+        Program.ui.DrawText(64, 17, "[1]", "");
+        Program.ui.DrawText(68, 17, $"| {Program.player.SkillList[0].Name}", "");
+        Program.ui.DrawText(105, 17, $"| {Program.player.SkillList[0].PP} / {Program.player.SkillList[0].MaxPP}", "");
+        Program.ui.DrawText(64, 18, "[2]", "");
+        Program.ui.DrawText(68, 18, $"| {Program.player.SkillList[1].Name}", "");
+        Program.ui.DrawText(105, 18, $"| {Program.player.SkillList[1].PP} / {Program.player.SkillList[1].MaxPP}", "");
+        Program.ui.DrawText(64, 19, "[3]", "");
+        Program.ui.DrawText(68, 19, $"| {Program.player.SkillList[2].Name}", "");
+        Program.ui.DrawText(105, 19, $"| {Program.player.SkillList[2].PP} / {Program.player.SkillList[2].MaxPP}", "");
+        Program.ui.DrawText(64, 20, "[4]", "");
+        Program.ui.DrawText(68, 20, $"| {Program.player.SkillList[3].Name}", "");
+        Program.ui.DrawText(105, 20, $"| {Program.player.SkillList[3].PP} / {Program.player.SkillList[3].MaxPP}", "");
         Program.ui.DrawBox(62, 25, 58, 5, "Gray");
     }
 

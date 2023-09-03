@@ -1,26 +1,4 @@
-﻿enum SKillType // 스킬 이름
-{
-    BodySlam,
-    WaterCanon,
-    BubbleBeam,
-    IceBeam,
-    BiteDeep,
-    Splash,
-    TailWhip =100,
-
-    None
-}
-
-enum AttackType // 공격 방식
-{
-    Nomal = 0, // 일반 공격
-    Pierce, // 방어력 일부 무시
-    Cut, // 방어력이 약한 상대
-
-    Hp = 10,
-    Atk, // 디버프
-    Def
-}
+﻿
 
 class Skill
 {
@@ -60,7 +38,7 @@ class Skill
     public Skill(SKillType sKillType)  // 생성시 데이터에 맞게 불러옴
     {
         this.skillType = sKillType;
-        SkillManager.SM.ChangeSkillData(this);
+        SkillManager.SM.SetSkillData(this);
     }
 
     protected bool IsDodged(Unit user, Unit target) // 회피 여부

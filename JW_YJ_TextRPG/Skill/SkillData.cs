@@ -1,4 +1,30 @@
-﻿partial class SkillManager
+﻿enum SKillType // 스킬 이름
+{
+    BodySlam, // 공격 스킬
+    WaterCanon,
+    BubbleBeam,
+    IceBeam,
+    BiteDeep,
+    Splash,
+    WaterPulse,
+    IcePunch,
+    Surf,
+    TailWhip = 100, // 버프 스킬
+
+    None
+}
+
+enum AttackType // 공격 방식
+{
+    Nomal = 0, // 일반 공격
+    Pierce, // 방어력 일부 무시
+    Cut, // 방어력이 약한 상대
+    Hp = 10,// 디버프 Hp는 도트딜
+    Atk, 
+    Def
+}
+
+partial class SkillManager
 {
 
     void BodySlam(Skill skill)
@@ -91,9 +117,46 @@
         ((BuffSkill)skill).Percent = 5;
     }
 
-    void None(Skill skill)
+    void WaterPluse(Skill skill)
     {
-        skill.AttackType = AttackType.Hp;
+        skill.AttackType = AttackType.Nomal;
+        skill.Name = "물의 파동";
+        skill.Comment = "물의 진동으로 상대에게 공격한다.";
+        skill.UseComment = "은(는) 물에 진동을 일으켰다.";
+        skill.MaxPP = 20;
+        skill.PP = skill.MaxPP;
+        skill.Power = 1.2f;
+        skill.Accuracy = 0.9f;
+
+    }
+
+    void IcePunch(Skill skill)
+    {
+        skill.AttackType = AttackType.Nomal;
+        skill.Name = "냉동 펀치";
+        skill.Comment = "냉기를 담은 펀치로 상대를 공격한다.";
+        skill.UseComment = "은(는) 지느러미에 냉기를 담았다.";
+        skill.MaxPP = 10;
+        skill.PP = skill.MaxPP;
+        skill.Power = 1.0f;
+        skill.Accuracy = 1.1f;
+    }
+
+    void Surf(Skill skill)
+    {
+        skill.AttackType = AttackType.Nomal;
+        skill.Name = "파도 타기";
+        skill.Comment = "큰 파도를 일으켜 상대를 공격한다.";
+        skill.UseComment = "은(는) 파도를 일으켰다.";
+        skill.MaxPP = 15;
+        skill.PP = skill.MaxPP;
+        skill.Power = 0.9f;
+        skill.Accuracy = 1.0f;
+    }
+
+    void None(Skill skill) // 디버그용
+    {
+        skill.AttackType = AttackType.Nomal;
         skill.Name = "";
         skill.Comment = "";
         skill.MaxPP = 0;

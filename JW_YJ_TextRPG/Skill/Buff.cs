@@ -54,7 +54,8 @@
         }
 
         taget.BuffList.Add(this);
-        SkillManager.SM.RoundTurn += this.DecreaseTurn;
+        SkillManager.SM.roundTurn += this.DecreaseTurn;
+        SkillManager.SM.finishBattle += this.EffectOff;
     }
 
     public void EffectOff()
@@ -79,7 +80,7 @@
             if (buff == this)
             {
                 taget.BuffList.Remove(this);
-                SkillManager.SM.RoundTurn -= this.DecreaseTurn;
+                SkillManager.SM.roundTurn -= this.DecreaseTurn;
                 break;
             }
         }

@@ -555,6 +555,7 @@ internal class Battle
 
     public void Reward(int totalGold, int totalExp)
     {
+        SkillManager.SM.FinishBattle();
         Console.Clear();
         Program.animation.BiggerBox(32, 5);
         Program.animation.OpenBox(55, 12);

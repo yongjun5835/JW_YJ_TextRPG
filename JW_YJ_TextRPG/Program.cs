@@ -18,8 +18,9 @@ namespace JW_YJ_TextRPG
             new SkillManager();
             new UnitManager();
 
-            Console.CursorVisible = false;
             TestBuff();
+
+            Console.CursorVisible = false;
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
@@ -41,6 +42,12 @@ namespace JW_YJ_TextRPG
             Unit unit5 = new Unit(UnitType.Angler);
 
             int tempHp =taget.Hp;
+
+            SkillManager.SM.AddSkill(taget, SKillType.BubbleBeam);
+            SkillManager.SM.AddSkill(taget, SKillType.IcePunch);
+            SkillManager.SM.AddSkill(taget, SKillType.Surf);
+            SkillManager.SM.AddSkill(taget, SKillType.WaterPulse);
+
 
             unit3.Attack(2, unit2);
             unit2.Attack(2, unit3);

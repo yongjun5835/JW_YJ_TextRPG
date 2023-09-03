@@ -17,10 +17,11 @@ internal class Unit
     protected int atk= 10;
     protected int def = 1;
     protected int speed = 1; // 스피드 치어3, 유어2, 성어1
-    protected int habitat = 0; // 1태평양, 2대서양, 3인도양
+    protected string habitat = "태평양"; // 1태평양, 2대서양, 3인도양
     protected int gold = 0;
     protected int exp = 0;
     protected int level = 1;
+    protected string grow = "치어";
 
     protected int accuracy = 1; // 명중
     protected int dodge = 1; // 회피
@@ -35,7 +36,8 @@ internal class Unit
     public int Atk { get { return atk; } set { atk = value; } }
     public int Def { get { return def; } set { def = value; } }
     public int Spd { get { return speed; } set { speed = value; } }
-    public int Habitat { get { return habitat; } set { habitat = value; } }
+    public string Habitat { get { return habitat; } set { habitat = value; } }
+    public string Grow { get { return grow; } set { grow = value; } }
     public int Gold { get { return gold; } set { gold = value; } }
     public int Exp { get { return exp; } set { exp = value; } }
     public int Level { get { return level; } set { level = value; } }

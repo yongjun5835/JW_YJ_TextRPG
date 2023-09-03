@@ -24,6 +24,7 @@ namespace JW_YJ_TextRPG
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
+            hideout.DrawDisplay();
             createPlayer.DrawDisplay();
             if (player.Habitat == "태평양")
             {
@@ -60,7 +61,6 @@ namespace JW_YJ_TextRPG
             intro.DrawDisplay();
             tutorial.DrawDisplay();
             story1.DrawDisplay();
-            hideout.DrawDisplay();
         }
 
         static void TestBuff()

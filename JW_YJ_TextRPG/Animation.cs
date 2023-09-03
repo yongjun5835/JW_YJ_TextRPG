@@ -1,6 +1,7 @@
 ﻿using JW_YJ_TextRPG;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,27 @@ internal class Animation
             Console.ResetColor();
             Thread.Sleep(50);
         }
+    }
+
+    public void DrawTextNomal(int x, int y, string text, string color)
+    {
+        Console.SetCursorPosition(x, y);
+        if (color == "Green")
+            Console.ForegroundColor = ConsoleColor.Green;
+        else if (color == "Red")
+            Console.ForegroundColor = ConsoleColor.Red;
+        else if (color == "Blue")
+            Console.ForegroundColor = ConsoleColor.Blue;
+        else if (color == "Black")
+            Console.ForegroundColor = ConsoleColor.Black;
+        else if (color == "Gray")
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+        else if (color == "Yellow")
+            Console.ForegroundColor = ConsoleColor.Yellow;
+        else if (color == "White")
+            Console.ForegroundColor = ConsoleColor.White;
+        Console.Write(text);
+        Console.ResetColor();
     }
 
     public void SmallerBox(int x, int y)

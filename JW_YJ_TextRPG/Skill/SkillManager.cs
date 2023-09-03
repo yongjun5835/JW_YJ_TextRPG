@@ -25,6 +25,8 @@ partial class SkillManager
     //디버프 모두 삭제
     public void FinishBattle()
     {
+        if (finishBattle == null)
+            return;
         finishBattle();
     }
 

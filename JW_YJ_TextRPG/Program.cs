@@ -23,8 +23,17 @@ namespace JW_YJ_TextRPG
 
         static void Main(string[] args)
         {
+
             new SkillManager();
             new UnitManager();
+            new ItemManager();
+
+
+            Shop shop = new Shop();
+            shop.EnterShop();
+
+
+            Console.ReadLine();
 
             stories.Add(story1);
 

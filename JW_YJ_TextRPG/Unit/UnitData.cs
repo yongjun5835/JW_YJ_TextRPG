@@ -25,7 +25,7 @@
         unit.Def = 100;
         unit.Spd = 100;
         unit.Accuracy = 100;
-        unit.Dodge = 100; 
+        unit.Dodge = 100;
         SkillManager.SM.AddSkill(unit, SKillType.WaterPulse);
         SkillManager.SM.AddSkill(unit, SKillType.Surf);
         SkillManager.SM.AddSkill(unit, SKillType.Splash);
@@ -40,9 +40,11 @@
         unit.MaxHp = 30;
         unit.Atk = 5;
         unit.Def = 2;
-        unit.Spd = 5;
+        unit.Spd = 3;
         unit.Accuracy = 3;
         unit.Dodge = 1;
+        unit.Gold = 20;
+        unit.Exp = 5;
 
 
         SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
@@ -59,6 +61,8 @@
         unit.Spd = 10;
         unit.Accuracy = 5;
         unit.Dodge = 5;
+        unit.Gold = 40;
+        unit.Exp = 20;
 
         SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
         SkillManager.SM.AddSkill(unit, SKillType.TailWhip);
@@ -75,6 +79,8 @@
         unit.Spd = 1;
         unit.Accuracy = 1;
         unit.Dodge = 1;
+        unit.Gold = 10;
+        unit.Exp = 5;
 
         SkillManager.SM.AddSkill(unit, SKillType.BodySlam);
         SkillManager.SM.AddSkill(unit, SKillType.TailWhip);
@@ -84,11 +90,11 @@
     void Angler(Unit unit)
     {
         unit.Name = "낚시꾼";
-        unit.Hp = 210;
-        unit.MaxHp = 210;
+        unit.Hp = 420;
+        unit.MaxHp = 420;
         unit.Atk = 20;
         unit.Def = 5;
-        unit.Spd = 10;
+        unit.Spd = 5;
         unit.Accuracy = 5;
         unit.Dodge = 5;
 

@@ -15,6 +15,22 @@ internal class Hideout
 
     public void DrawDisplay()
     {
+        if (Program.player.Exp >= 5)
+            Program.player.Level = 2;
+        if (Program.player.Exp >= 15)
+            Program.player.Level = 3;
+        if (Program.player.Exp >= 25)
+            Program.player.Level = 4;
+        if (Program.player.Exp >= 45)
+            Program.player.Level = 5;
+
+        if (Program.player.Grow == "치어")
+            Program.player.MaxHp = 30 + 10 * Program.player.Level;
+        else if (Program.player.Grow == "유어")
+            Program.player.MaxHp = 60 + 10 * Program.player.Level;
+        else if (Program.player.Grow == "성어")
+            Program.player.MaxHp = 90 + 10 * Program.player.Level;
+
         Program.animation.FadeInOut(42, 10, 15, "은신처");
         Program.animation.UnfoldScroll(10, 0);
         while (true)

@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-internal class Story1
+internal class Story1 : StoryManager
 {
     public Story1()
     {
 
     }
 
-    public void DrawDisplay()
+    public override void DrawDisplay()
     {
         Program.animation.FadeInOut(42, 10, 11, "1. 어미를 잃다");
         Program.animation.UnfoldScroll(10, 0);

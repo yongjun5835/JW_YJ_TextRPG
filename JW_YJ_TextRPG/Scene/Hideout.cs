@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 internal class Hideout
 {
-    protected int storyProgress { get; set; }
-
     public Hideout()
     {
-        storyProgress = 1;
+
     }
 
     public void DrawDisplay()
@@ -51,6 +49,7 @@ internal class Hideout
             input = Console.ReadLine();
             if (input == "1")
             {
+                Program.storyManager.Progress();
                 isSelect1 = true;
                 Console.CursorVisible = false;
             }

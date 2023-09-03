@@ -13,6 +13,7 @@ internal class Battle
     }
 
     public bool isFaster;
+    public bool isTraining = false;
     public Unit enemy;
     public Random rand = new Random();
     public int index;
@@ -543,6 +544,7 @@ internal class Battle
             Console.Clear();
             Program.animation.SmallerBox(32, 5);
             Thread.Sleep(1000);
+            Program.hideout.DrawDisplay();
         }
         else if (enemy.Hp <= 0)
         {
@@ -550,16 +552,20 @@ internal class Battle
             Program.animation.SmallerBox(32, 5);
             Thread.Sleep(1000);
             Reward(enemy.Gold, enemy.Exp);
+            Program.hideout.DrawDisplay();
         }
     }
 
     public void Reward(int totalGold, int totalExp)
     {
+        if (isTraining == false)
+            Program.storyManager.SP++;
         SkillManager.SM.FinishBattle();
         Console.Clear();
         Program.animation.BiggerBox(32, 5);
         Program.animation.OpenBox(55, 12);
         Program.animation.DrawTextSlowly(39, 11, $"당신은 {totalGold}의 골드와 {totalExp}의 경험치를 흭득했습니다!", "Blue");
+        isTraining = false;
         Thread.Sleep(5000);
         Program.animation.SmallerBox(32, 5);
         Thread.Sleep(1000);

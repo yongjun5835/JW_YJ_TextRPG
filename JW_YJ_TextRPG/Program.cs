@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace JW_YJ_TextRPG
 {
@@ -9,21 +13,25 @@ namespace JW_YJ_TextRPG
         public static CreatePlayer createPlayer = new CreatePlayer();
         public static Intro intro = new Intro();
         public static Tutorial tutorial = new Tutorial();
-        public static Story1 story1 = new Story1();
         public static Battle battle = new Battle();
         public static Unit player = new Unit(UnitType.Player);
         public static Hideout hideout = new Hideout();
+        public static Story1 story1 = new Story1();
+        public static StoryManager storyManager = new StoryManager();
+
+        public static List<StoryManager> stories = new List<StoryManager>();
 
         static void Main(string[] args)
         {
             new SkillManager();
             new UnitManager();
 
+            stories.Add(story1);
+
             Console.CursorVisible = false;
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            hideout.DrawDisplay();
             createPlayer.DrawDisplay();
             if (player.Habitat == "태평양")
             {
@@ -59,7 +67,6 @@ namespace JW_YJ_TextRPG
 
             intro.DrawDisplay();
             tutorial.DrawDisplay();
-            story1.DrawDisplay();
         }
 
         static void TestBuff()

@@ -136,7 +136,7 @@ internal class BossBattle
             Program.player.Attack(1, enemy);
             Console.Clear();
             DrawDisplay();
-            DrawAngler("white");
+            DrawAngler("White");
             Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[0].UseComment}", "");
             DrawAngler("Red");
             Thread.Sleep(500);
@@ -149,10 +149,10 @@ internal class BossBattle
         }
         else if (input == "2")
         {
-            Program.player.Attack(1, enemy);
+            Program.player.Attack(2, enemy);
             Console.Clear();
             DrawDisplay();
-            DrawAngler("white");
+            DrawAngler("White");
             Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[1].UseComment}", "");
             DrawAngler("Red");
             Thread.Sleep(500);
@@ -165,10 +165,10 @@ internal class BossBattle
         }
         else if (input == "3")
         {
-            Program.player.Attack(1, enemy);
+            Program.player.Attack(3, enemy);
             Console.Clear();
             DrawDisplay();
-            DrawAngler("white");
+            DrawAngler("White");
             Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[2].UseComment}", "");
             DrawAngler("Red");
             Thread.Sleep(500);
@@ -181,10 +181,10 @@ internal class BossBattle
         }
         else if (input == "4")
         {
-            Program.player.Attack(1, enemy);
+            Program.player.Attack(4, enemy);
             Console.Clear();
             DrawDisplay();
-            DrawAngler("white");
+            DrawAngler("White");
             Program.animation.DrawTextSlowly(64, 2, $"{Program.player.Name}{Program.player.SkillList[3].UseComment}", "");
             DrawAngler("Red");
             Thread.Sleep(500);

@@ -14,6 +14,7 @@ internal class Hideout
 
     public void DrawDisplay()
     {
+        Program.player.Hp = Program.player.MaxHp;
         Program.animation.FadeInOut(42, 10, 15, "은신처");
         Program.animation.UnfoldScroll(10, 0);
         Program.ui.DrawBox(21, 4, 45, 22, "Gray");

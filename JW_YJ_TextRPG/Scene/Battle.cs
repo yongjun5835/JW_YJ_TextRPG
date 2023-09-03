@@ -551,7 +551,6 @@ internal class Battle
             Console.Clear();
             Program.animation.SmallerBox(32, 5);
             Thread.Sleep(1000);
-            Program.player.Hp = Program.player.MaxHp;
             Program.hideout.DrawDisplay();
         }
         else if (enemy.Hp <= 0)
@@ -560,7 +559,6 @@ internal class Battle
             Program.animation.SmallerBox(32, 5);
             Thread.Sleep(1000);
             Reward(enemy.Gold, enemy.Exp);
-            Program.player.Hp = Program.player.MaxHp;
             Program.hideout.DrawDisplay();
         }
     }

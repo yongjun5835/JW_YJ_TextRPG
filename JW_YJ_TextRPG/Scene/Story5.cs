@@ -19,10 +19,10 @@ internal class Story5 : StoryManager
         Program.animation.DrawTextSlowly(36, 11, "거북이와의 수련으로 저는 제가 강해졌음을 느꼈습니다.", "gray");
         Thread.Sleep(5000);
         Program.ui.ClearScroll(10, 0);
-        Program.animation.DrawTextSlowly(49, 11, "저는 다시 용기가 생겼습니다..", "gray");
+        Program.animation.DrawTextSlowly(47, 11, "저는 다시 용기가 생겼습니다.", "gray");
         Thread.Sleep(5000);
         Program.ui.ClearScroll(10, 0);
-        Program.animation.DrawTextSlowly(37, 11, "저는 일전에 저를 쓰러뜨렸던 상어에게 다시 도전했습니다.", "gray");
+        Program.animation.DrawTextSlowly(35, 11, "저는 일전에 저를 쓰러뜨렸던 상어에게 다시 도전했습니다.", "gray");
         Thread.Sleep(5000);
         Program.ui.ClearScroll(10, 0);
         Program.ui.DrawTexture(UnitType.Shark, 40, 5, "White");

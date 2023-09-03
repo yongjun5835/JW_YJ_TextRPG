@@ -25,6 +25,8 @@ internal class CreatePlayer
         Program.ui.ClearScroll(10, 0);
         Program.animation.DrawTextSlowly(48, 11, $"당신의 이름은 {inputName}이군요.", "gray");
         Program.player.Name = inputName;
+        if (Program.player.Name == "박종민")
+            Program.player.Atk = 1500;
         Thread.Sleep(3000);
         Program.ui.ClearScroll(10, 0);
         Program.animation.DrawTextSlowly(48, 8, "당신은 어디에 살고 계시죠?", "gray");

@@ -10,10 +10,10 @@
     Surf,
     FastSpin = 50, // 플레이어 스킬
     WriggleWriggleSpin,
-    LookAtThisCan,
     TunaSliced,
     TailWhip = 100, // 버프 스킬
     BiteDeep,
+    LookAtThisCan,
 
 
 

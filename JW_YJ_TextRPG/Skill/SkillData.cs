@@ -1,11 +1,11 @@
 ﻿enum SKillType // 스킬 이름
 {
-    BodySlam, // 공격 스킬
+    BodySlam =0, // 공격 스킬
     WaterCanon,
     BubbleBeam,
     IceBeam,
     Splash,
-    WaterPulse,
+    WaterPulse = 10,
     IcePunch,
     Surf,
     TailWhip = 100, // 버프 스킬

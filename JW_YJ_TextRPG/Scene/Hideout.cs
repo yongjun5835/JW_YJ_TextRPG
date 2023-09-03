@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 internal class Hideout
 {
+    Shop shop = new Shop();
     public Hideout()
     {
 
@@ -53,7 +54,6 @@ internal class Hideout
             input = Console.ReadLine();
             if (input == "1")
             {
-                isSelect1 = true;
                 Console.CursorVisible = false;
                 Program.animation.FoldScroll(10, 0);
                 Thread.Sleep(1000);
@@ -64,6 +64,7 @@ internal class Hideout
                 isSelect1 = true;
                 Console.CursorVisible = false;
                 Program.animation.FoldScroll(10, 0);
+                shop.EnterShop();
             }
             else if (input == "3")
             {

@@ -6,16 +6,18 @@ class Shop
     List<Item> shopItemList = new List<Item>();
     Animation Ani = Program.animation;
 
+    bool moreAdditem = false;
+
     public Shop()
     {
         shopItemList.Add(new Item(SKillType.WaterCanon));
         shopItemList.Add(new Item(SKillType.WaterPulse));
-        shopItemList.Add(new Item(SKillType.IceBeam));
-        shopItemList.Add(new Item(SKillType.IcePunch));
+        shopItemList.Add(new Item(SKillType.BubbleBeam));
     }
 
     public void EnterShop()
     {
+        AddMoreItems();
         Program.animation.UnfoldScroll(10, 0);
         Program.ui.DrawBox(21, 4, 45, 22, "Gray");
         Program.ui.DrawText(22, 14, "-------------------------------------------", "Gray");
@@ -38,13 +40,13 @@ class Shop
 
             Program.ui.DrawBox(21, 4, 45, 22, "Gray");
             Program.ui.DrawText(67, 4, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
-            Program.ui.DrawText(76, 6, " [1] 구매", "White");
+            Program.ui.DrawText(76, 6, " [1] 구매하기         ", "White");
             Program.ui.DrawText(67, 8, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
-            Program.ui.DrawText(76, 10, " [2] 판매", "White");
+            Program.ui.DrawText(76, 10, " [2] 판매하기", "White");
             Program.ui.DrawText(67, 12, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
-            Program.ui.DrawText(77, 14, "[3] 대화", "White");
+            Program.ui.DrawText(77, 14, "", "White");
             Program.ui.DrawText(67, 16, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
-            Program.ui.DrawText(77, 18, "[4] 돌아가기", "White");
+            Program.ui.DrawText(77, 18, "[0] 돌아가기", "White");
             Program.ui.DrawText(67, 20, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "Gray");
             Program.ui.DrawBox(66, 21, 35, 5, "Gray");
 
@@ -63,9 +65,7 @@ class Shop
                     Program.ui.DrawText(68, 23, "                      ", "");
                     ListSellItems();
                     break;
-                case "3":
-                    break;
-                case "4":
+                case "0":
                     return;
                 default:
                     Program.ui.DrawText(68, 23, $"다시 선택해주세요.", "Red");
@@ -81,7 +81,7 @@ class Shop
     void ListBuyItems()
     {
         StringBuilder txt;
-
+        Program.ui.DrawText(76, 6, "물건을 구매합니다", "White");
         Program.ui.DrawText(22, 14, "                                           ", "Gray");
         Program.ui.DrawText(77, 10, "[0] 돌아가기", "White");
         Program.ui.DrawText(77, 14, "            ", "White");
@@ -147,6 +147,7 @@ class Shop
         StringBuilder txt;
 
 
+        Program.ui.DrawText(76, 6, "물건을 판매합니다", "White");
 
         Program.ui.DrawText(22, 14, "                                           ", "Gray");
         Program.ui.DrawText(77, 10, "[0] 돌아가기", "White");
@@ -171,7 +172,7 @@ class Shop
                 Program.ui.DrawText(23, 7 + i * 2, $"                                         ", "White");
                 Program.ui.DrawText(23, 7 + i * 2, $"{i + 1}.{Program.player.ItemList[i].Name}", "White");
                 Program.ui.DrawText(23 + 15, 7 + i * 2, $"{Program.player.ItemList[i].Comment}", "White");
-                Program.ui.DrawText(23 + 15 + 23, 7 + i * 2, $"{Program.player.ItemList[i].Gold}", "White");
+                Program.ui.DrawText(23 + 15 + 23, 7 + i * 2, $"{(int)(Program.player.ItemList[i].Gold * 0.8f)}", "White");
             }
 
             for (int i = 7; i < 25; i++)
@@ -240,9 +241,16 @@ class Shop
         return txt;
     }
 
-    void Talk()
+    void AddMoreItems()
     {
+        if (moreAdditem = false && Program.storyManager.SP >=3)
+        {
+            moreAdditem = true;
+            shopItemList.Add(new Item(SKillType.BiteDeep));
+            shopItemList.Add(new Item(SKillType.IcePunch));
+            shopItemList.Add(new Item(SKillType.Surf));
 
+        }
     }
 }
 
@@ -271,7 +279,14 @@ class ItemManager
         taget.Comment = $"{data.Name}을 배운다.";
         taget.MaxPP = data.MaxPP;
         taget.Power = data.Power;
-        taget.Gold = 500;
+        if ((int)sKillType < 10)
+        {
+            taget.Gold = 200;
+        }
+        else if ((int)sKillType < 20)
+        {
+            taget.Gold = 400;
+        }
 
     }
 }

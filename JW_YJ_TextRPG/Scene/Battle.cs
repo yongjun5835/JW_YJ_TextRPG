@@ -567,7 +567,7 @@ internal class Battle
     public void DrawDisplay(UnitType Unit)
     {
         Console.Clear();
-        Program.ui.DrawTexture(UnitType.Player, 5, 8, "White");
+        Program.ui.DrawTexture(UnitType.Player, 5, 8, "Blue");
         Program.ui.DrawHpBar(5, 6, Program.player);
         Program.ui.DrawTexture(Unit, 80, 2, "White");
         Program.ui.DrawHpBar(80, 13, enemy);

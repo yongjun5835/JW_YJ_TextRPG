@@ -39,6 +39,7 @@ internal class CreatePlayer
             inputLive = Console.ReadLine();
             if (inputLive == "1")
             {
+                Program.player.Habitat = "태평양";
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(47, 11, $"당신의 서식지는 '태평양'이군요.", "gray");
                 isSelect2 = true;
@@ -46,6 +47,7 @@ internal class CreatePlayer
             }
             else if (inputLive == "2")
             {
+                Program.player.Habitat = "대서양";
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(47, 11, $"당신의 서식지는 '대서양'이군요.", "gray");
                 isSelect2 = true;
@@ -53,6 +55,7 @@ internal class CreatePlayer
             }
             else if (inputLive == "3")
             {
+                Program.player.Habitat = "인도양";
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(47, 11, $"당신의 서식지는 '인도양'이군요.", "gray");
                 isSelect2 = true;
@@ -84,6 +87,7 @@ internal class CreatePlayer
             inputAge = Console.ReadLine();
             if (inputAge == "1")
             {
+                Program.player.Grow = "치어";
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(48, 11, $"당신은 참치의 '치어'시군요.", "gray");
                 isSelect1 = true;
@@ -91,6 +95,7 @@ internal class CreatePlayer
             }
             else if (inputAge == "2")
             {
+                Program.player.Grow = "유어";
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(48, 11, $"당신은 참치의 '유어'시군요.", "gray");
                 isSelect1 = true;
@@ -98,6 +103,7 @@ internal class CreatePlayer
             }
             else if (inputAge == "3")
             {
+                Program.player.Grow = "성어";
                 Program.ui.ClearScroll(10, 0);
                 Program.animation.DrawTextSlowly(48, 11, $"당신은 참치의 '성어'시군요.", "gray");
                 isSelect1 = true;

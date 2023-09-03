@@ -1,11 +1,11 @@
-﻿using System.Runtime.InteropServices;
-
+﻿
 partial class SkillManager
 {
     public static SkillManager SM;
 
     public delegate void Event();
-    public event Event RoundTurn;
+    public event Event roundTurn;
+    public event Event finishBattle;
 
 
     public SkillManager()
@@ -13,31 +13,88 @@ partial class SkillManager
         SM = this;
     }
 
+    // 턴 진행 이벤트 ex) 턴 버프
     public void TurnEvent()
     {
-        if (RoundTurn == null)
+        if (roundTurn == null)
             return;
 
-        RoundTurn();
+        roundTurn(); 
     }
 
-    public void AddSkill(Unit unit, SKillType type) // 스킬 실수 없이 추가 하기
+    //디버프 모두 삭제
+    public void FinishBattle() 
     {
-        List<Skill> addlist = unit.SkillList;
+        finishBattle();
+    }
 
+    // 스킬 실수 없이 추가 하기
+    public bool AddSkill(Unit unit, SKillType type)
+    {
+        int changeListNum = -1;
+
+        // 중복 체크
+        foreach (var skill in unit.SkillList)
+        {
+            if (type == skill.SkillType)
+            {
+                Console.WriteLine("스킬 중복; 스킬매니저 AddSkill 대사 수정");
+                Console.ReadLine();
+
+                return false;
+            }
+        }
+
+        // 초과 체크
+        while (unit.SkillList.Count >= 4 && changeListNum == -1)
+        {
+            Console.WriteLine("어떤 스킬을 교체 할까?");
+            for (int i = 0; i < unit.SkillList.Count; i++)
+            {
+                Console.Write($"{i+1}. {unit.SkillList[i].Name}  ");
+            }
+            Console.WriteLine("0. 취소");
+
+            string inputKey = Console.ReadLine();
+            switch (inputKey)
+            {
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                    changeListNum = int.Parse(inputKey) - 1;
+                    break;
+                case "0":
+                    return false;
+                default:
+                    Console.WriteLine("그런 선택지는 없다!");
+                    Thread.Sleep(1000);
+                    continue;
+            }
+        }
+
+        // 추가
         switch ((int)type)
         {
             case < 100: // 공격 스킬
-                addlist.Add(new AttackSkill(type));
+                if (changeListNum == -1)
+                    unit.SkillList.Add(new AttackSkill(type));
+                else
+                    unit.SkillList[changeListNum] = new AttackSkill(type);
                 break;
             case >= 100: // 버프 스킬
-                addlist.Add(new BuffSkill(type));
+                if (changeListNum == -1)
+                    unit.SkillList.Add(new BuffSkill(type));
+                else
+                    unit.SkillList[changeListNum] = new BuffSkill(type);
                 break;
         }
+        return true;
 
     }
 
-    public void ChangeSkillData(Skill skill)
+    // skill 생성시 데이터 입력
+    public void SetSkillData(Skill skill)
     {
         switch (skill.SkillType)
         {
@@ -62,13 +119,22 @@ partial class SkillManager
             case SKillType.BiteDeep:
                 BiteDeep(skill);
                 break;
+            case SKillType.WaterPulse:
+                WaterPluse(skill);
+                break;
+            case SKillType.IcePunch:
+                IcePunch(skill);
+                break;
+            case SKillType.Surf:
+                Surf(skill);
+                break;
             case SKillType.None:
                 None(skill);
                 break;
             default:
                 break;
         }
-    } // skill 데이터 입력
+    }
 
     public void CalcAttackType(Skill skill, Unit taget, ref int damage)
     {
